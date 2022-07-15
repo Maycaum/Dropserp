@@ -1,185 +1,88 @@
-.124_2 { 
-	overflow:hidden;
+body {
+	font-family: "Lato", sans-serif;
+	padding:0px;
+    margin:0px;
+
+  }
+
+
+
+
+#nome ,#cargo{
+	color: #f1f1f1;
+	margin-top: -10;
+	margin-left: 1050px;
+	float:r
 }
-.e124_2 { 
-	width:1440px;
-	height:1024px;
+
+#logop{
+	margin-left: 80%;
+	border-radius: 50%;
+	position: absolute;
 	
 }
-.e20_16 { 
-	width:1440px;
-	height:1024px;
-	left:0px;
-	top:0px;
+
+
+span{
+	color: #934D9E;
+	top: 166;
+	position: absolute;
 }
-.e4_3 { 
-	background-color:rgba(82.00000271201134, 57.00000040233135, 97.00000181794167, 1);
-	width:100%;
-	height:179px;
-	position:absolute;
-	left:0px;
-	top:0px;
-}
-.4_3 { 
-	border:1px solid rgba(255, 255, 255, 1);
-}
-.lateral { 
-    background-color: rgba(147.00000643730164, 77.00000301003456, 158.00000578165054, 1);
-    width: 20%;
-    height: 100%;
-    position: absolute;
-    left: 0px;
-    top: 179px;
-}
-.4_4 { 
-	border:1px solid rgba(255, 255, 255, 1);
-}
-.e122_6 { 
-	width:231.56625366210938px;
-	height:37.409637451171875px;
-	position:absolute;
-	left:1172px;
-	top:126px;
-}
-.nome { 
-	color:rgba(255, 255, 255, 1);
-	width:110.5662612915039px;
-	height:37.409637451171875px;
-	position:absolute;
-	left:0px;
-	top:0px;
-	font-family:Cabin;
-	text-align:left;
-	font-size:30px;
-	letter-spacing:0;
-}
-.cargo { 
-	color:rgba(255, 255, 255, 1);
-	width:110.5662612915039px;
-	height:37.409637451171875px;
-	position:absolute;
-	left:121px;
-	top:0px;
-	font-family:Cabin;
-	text-align:left;
-	font-size:30px;
-	letter-spacing:0;
-}
-.e12_4 { 
-	border-radius:500px;
-	background-color:rgba(255, 255, 255, 1);
-	width:17px;
-	height:17px;
-	position:absolute;
-	left:36px;
-	top:290px;
-}
-.12_4 { 
-	border:1px solid rgba(255, 255, 255, 1);
-}
-.e17_2 { 
-	border-radius:500px;
-	background-color:rgba(255, 255, 255, 1);
-	width:17px;
-	height:17px;
-	position:absolute;
-	left:36px;
-	top:410px;
-}
-.17_2 { 
-	border:1px solid rgba(255, 255, 255, 1);
-}
-.e17_3 { 
-	border-radius:500px;
-	background-color:rgba(255, 255, 255, 1);
-	width:17px;
-	height:15px;
-	position:absolute;
-	left:36px;
-	top:531px;
-}
-.17_3 { 
-	border:1px solid rgba(255, 255, 255, 1);
-}
-.e17_6 { 
-	color:rgba(255, 255, 255, 1);
-	width:108px;
-	height:44px;
-	position:absolute;
-	left:81px;
-	top:280px;
-	font-family:Cabin;
-	text-align:left;
-	font-size:25px;
-	letter-spacing:0;
-}
-.e18_7 { 
-	color:rgba(255, 255, 255, 1);
-	width:120px;
-	height:38px;
-	position:absolute;
-	left:69px;
-	top:400px;
-	font-family:Cabin;
-	text-align:left;
-	font-size:25px;
-	letter-spacing:0;
-}
-.e18_8 { 
-	color:rgba(255, 255, 255, 1);
-	width:116px;
-	height:37px;
-	position:absolute;
-	left:69px;
-	top:527px;
-	font-family:Cabin;
-	text-align:left;
-	font-size:25px;
-	letter-spacing:0;
-}
-.e20_13 { 
-	width:156px;
-	height:87px;
-	position:absolute;
-	left:45px;
-	top:729px;
-	background-image:url(images/sair_1.png);
-	background-repeat:no-repeat;
-	background-size:cover;
-}
-.e20_14 { 
-	color:rgba(255, 255, 255, 1);
-	width:208px;
-	height:68px;
-	position:absolute;
-	left:26px;
-	top:919px;
-	font-family:Cabin;
-	text-align:left;
-	font-size:20px;
-	letter-spacing:0;
-}
-.perso { 
-	width:96px;
-	height:88px;
-	position:absolute;
-	left:1700px;
-	top:38px;
-	border-top-left-radius:100px;
-	border-top-right-radius:100px;
-	border-bottom-left-radius:100px;
-	border-bottom-right-radius:100px;
-	background-image:url(images/image_1.png);
-	background-repeat:no-repeat;
-	background-size:cover;
-}
-.e122_5 { 
-	width:222px;
-	height:165px;
-	position:absolute;
-	left:12px;
-	top:17px;
-	background-image:url(images/image_2.png);
-	background-repeat:no-repeat;
-	background-size:cover;
-}
+  
+.mein{
+	
+	    background-color: #523961;
+		padding:8px 8px 8px 32px;
+		position: absolute;
+		position: fixed;
+		width: 100%;
+		height: 150;
+		
+  }
+  
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: relative;
+	position: fixed;
+	z-index: 1;
+	top: 166;
+	left: 0;
+	background-color: #934D9E;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+	
+  }
+  
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	display: block;
+	transition: 0.3s;
+	color: #f1f1f1;
+  }
+  
+.sidenav a:hover {
+	opacity: 0.2;
+  }
+  
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
+  
+#main {
+	transition: margin-left .5s;
+	padding: 16px;
+  }
+  
+@media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+  }
+  

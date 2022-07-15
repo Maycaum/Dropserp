@@ -1,25 +1,52 @@
-<html lang="en">
+<html lang="pt-br">
           <head>
             <meta charset="utf-8">
           
-            <title>Html Generated</title>
-            <meta name="description" content="Figma htmlGenerator">
-            <meta name="author" content="htmlGenerator">
+            <title>H55</title>
+        
             <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
-
             <link rel="stylesheet" href="styles.css">
+            <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
             
-            <style>
-              /*
-                Figma Background for illustrative/preview purposes only.
-                You can remove this style tag with no consequence
-              */
-              body {background: #E5E5E5; }
-            </style>
-          
           </head>
           
           <body>
-            <div class=e124_2><div class=e20_16><div  class="e4_3"></div><div  class="lateral"></div><div class=e122_6><span  class="nome">Nome  -</span><span  class="cargo">Cargo</span></div><div  class="e12_4"></div><div  class="e17_2"></div><div  class="e17_3"></div><span  class="e17_6">RH</span><span  class="e18_7">Estoque</span><span  class="e18_8">Finanças</span><div  class="e20_13"></div><span  class="e20_14">Para mais informações entrar em contato com o Admin@admin.com</span></div><div  class="perso"></div><div  class="e122_5"></div></div>
+
+
+          <div class="mein">
+
+            <a href="img"><img id="logo" src="./images/image_2.png" alt="" height="120px" width=""></a>
+            <img id="logop" src="./images/image_1.png" alt="" height="100px" width="100px">
+            <p id="nome">Nome</p>
+            <p id="cargo">cargo</p>
+
+
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a href="#">RH</a>
+              <a href="#">Estoque</a>
+              <a href="#">Finanças</a>
+
+            </div>
+            
+            <div id="main">
+              
+              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </div>
+            
+            <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "250px";
+              document.getElementById("main").style.marginLeft = "250px";
+            }
+            
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+              document.getElementById("main").style.marginLeft= "0";
+            }
+           </script>
+           
+           
+          </div>
           </body>
           </html>
