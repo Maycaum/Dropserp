@@ -2,17 +2,21 @@ body {
 	font-family: "Lato", sans-serif;
 	padding:0px;
     margin:0px;
+	background-color: #E1DEE9;
 
   }
 
 
 
+ p{
+	display: inline-block;
+ }
 
-#nome ,#cargo{
-	color: #f1f1f1;
-	margin-top: -10;
-	margin-left: 1050px;
-	float:r
+.pos1{
+	color:white;
+	margin-top: -30;
+	margin-left: 90%;
+	
 }
 
 #logop{
@@ -31,7 +35,7 @@ span{
   
 .mein{
 	
-	    background-color: #523961;
+			background-color: #523961;
 		padding:8px 8px 8px 32px;
 		position: absolute;
 		position: fixed;
@@ -75,7 +79,18 @@ span{
 	font-size: 36px;
 	margin-left: 50px;
   }
-  
+ 
+
+#sairpos{
+	margin-top: 150%;
+}
+ 
+.pos2{
+	font-size: 18;
+	margin-left: 5%;
+	color: white;
+}
+
 #main {
 	transition: margin-left .5s;
 	padding: 16px;
