@@ -6,20 +6,23 @@ body {
 
   }
 
+
+
  p{
 	display: inline-block;
  }
 
-
- .pos1{
-
-	color: white;
-	margin-top: -100;
+.pos1{
+	color:white;
+	margin-top: -30;
 	margin-left: 90%;
- }
-#logop{ 
-	margin-right: 50%;
+	
+}
+
+#logop{
 	border-radius: 50%;
+	position: absolute;
+	margin-top: -85;
 }
 
 
@@ -31,7 +34,7 @@ span{
   
 .mein{
 	
-		background-color: #523961;
+			background-color: #523961;
 		padding:8px 8px 8px 32px;
 		position: absolute;
 		position: fixed;
@@ -54,9 +57,10 @@ span{
 	padding-top: 60px;
 	
   }
-  
+
+
 .sidenav a {
-	padding: 8px 8px 8px 32px;
+	padding: 8px 8px 78px 32px;
 	text-decoration: none;
 	font-size: 25px;
 	display: block;
@@ -76,8 +80,9 @@ span{
 	margin-left: 50px;
   }
  
-  #sairpos{
-	margin-top: 150%;
+
+#sairpos{
+	margin-top: 40%;
 }
  
 .pos2{
@@ -85,6 +90,7 @@ span{
 	margin-left: 5%;
 	color: white;
 }
+
 #main {
 	transition: margin-left .5s;
 	padding: 16px;
@@ -93,14 +99,5 @@ span{
 @media screen and (max-height: 450px) {
 	.sidenav {padding-top: 15px;}
 	.sidenav a {font-size: 18px;}
-	#sairpos{margin-top: 2%; height: 30px; }
-	 
-	.pos2{ font-size: 15; margin-left: 5%; height: 5px; color: white;}
-	.pos1{ color: white; margin-top: -100; margin-left: 80%; 
-		
-	 }
-
-	}
-	
-}
+  }
   
