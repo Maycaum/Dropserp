@@ -20,10 +20,9 @@ body {
 }
 
 #logop{
-	margin-left: 80%;
 	border-radius: 50%;
 	position: absolute;
-	
+	margin-top: -85;
 }
 
 
@@ -58,9 +57,10 @@ span{
 	padding-top: 60px;
 	
   }
-  
+
+
 .sidenav a {
-	padding: 8px 8px 8px 32px;
+	padding: 8px 8px 78px 32px;
 	text-decoration: none;
 	font-size: 25px;
 	display: block;
@@ -82,7 +82,7 @@ span{
  
 
 #sairpos{
-	margin-top: 150%;
+	margin-top: 40%;
 }
  
 .pos2{
