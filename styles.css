@@ -101,3 +101,68 @@ span{
 	.sidenav a {font-size: 18px;}
   }
   
+
+
+  /* em diante css do da tela de login*/
+
+  .centro{
+	position: absolute;
+	width: 431px;
+	height: 431px;
+	left: 40%;
+	top: 15%;
+	background: #523961;
+	border-radius: 50%;
+   }
+
+.textologin{
+	color: white;
+	position: absolute;
+	margin-left: 24%;
+	font-size: 50px;
+
+	
+}
+.imglogin{
+	position: absolute;
+	margin-top: 119px;
+	border-radius: 50%;
+	margin-left: 60px;
+	
+}
+/*exescencial*/
+.trabalho{
+	width: 50px;
+    margin: auto;
+    border: none;
+    margin-top: 250px;
+}
+
+.botao{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#cadastrofun{
+	height: 85px;
+    width: 250px;
+    background-color: #934D9E;
+    color: white;
+    font-size: 30px;
+    border-radius: 50px;
+    border: none;
+}
+
+#cadastrofor{
+	height: 85px;
+    width: 250px;
+    background-color: #934D9E;
+    color: white;
+    font-size: 30px;
+    border-radius: 50px;
+    border: none;
+	margin-top: 60px;
+	
+}

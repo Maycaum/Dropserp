@@ -1,0 +1,84 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0" />
+  <link rel="shortcut icon" href="images/image_2.png" type="image/x-icon">
+  <title>Dropserp</title>
+  <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="./css/contas_a_receber.css">
+
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+  <script src="https://kit.fontawesome.com/d7f5ff492c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="mein">
+    <a href="img"><img id="logo" src="./images/image_2.png" alt="" height="120px" width="" /></a>
+
+    <div class="pos1">
+      <img id="logop" src="./images/image_1.png" alt="" height="100px" width="100px" />
+      <p id="nome">Nome-</p>   
+      <p id="cargo">cargo</p>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#"><img src="/images/circulo-pp.png" height="10px" /> RH</a>
+      <a href="#"><img src="/images/circulo-pp.png" height="10px" /> Estoque</a>
+      <a href="#"><img src="/images/circulo-pp.png" height="10px" /> Finanças</a>
+      <div>
+        <a href=""><img id="sairpos" src="./images/sair_1.png" height="100px" width="" /></a>
+      </div>
+      <h1 class="pos2">
+        Para mais informações entrar em contato com o Admin@admin.com
+      </h1>
+    </div>
+
+    <div id="main">
+      <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
+    </div>
+
+    <div class="tela">
+      <fieldset>
+        <h1>Contas a Receber</h1>
+        <div class="card">
+          <label>Nome</label>
+          <input class="entrada" type="text" maxlength="20" />
+          <br />
+          <label>Valor</label>
+          <input class="entrada" type="text" />
+          <br />
+          <label>Pagador</label>
+          <input class="entrada" type="text" maxlength="20" />
+          <br />
+          <label>Data</label>
+          <input class="entrada" type="date" />
+        </div>
+        <br />
+        <div class="botoes-estilos">
+          <button id="b_visul"><strong>Visualizar</strong></button>
+          <button id="b_cadast"><strong> Cadastrar </strong></button>
+        </div>
+      </fieldset>
+    </div>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+    </script>
+
+    <div class="trabalho"></div>
+  </div>
+</body>
+
+</html>
