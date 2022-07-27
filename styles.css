@@ -133,9 +133,9 @@ span{
 /*exescencial*/
 .trabalho{
 	width: 50px;
-    margin: auto;
+    margin-left: 40%;
     border: none;
-    margin-top: 250px;
+    margin-top: 170px;
 }
 
 .botao{
@@ -145,6 +145,7 @@ span{
     margin-top: 30px;
 }
 
+/*menu rh*/
 #cadastrofun{
 	height: 85px;
     width: 250px;
@@ -153,6 +154,7 @@ span{
     font-size: 30px;
     border-radius: 50px;
     border: none;
+	cursor: pointer;
 }
 
 #cadastrofor{
@@ -164,5 +166,6 @@ span{
     border-radius: 50px;
     border: none;
 	margin-top: 60px;
+	cursor: pointer;
 	
 }
