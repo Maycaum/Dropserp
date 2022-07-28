@@ -146,26 +146,4 @@ span{
 }
 
 /*menu rh*/
-#cadastrofun{
-	height: 85px;
-    width: 250px;
-    background-color: #934D9E;
-    color: white;
-    font-size: 30px;
-    border-radius: 50px;
-    border: none;
-	cursor: pointer;
-}
 
-#cadastrofor{
-	height: 85px;
-    width: 250px;
-    background-color: #934D9E;
-    color: white;
-    font-size: 30px;
-    border-radius: 50px;
-    border: none;
-	margin-top: 60px;
-	cursor: pointer;
-	
-}
