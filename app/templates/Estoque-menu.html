@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Financeiro</title>
+  <title>Estoque</title>
   <link rel="shortcut icon" href="images/image_2.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="/css/Financeiro.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='/css/Financeiro.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='/css/Estoque.css')}}">
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/d7f5ff492c.js" crossorigin="anonymous"></script>
   
@@ -62,15 +63,12 @@
 
 
     <div class="trabalho">
-      <h3>Financeiro</h3>
-      <button id="b_contas-a"> Cadastrar conta a receber</button>
+      <h3>Estoque</h3>
+      <button id="b_pesq-p"> Pesquisa de produto</button>
       <br>
-      <button id="b_contas-p"> Cadastrar conta a pagar</button>
-
-      <button id="b_exibir-relatorio"> Exibir Relatório</button>
+      <button id="b_cadastrar-p"> Cadastramento de Produto </button>
    
     </div>
-
 
 
 
