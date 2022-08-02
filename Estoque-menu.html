@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Funcionario </title>
+  <title>Estoque</title>
   <link rel="shortcut icon" href="images/image_2.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/Rh.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="/css/Financeiro.css">
+  <link rel="stylesheet" href="./css/Estoque.css">
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/d7f5ff492c.js" crossorigin="anonymous"></script>
-
+  
 </head>
 
 <body>
@@ -41,9 +42,9 @@
 
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#"> RH</a>
-      <a href="#"> Estoque</a>
-      <a href="#"> Finanças</a>
+      <a href="./RH-menu.html"><img src="/images/circulo-pp.png" height="10px"> RH</a>
+      <a href="./Estoque-menu.html"><img src="/images/circulo-pp.png" height="10px"> Estoque</a>
+      <a href="./Financeiro-menu.html"><img src="/images/circulo-pp.png" height="10px"> Finanças</a>
       <div>
         <a href=""><img id="sairpos" src="./images/sair_1.png" height="100px" width=""></a>
       </div>
@@ -51,6 +52,7 @@
         Para mais informações entrar em contato com o Admin@admin.com
       </h1>
     </div>
+    
 
 
     <div id="main">
@@ -68,55 +70,20 @@
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
       }
-      function mascara_cpf(){
-          var cpf =  document.getElementById('cpf')
-          if(cpf.value.length ==3 || cpf.value.length == 7 ){
-              cpf.value = cpf.value + "."
-          }
-          else if (cpf.value.length == 11){
-              cpf.value  +="-"
-      }
-}
       function modo_nortuno() {
-                var element = document.body;
-                element.classList.toggle("dark-mode");
-              }
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
     </script>
 
 
-
     <div class="trabalho">
-      <fieldset>
-        <h4>Funcionario</h3>
-          <div class="card">
-            <label>Nome</label>
-            <input class="entrada" type="text" maxlength="20" />
-            <br>
-            <label>Sobrenome </label>
-            <input class="entrada" type="text" maxlength="20" />
-            <br>
-            <label>CPF</label>
-            <input id="cpf" class="entrada" type="text" maxlength="14"  pattern="[a1,]+" onkeyup="mascara_cpf()" />
-            <br>
-            <label>Cargo</label>
-            <select class="entrada" id="teste">
-            <option value="Selecionar"></option>
-            <option value="Analista Rh">Analista Rh</option>
-            <option value="Analista Estoque">Analista Estoque</option>
-            <option value="Analista de Financeiro">Analista de Financeiro</option>
-            </select>
-            <br>
-            <label>Senha</label>
-            <input class="entrada" type="text" maxlength="8" />
-          </div>
-      </fieldset>
-      <div class="botoes-estilos">
-        <button id="b_cancelar"> Cancelar </button>
-        <button id="b_cadastro"> Cadastrar </button>
-      </div>
-
+      <h3>Estoque</h3>
+      <button id="b_pesq-p"> Pesquisa de produto</button>
+      <br>
+      <button id="b_cadastrar-p"> Cadastramento de Produto </button>
+   
     </div>
-
 
 
 

@@ -1,0 +1,288 @@
+body {
+	font-family: "Lato", sans-serif;
+	padding:0px;
+    margin:0px;
+	background-color: #E1DEE9;
+
+  }
+
+
+
+ p{
+	display: inline-block;
+	font-size: 20;
+ }
+
+.pos1{
+	color:white;
+	margin-top: -30;
+	margin-left: 90%;
+	
+}
+* {
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+  }
+  
+  *:focus {
+	outline: none;
+  }
+  
+  body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	background-color: #f1f9f9;
+  }
+  
+  #app-cover {
+	display: table;
+	width: 600px;
+	margin: 80px auto;
+	counter-reset: button-counter;
+  }
+  
+  .row {
+	display: table-row;
+  }
+  
+  .toggle-button-cover {
+	display: table-cell;
+	position: relative;
+	width: 74px;
+	height: 36px;
+	box-sizing: border-box;
+  }
+  
+
+  
+
+  
+  .button-cover,
+  .knobs,
+  .layer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+  }
+  
+  .button {
+	position: relative;
+	top: 120%;
+	width: 74px;
+	height: 36px;
+	margin: -20px auto 0 auto;
+	overflow: hidden;
+  }
+  
+  .button.r,
+  .button.r .layer {
+	border-radius: 100px;
+  }
+  
+  .button.b2 {
+	border-radius: 2px;
+  }
+  
+  .checkbox {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	opacity: 0;
+	cursor: pointer;
+	z-index: 3;
+  }
+  
+  .knobs {
+	z-index: 2;
+  }
+  
+  .layer {
+	width: 100%;
+	background-color: #934D9E;
+	transition: 0.3s ease all;
+	z-index: 1;
+  }
+/* Button 3 */
+#button-3 .knobs:before {
+	content: " ";
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 20px;
+	height: 10px;
+	color: #fff;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1;
+	padding: 9px 4px;
+	background-color: #182125;
+	border-radius: 50%;
+	transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+  }
+  
+  #button-3 .checkbox:active + .knobs:before {
+	width: 46px;
+	border-radius: 100px;
+  }
+  
+  #button-3 .checkbox:checked:active + .knobs:before {
+	margin-left: -26px;
+  }
+  
+  #button-3 .checkbox:checked + .knobs:before {
+	content: " ";
+	left: 42px;
+	background-color:rgb(10, 2, 37);
+  }
+  
+  #button-3 .checkbox:checked ~ .layer {
+	background-color: #fcebeb;
+  }
+.dark-mode {
+
+    background-color: rgb(10, 2, 37);
+    color: white;
+    width: 10px;
+    height: 10px;
+
+}
+
+.moon{
+
+    position: absolute;
+    top: 174px;
+    right: 147px;
+}
+
+#logop{
+    border-radius: 50%;
+    margin-top: -115px;
+    display: flex;
+}
+
+
+span{
+	color: #934D9E;
+	top: 166;
+	position: absolute;
+}
+  
+.mein{
+	
+			background-color: #523961;
+		padding:8px 8px 8px 32px;
+		position: absolute;
+		position: fixed;
+		width: 100%;
+		height: 150;
+		
+  }
+  
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: relative;
+	position: fixed;
+	z-index: 1;
+	top: 166;
+	left: 0;
+	background-color: #934D9E;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+	
+  }
+
+
+.sidenav a {
+	padding: 8px 8px 78px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	display: block;
+	transition: 0.3s;
+	color: #f1f1f1;
+  }
+  
+.sidenav a:hover {
+	opacity: 0.2;
+  }
+  
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
+ 
+
+#sairpos{
+	margin-top: 40%;
+}
+ 
+.pos2{
+	font-size: 18;
+	margin-left: 5%;
+	color: white;
+}
+
+#main {
+	transition: margin-left .5s;
+	padding: 16px;
+  }
+  
+@media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+  }
+  
+
+
+  /* em diante css do da tela de login*/
+
+  .centro{
+	position: absolute;
+	width: 431px;
+	height: 431px;
+	left: 40%;
+	top: 15%;
+	background: #523961;
+	border-radius: 50%;
+   }
+
+.textologin{
+	color: white;
+	position: absolute;
+	margin-left: 24%;
+	font-size: 50px;
+
+	
+}
+.imglogin{
+	position: absolute;
+	margin-top: 119px;
+	border-radius: 50%;
+	margin-left: 60px;
+	
+}
+/*exescencial*/
+.trabalho{
+	width: 50px;
+    margin-left: 40%;
+    border: none;
+    margin-top: 170px;
+}
+
+.botao{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 30px;
+}
+
+/*menu rh*/

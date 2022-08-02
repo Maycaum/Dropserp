@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="images/image_2.png" type="image/x-icon">
   <title>Dropserp</title>
   <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="/css/styles.css"/>
   <link rel="stylesheet" href="./css/contas_a_receber.css">
 
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
@@ -20,15 +20,25 @@
 
     <div class="pos1">
       <img id="logop" src="./images/image_1.png" alt="" height="100px" width="100px" />
-      <p id="nome">Nome-</p>   
+      <p id="nome">Nome</p>   
       <p id="cargo">cargo</p>
+      <a class="moon" onclick="modo_nortuno()">
+        <div class="toggle-button-cover">
+          <div class="button-cover">
+            <div class="button r" id="button-3">
+              <input type="checkbox" class="checkbox" />
+              <div class="knobs"></div>
+              <div class="layer"></div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#"><img src="/images/circulo-pp.png" height="10px" /> RH</a>
-      <a href="#"><img src="/images/circulo-pp.png" height="10px" /> Estoque</a>
-      <a href="#"><img src="/images/circulo-pp.png" height="10px" /> Finanças</a>
+      <a href="#"> RH</a>
+      <a href="#"> Estoque</a>
+      <a href="#"> Finanças</a>
       <div>
         <a href=""><img id="sairpos" src="./images/sair_1.png" height="100px" width="" /></a>
       </div>
@@ -49,7 +59,7 @@
           <input class="entrada" type="text" maxlength="20" />
           <br />
           <label>Valor</label>
-          <input class="entrada" type="text" />
+          <input class="entrada" type="number" />
           <br />
           <label>Pagador</label>
           <input class="entrada" type="text" maxlength="20" />
@@ -75,9 +85,13 @@
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
       }
+      function modo_nortuno() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
     </script>
 
-    <div class="trabalho"></div>
+    
   </div>
 </body>
 

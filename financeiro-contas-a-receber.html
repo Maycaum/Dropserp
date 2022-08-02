@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="images/image_2.png" type="image/x-icon">
   <title>Dropserp</title>
   <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="css/styles.css"/>
   <link rel="stylesheet" href="./css/contas_a_receber.css">
 
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
@@ -22,6 +22,17 @@
       <img id="logop" src="./images/image_1.png" alt="" height="100px" width="100px" />
       <p id="nome">Nome-</p>   
       <p id="cargo">cargo</p>
+      <a class="moon" onclick="modo_nortuno()">
+        <div class="toggle-button-cover">
+          <div class="button-cover">
+            <div class="button r" id="button-3">
+              <input type="checkbox" class="checkbox" />
+              <div class="knobs"></div>
+              <div class="layer"></div>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
 
     <div id="mySidenav" class="sidenav">
@@ -75,9 +86,13 @@
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
       }
+      function modo_nortuno() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
     </script>
 
-    <div class="trabalho"></div>
+    
   </div>
 </body>
 

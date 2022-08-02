@@ -63,7 +63,7 @@ font-size: 20px;
 
 height: 65px;
 width: 167px;
-background-color: red;
+background-color: #A22C27;
 color: white;
 border-radius: 50px;
 border: none;
@@ -86,6 +86,10 @@ border: none;
 
 } 
 
-
+button:hover{opacity: 0,7;}
 /* Animações  */
+
+#pos3{
+    margin-left: 1px;
+}
 
