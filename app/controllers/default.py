@@ -9,6 +9,13 @@ def index():
 def Estoque():
     return render_template("Estoque-menu.html")
 
+@app.route('/estoque-cadastro')
+def EstoqueCadastro():
+    return render_template("Estoque-cadastro-de-produto.html")
+
+@app.route('/estoque-pesquisa')
+def EstoquePesquisa():
+    return render_template("Estoque-pesquisar-produto.html")
 @app.route('/financeiros-contas-a-pagar')
 def ContasAPagar():
     return render_template("financeiro-contas-a-pagar.html")
