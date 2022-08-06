@@ -1,0 +1,27 @@
+{% extends 'menu.html' %}
+{% block title %}{{super()}} - Cadastro de Produtos{% endblock title %}
+{% block content %}
+
+
+    <div class="trabalho">
+      <fieldset>
+        <h4>Fornecedores</h4>
+        <div class="card">
+         <label class="nomeem">Nome da Empresa</label>
+         <input class="entrada" type="text" maxlength="20" />
+         <br>
+         <label>CNPJ</label>
+         <input id="cnpj" class="entrada" type="text" maxlength="18" onkeyup="mascara_cnpj()" />
+         <br> 
+         <label>Descrição</label>
+         <input class="entrada" type="text" maxlength="20" /> 
+        </div>
+      </fieldset>
+      <div class="botoes-estilos">
+        <button id="b_cancelar"> Cancelar </button>
+        <button id="b_cadastro"> Cadastrar </button>
+      </div>
+   
+    </div>
+
+{% endblock content %}

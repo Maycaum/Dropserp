@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title> DropsERP - Login </title> 
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/d7f5ff492c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/login.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/styles.css')}}">
+</head>
+<body>
+    <div class="centro">
+        <h3 class="textologin">DropsERP</h3>
+        <img class="imglogin" src="{{url_for('static', filename='images/image_1.png')   }}" alt="" height="300px">
+        <fieldset>
+            <label>Login</label>
+            <input class="entrada" type="text" id="login" autocomplete="off">
+            <br>
+            <label>Senha</label>
+            <input class="entrada" type="password" id="senha" >
+            <br>
+            <div class="botao">
+                <button id="entrar"><strong> Entrar </strong></button>
+            </div>
+            
+        </fieldset>
+        </div>
+</body>
+</html>
+

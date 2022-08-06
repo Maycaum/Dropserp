@@ -1,0 +1,27 @@
+{% extends 'menu.html' %}
+{% block title %}{{super()}} - Cadastro de Produtos{% endblock title %}
+{% block content %}
+
+    <div class="trabalho">
+      <fieldset>
+        <h4>Cadastro de produto</h4>
+          <div class="card">
+            <label>Nome</label>
+            <input class="entrada_pes" type="text" maxlength="20" />
+            <br>
+            <label>Quantidade </label>
+            <input class="entrada" type="number" maxlength="20" />
+            <br>
+            <label>Detalhes</label>
+            
+            <textarea class="entrada_maior" name="" id="" cols="30" rows="100"></textarea>
+          </div>
+      </fieldset>
+      <div class="botoes-estilos">
+        <button id="b_adicionar"> Adicionar </button>
+        
+      </div>
+
+    </div>
+
+{% endblock content %}

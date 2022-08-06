@@ -1,0 +1,27 @@
+{% extends 'menu.html' %}
+{% block title %}{{super()}} - RH{% endblock title %}
+{% block content %}
+    <div class="tela">
+      <fieldset>
+        <h1>Contas a Pagar</h1>
+        <div class="card">
+          <label>Nome</label>
+          <input class="entrada" type="text" maxlength="20" />
+          <br />
+          <label>Valor</label>
+          <input class="entrada" type="number" />
+          <br />
+          <label>Pagador</label>
+          <input class="entrada" type="text" maxlength="20" />
+          <br />
+          <label>Data</label>
+          <input class="entrada" type="date" />
+        </div>
+        <br />
+        <div class="botoes-estilos">
+          <button id="b_visul"><strong>Visualizar</strong></button>
+          <button id="b_cadast"><strong> Cadastrar </strong></button>
+        </div>
+      </fieldset>
+    </div>
+{% endblock content %}
