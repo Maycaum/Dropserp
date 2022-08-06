@@ -1,36 +1,34 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8">
-    <title> DropsERP - Login </title> 
-    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/d7f5ff492c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{url_for('static', filename='/css/login.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename = 'css/styles.css')}}">
-</head>
-<body>
-    <div class="centro">
-        <h3 class="textologin">DropsERP</h3>
-        <img class="imglogin" src="{{url_for('static', filename='images/image_1.png')   }}" alt="" height="300px">
-        <fieldset>
-            <form action="" method="POST">
-                {{form.csrf_token}}
-                <label>Login</label>
-                {{form.username(class="entrada", placeholder='Seu Usuário')}}
-                <br>
-                <label>Senha</label>
-                {{form.password(class="entrada", placeholder='Insira sua senha')}}
-                <br>
-                <div class="botao">
-                    <button id="entrar" type="submit"><strong> Entrar </strong></button>
-                </div>
+    <html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title> DropsERP - Login </title> 
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/d7f5ff492c.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='/css/login.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename = 'css/styles.css')}}">
+    </head>
+    <body>
+        <div class="centro">
+            <h3 class="textologin">DropsERP</h3>
+            <img class="imglogin" src="{{url_for('static', filename='images/image_1.png')}}" alt="" height="300px">
+            <fieldset>
+                <form action="" method="POST">
+                    {{form.csrf_token}}
+                    <label>Login</label>
+                    {{form.username(class="entrada", placeholder='Seu Usuário')}}
+                    <br>
+                    <label>Senha</label>
+                    {{form.password(class="entrada", placeholder='Insira sua senha')}}
+                    <br>
+                    <div class="botao">
+                        <button id="entrar" type="submit"><strong> Entrar </strong></button>
+                    </div>
+                    
+                </form>
                 
-            </form>
-            
-        </fieldset>
-        </div>
-</body>
-</html>
-
+            </fieldset>
+            </div>
+    </body>
+    </html>
