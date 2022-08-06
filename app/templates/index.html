@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,15 +15,19 @@
         <h3 class="textologin">DropsERP</h3>
         <img class="imglogin" src="{{url_for('static', filename='images/image_1.png')   }}" alt="" height="300px">
         <fieldset>
-            <label>Login</label>
-            <input class="entrada" type="text" id="login" autocomplete="off">
-            <br>
-            <label>Senha</label>
-            <input class="entrada" type="password" id="senha" >
-            <br>
-            <div class="botao">
-                <button id="entrar"><strong> Entrar </strong></button>
-            </div>
+            <form action="" method="POST">
+                {{form.csrf_token}}
+                <label>Login</label>
+                {{form.username(class="entrada", placeholder='Seu Usuário')}}
+                <br>
+                <label>Senha</label>
+                {{form.password(class="entrada", placeholder='Insira sua senha')}}
+                <br>
+                <div class="botao">
+                    <button id="entrar" type="submit"><strong> Entrar </strong></button>
+                </div>
+                
+            </form>
             
         </fieldset>
         </div>
