@@ -18,6 +18,16 @@ no Windows
 <p></p>
 <p>Após isto basta realizar a isntalação das bibliotecas com o comando</p>
 <code>pip3 install -r caminho do arquivo requirements.txt</code>
-
 <p></p>
-<p> para rodar o codigo basta rodar o codigo com <code> python run.py </code>
+
+<p> 
+<h3>Adicionndo as tabelas do banco de dados</h3>
+Para adicionar o banco de dados, primeiramente precisamos possuir o mesmo em nossa maquina com o nome <b>flask</b>, após isto devemos rodas os seguintes comandos no terminal, dentro da pasta onde se encontra o arquivo <b> run.py </b>
+<code> flask db stamp head </code>
+<code> flask db migrate</code>
+<code> flask db upgrade</code>
+Se tudo der certo, as tabelas serão criadas corretamente
+</p>
+<p></p>
+<p> Após estes passos podemos rodar nosso código usando o seguinte comando</p>
+<code> python run.py </code>
