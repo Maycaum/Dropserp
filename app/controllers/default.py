@@ -1,7 +1,8 @@
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, jsonify
 from app import app
 from app.models.form import LoginForm
 from app.models.tables import User
+from app.models.api import wcapi
 from flask_login import login_user, logout_user, login_required, current_user
 
 @app.route("/", methods=['GET', 'POST'])
@@ -72,3 +73,8 @@ def RhFuncionarios():
 @login_required
 def Rh():
     return render_template("RH-Fornecedores.html", name=current_user.username) 
+
+@app.route('/json')
+def json():
+    retorno = wcapi.get("products").json()
+    return  jsonify(retorno)
