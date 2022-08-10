@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import render_template, flash, redirect, url_for
 from app import app
 from app.models.form import LoginForm
