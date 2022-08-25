@@ -278,7 +278,12 @@ span{
     border: none;
     margin-top: 170px;
 }
-
+.trabalho-allef{
+	width: 100%;
+    margin-left: 40%;
+    border: none;
+    margin-top: 170px;
+}
 .botao{
     display: flex;
     justify-content: space-around;

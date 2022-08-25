@@ -1,0 +1,25 @@
+{% extends 'menu.html' %} {% block title %}{{super()}} - Financeiro-Contas{%
+endblock title %} {% block content %}
+
+<div class="trabalho-allef">
+  <table>
+    <thead>
+      <tr>
+        <th>Sku</th>
+        <th>Nome</th>
+        <th>preço</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in retorno %}
+      <tr>
+        <td>{{i['sku']}}</td>
+        <td>{{i['name']}}</td>
+        <td>{{i['price']}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock content %}

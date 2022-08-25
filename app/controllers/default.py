@@ -1,9 +1,10 @@
 from flask import render_template, flash, redirect, url_for, jsonify
 from app import app
-from app.models.form import LoginForm
+from app.models.form import LoginForm, CadastroProdutos
 from app.models.tables import User
-from app.models.api import wcapi
+from app.models.api import wcapi, retorno
 from flask_login import login_user, logout_user, login_required, current_user
+import json
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
@@ -32,12 +33,13 @@ def Estoque():
 @app.route('/estoque-cadastro')
 @login_required
 def EstoqueCadastro():
-    return render_template("Estoque-cadastro-de-produto.html", name=current_user.username)
+    cadastro = CadastroProdutos
+    return render_template("Estoque-cadastro-de-produto.html", name=current_user.username, cadastro=cadastro)
 
 @app.route('/estoque-pesquisa')
 @login_required
-def EstoquePesquisa():
-    return render_template("Estoque-pesquisar-produto.html", name=current_user.username)
+def EstoqueListar():
+    return render_template("Estoque-listar-produtos.html", name=current_user.username, retorno=retorno)
 
 @app.route('/financeiros-contas-a-pagar')
 @login_required
@@ -74,16 +76,12 @@ def RhFuncionarios():
 def Rh():
     return render_template("RH-Fornecedores.html", name=current_user.username) 
 
-@app.route('/json')
-def json():
-    retorno = wcapi.get("products", params={"per_page": 20}).json()
-    return  jsonify(retorno)
 
 @app.route('/criar')
 def criar():
     produto = {
-    "sku": "Teste",
-    "name": "Teste Sistemas DIstribuidos",
+    "sku": "Teste2",
+    "name": "Teste Sistemas DIstribuidos 2",
     "type": "simple",
     "regular_price": "50.00",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa tellus, varius in tortor id, rhoncus pharetra arcu. Proin porta pharetra elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum urna in mi bibendum porta. Curabitur in nisi dignissim, venenatis odio id, interdum ante. Nam tristique mattis augue, non eleifend eros condimentum dapibus. Praesent facilisis eros a metus lobortis tristique. Aenean id fringilla enim. Pellentesque nec arcu non erat vestibulum condimentum a sit amet eros. ",
