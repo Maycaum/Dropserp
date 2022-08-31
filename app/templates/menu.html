@@ -26,8 +26,10 @@
         <div class="pos1">
             <img id="logop" src="{{url_for('static', filename = '/images/image_1.png')}}" alt="" height="100px"
                 width="100px">
-            <p id="nome"> {% block name %} {% endblock name %} | </p>
-            <p id="cargo">cargo</p>
+            <div class="pos3">
+                <p id="nome"> {% block name %} {% endblock name %}  </p>
+                <p id="cargo">cargo</p>
+            </div>
             <a class="moon" onclick="modo_nortuno()">
                 <div class="toggle-button-cover">
                     <div class="button-cover">

@@ -41,7 +41,7 @@ def EstoqueCadastro():
             "regular_price": str(cadastro.preco.data),
             'manage_stock': True,
             "stock_quantity": cadastro.quantidade.data,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa tellus, varius in tortor id, rhoncus pharetra arcu. Proin porta pharetra elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum urna in mi bibendum porta. Curabitur in nisi dignissim, venenatis odio id, interdum ante. Nam tristique mattis augue, non eleifend eros condimentum dapibus. Praesent facilisis eros a metus lobortis tristique. Aenean id fringilla enim. Pellentesque nec arcu non erat vestibulum condimentum a sit amet eros. ",
+            "description": cadastro.descricao.data,
             }
         wcapi.post("products", produto).json()
         flash('Produto Criado')
