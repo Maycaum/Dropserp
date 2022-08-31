@@ -6,7 +6,7 @@ __pycache__/
 # C extensions
 *.so
 migrations/
-api.py
+models/api.py
 # Distribution / packaging
 .Python
 build/
