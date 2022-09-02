@@ -18,15 +18,18 @@
 
 <body>
     <div class="mein">
-
-        <a href="/"><img id="logo" src="{{url_for('static', filename = '/images/image_2.png')}}" alt="" height="120px"
+   
+        
+        <a href="/rh-menu"><img id="logo" src="{{url_for('static', filename = '/images/image_2.png')}}" alt="" height="120px"
                 width=""></a>
 
         <div class="pos1">
             <img id="logop" src="{{url_for('static', filename = '/images/image_1.png')}}" alt="" height="100px"
                 width="100px">
-            <p id="nome">{{name }} | </p>
-            <p id="cargo">cargo</p>
+            <div class="pos3">
+                <p id="nome"> {% block name %} {% endblock name %}  </p>
+                <p id="cargo">cargo</p>
+            </div>
             <a class="moon" onclick="modo_nortuno()">
                 <div class="toggle-button-cover">
                     <div class="button-cover">
@@ -48,7 +51,7 @@
             <a href="estoque"> Estoque</a>
             <a href="financeiro-menu"> Finanças</a>
             <div>
-                <a href="/"><img id="sairpos" src="{{url_for('static', filename = '/images/sair_1.png')}}" height="100px" width=""></a>
+                <a href="/logout"><img id="sairpos" src="{{url_for('static', filename = '/images/sair_1.png')}}" height="100px" width=""></a>
             </div>
             <h1 class="pos2">
                 Para mais informações entrar em contato com o Admin@admin.com
@@ -57,8 +60,11 @@
 
 
         <div id="main">
-
+        
+            
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+            
         </div>
 
         <script>

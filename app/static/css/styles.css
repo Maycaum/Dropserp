@@ -1,23 +1,39 @@
+*{
+
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
 body {
 	font-family: "Lato", sans-serif;
 	padding:0px;
     margin:0px;
-	background-color: #E1DEE9;
+	background-color: rgb(10, 2, 37);
 
   }
 
 
-
+/*nome de usuario*/
  p{
 	display: inline-block;
 	font-size: 20;
+	
  }
 
+ /*posição logo*/
 .pos1{
 	color:white;
-	margin-top: -30;
-	margin-left: 90%;
+	margin-top: -110;
+	margin-left: 89%;
+	position: fixed;
 	
+	
+}
+.pos3{
+	margin-left: -17;
+
 }
 * {
 	user-select: none;
@@ -31,7 +47,7 @@ body {
   body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
-	background-color: #f1f9f9;
+	
   }
   
   #app-cover {
@@ -141,11 +157,12 @@ body {
   }
   
   #button-3 .checkbox:checked ~ .layer {
-	background-color: #fcebeb;
+	background-color: hsl(292, 30%, 49%);
+	
   }
 .dark-mode {
 
-    background-color: rgb(10, 2, 37);
+    background-color: #E1DEE9;
     color: white;
     width: 10px;
     height: 10px;
@@ -161,7 +178,7 @@ body {
 
 #logop{
     border-radius: 50%;
-    margin-top: -115px;
+    /*margin-top: -115px;*/
     display: flex;
 }
 
@@ -197,6 +214,7 @@ span{
 	padding-top: 60px;
 	
   }
+  
 
 
 .sidenav a {
@@ -277,7 +295,12 @@ span{
     border: none;
     margin-top: 170px;
 }
-
+.trabalho-allef{
+	width: 100%;
+    margin-left: 40%;
+    border: none;
+    margin-top: 170px;
+}
 .botao{
     display: flex;
     justify-content: space-around;

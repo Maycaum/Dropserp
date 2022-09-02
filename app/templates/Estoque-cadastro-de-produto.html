@@ -1,27 +1,33 @@
-{% extends 'menu.html' %}
-{% block title %}{{super()}} - Cadastro de Produtos{% endblock title %}
-{% block content %}
+{% extends 'menu.html' %} {% block title %}{{super()}} - Cadastro de Produtos{%
+endblock title %} {% block name %} {{name}} {% endblock name %} {% block content%}
 
-    <div class="trabalho">
-      <fieldset>
-        <h4>Cadastro de produto</h4>
-          <div class="card">
-            <label>Nome</label>
-            <input class="entrada_pes" type="text" maxlength="20" />
-            <br>
-            <label>Quantidade </label>
-            <input class="entrada" type="number" maxlength="20" />
-            <br>
-            <label>Detalhes</label>
-            
-            <textarea class="entrada_maior" name="" id="" cols="30" rows="100"></textarea>
-          </div>
-      </fieldset>
-      <div class="botoes-estilos">
-        <button id="b_adicionar"> Adicionar </button>
-        
+<div class="trabalho">
+  <fieldset>
+    <h4>Cadastro de produto</h4>
+    <form action="" method="POST">
+      {{cadastro.csrf_token}}
+      <div class="card">
+        <label>SKU</label>
+        {{cadastro.sku(class_="entrada", placeholder='Insira o SKU do produtos')}}
+        <br>
+        <label>Nome</label>
+        {{cadastro.nome(class="entrada", placeholder='Insira o nome do produtos')}}
+        <br />
+        <label>Quantidade </label>
+        {{cadastro.quantidade(class="entrada", placeholder='Insira A quantidade em estoque')}}
+        <br />
+        <label>preço </label>
+        {{cadastro.preco(class="entrada", placeholder='Insira o valor')}}
+        <br />
+        <label>Descrição</label>
+        {{cadastro.descricao(class="entrada_maior", placeholder='Insira Uma descrição')}}
+
       </div>
-
-    </div>
+  </fieldset>
+  <div class="botoes-estilos">
+    <button id="b_adicionar">Adicionar</button>
+  </div>
+  </form>
+</div>
 
 {% endblock content %}
