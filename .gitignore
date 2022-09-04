@@ -7,6 +7,8 @@ __pycache__/
 *.so
 migrations/
 models/api.py
+app/models/api.py
+api.py
 # Distribution / packaging
 .Python
 build/

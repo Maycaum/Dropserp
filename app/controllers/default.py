@@ -87,15 +87,3 @@ def RhFuncionarios():
 def Rh():
     return render_template("RH-Fornecedores.html", name=current_user.username) 
 
-
-@app.route('/criar')
-def criar():
-    produto = {
-    "sku": "Teste2",
-    "name": "Teste Sistemas DIstribuidos 2",
-    "type": "simple",
-    "regular_price": "50.00",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa tellus, varius in tortor id, rhoncus pharetra arcu. Proin porta pharetra elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum urna in mi bibendum porta. Curabitur in nisi dignissim, venenatis odio id, interdum ante. Nam tristique mattis augue, non eleifend eros condimentum dapibus. Praesent facilisis eros a metus lobortis tristique. Aenean id fringilla enim. Pellentesque nec arcu non erat vestibulum condimentum a sit amet eros. ",
-    }
-    criar_produto = wcapi.post("products", produto).json()
-    return jsonify(criar_produto)
