@@ -6,27 +6,29 @@
     <div class="trabalho">
       <fieldset>
         <h4>Funcionario</h3>
-          <div class="card">
-            <label>Nome</label>
-            <input class="entrada" type="text" maxlength="20" />
-            <br>
-            <label>Sobrenome </label>
-            <input class="entrada" type="text" maxlength="20" />
-            <br>
-            <label>CPF</label>
-            <input id="cpf" class="entrada" type="text" maxlength="14"  pattern="[a1,]+" onkeyup="mascara_cpf()" />
-            <br>
-            <label>Cargo</label>
-            <select class="entrada" id="teste">
-            <option value="Selecionar"></option>
-            <option value="Analista Rh">Analista Rh</option>
-            <option value="Analista Estoque">Analista Estoque</option>
-            <option value="Analista de Financeiro">Analista de Financeiro</option>
-            </select>
-            <br>
-            <label>Senha</label>
-            <input class="entrada" type="text" maxlength="8" />
-          </div>
+          <form action="" method="post">
+            <div class="card">
+              <label>Nome</label>
+              <input class="entrada" type="text" maxlength="20" />
+              <br>
+              <label>Sobrenome </label>
+              <input class="entrada" type="text" maxlength="20" />
+              <br>
+              <label>CPF</label>
+              <input id="cpf" class="entrada" type="text" maxlength="14"  pattern="[a1,]+" onkeyup="mascara_cpf()" />
+              <br>
+              <label>Cargo</label>
+              <select class="entrada" id="teste">
+              <option value="Selecionar"></option>
+              <option value="Analista Rh">Analista Rh</option>
+              <option value="Analista Estoque">Analista Estoque</option>
+              <option value="Analista de Financeiro">Analista de Financeiro</option>
+              </select>
+              <br>
+              <label>Senha</label>
+              <input class="entrada" type="text" maxlength="8" />
+            </div>
+        </form>
       </fieldset>
       <div class="botoes-estilos">
         <button id="b_cancelar"> Cancelar </button>
