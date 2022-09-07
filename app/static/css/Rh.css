@@ -5,9 +5,9 @@ h3{
     margin: auto;
     text-align: center;
     font-size: 50px;
-    position: absolute;
+   /* position: absolute;*/
     margin-top: -150px;
-    margin-left: -60px;
+    margin-left: 42px;
 }
 h4{
     
@@ -73,14 +73,13 @@ label{
     font-size: 20px;
 }
 
-.botoes-estilos{
-    /* width: 296px; */
+/*.botoes-estilos{
+  
     display: flex;
     justify-content: space-around;
     margin: auto;
     margin-top: 50px;
-    
-}
+}*/
 #b_cancelar{
 
 
@@ -113,6 +112,7 @@ cursor: pointer;
 
 
 #cadastrofun{
+    margin: 1px 0px 15px 105px;
 	height: 85px;
     width: 250px;
     background-color: #934D9E;
@@ -124,6 +124,7 @@ cursor: pointer;
 }
 
 #cadastrofor{
+    margin: 1px 0px 15px 105px;
 	height: 85px;
     width: 250px;
     background-color: #934D9E;

@@ -25,7 +25,7 @@ h1{
 label{
 
     
-    position: relative;
+    /*position: relative;*/
     top: 49px;
     font-size: 30px;
     font-family: 'Cabin', sans-serif;
@@ -53,13 +53,13 @@ font-size: 20px;
 
 }
 
-.botoes-estilos{
-    /* width: 296px; */
+/*.botoes-estilos{
+  
     display: flex;
     justify-content: space-around;
     margin: auto;
     margin-top: 50px;
-}
+}*/
 #b_visul{
 
 height: 65px;

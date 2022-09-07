@@ -1,3 +1,4 @@
+/*all*/
 h3{
     
     font-family: 'Cabin', sans-serif;
@@ -5,9 +6,9 @@ h3{
     margin: auto;
     text-align: center;
     font-size: 50px;
-    position: absolute;
+    /*position: absolute;*/
     margin-top: -150px;
-    margin-left: 20px;
+    margin-left: 32px;
 }
 h4{
     
@@ -16,9 +17,21 @@ h4{
     margin: auto;
     text-align: center;
     font-size: 50px;
-    position: absolute;
-    margin-top: -150px;
+    /*position: absolute;*/
+    margin-top: -144px;
     margin-left: 70px;
+}
+/*estoque*/
+h5{
+    
+    font-family: 'Cabin', sans-serif;
+    color: #934D9E;
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    position: absolute;
+    margin-top: -143px;
+    margin-left: 133px;
 }
 
 fieldset{
@@ -46,7 +59,7 @@ fieldset{
 label{
 
     
-    position: relative;
+    /*position: relative;*/
     top: 49px;
     font-size: 25px;
     font-family: 'Cabin', sans-serif;
@@ -125,14 +138,13 @@ label{
     font-size: 20px;
 }
 
-.botoes-estilos{
-
+/*.botoes-estilos{
+  
     display: flex;
     justify-content: space-around;
     margin: auto;
     margin-top: 50px;
-    
-}
+}*/
 #b_adicionar{
 
 
@@ -144,6 +156,7 @@ font-size: 20px;
 margin-left: 400px;
 padding: 20px 50px;
 cursor: pointer;
+
 
 }
 
@@ -227,6 +240,7 @@ cursor: pointer;
 #b_pesquisar:hover,#b_cadastro:hover,#b_excluir:hover,#b_atualizar:hover,#b_pesq-p:hover,#b_cadastrar-p:hover,#b_adicionar:hover,#b_cadastro:hover, #b_cancelar:hover{opacity: 0.7;}
 
 #b_pesq-p{
+    margin: 1px 0px 15px 105px;
 	height: 85px;
     width: 250px;
     background-color: #934D9E;
@@ -238,6 +252,7 @@ cursor: pointer;
 }
 
 #b_cadastrar-p{
+    margin: 1px 0px 0px 93px;
 	height: 85px;
     width: 269px;
     background-color: #934D9E;

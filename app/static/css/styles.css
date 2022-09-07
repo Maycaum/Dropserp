@@ -11,6 +11,7 @@ body {
 	padding:0px;
     margin:0px;
 	background-color: rgb(10, 2, 37);
+	
 
   }
 
@@ -290,10 +291,27 @@ span{
 }
 /*exescencial*/
 .trabalho{
-	width: 50px;
-    margin-left: 40%;
+	width: 461px;
+    margin: auto;
     border: none;
-    margin-top: 170px;
+    margin-top: 61px;
+    border: 3px solid #934D9E;
+    border-radius: 100px;
+    padding: 53px 173px;
+
+}
+.trabalho-centro{
+	width: 461px;
+    margin: auto;
+    border: none;
+    margin-top: 62px;
+	border:3px solid #934D9E;	;
+	border-radius: 100px;
+	padding: 163px 63px;
+}
+body{
+	height: 300vh;
+
 }
 .trabalho-allef{
 	width: 100%;
@@ -308,4 +326,44 @@ span{
     margin-top: 30px;
 }
 
-/*menu rh*/
+.botoes-estilos{
+  
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 0px 0px -347px;
+    margin-top: 50px;
+}
+
+
+
+
+
+/*responsividade telas menores*/
+
+@media (min-width:768px) and (max-width: 1366px) {
+
+    body{
+        background-color: red;
+    }
+	.trabalho-centro{
+		width: 461px;
+		margin: auto;
+		border: none;
+		margin-top: 62px;
+		border:3px solid #934D9E;	;
+		border-radius: 100px;
+		padding: 163px 63px;
+
+	}
+	h5 {
+		font-family: 'Cabin', sans-serif;
+		color: #934D9E;
+		margin: auto;
+		text-align: center;
+		font-size: 50px;
+		position: absolute;
+		margin-top: -114px;
+		margin-left: 145px;
+		}
+    /* de 768px até 992px*/
+}

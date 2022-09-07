@@ -73,14 +73,13 @@ label{
     font-size: 20px;
 }
 
-.botoes-estilos{
-    /* width: 296px; */
+/*.botoes-estilos{
+  
     display: flex;
     justify-content: space-around;
     margin: auto;
     margin-top: 50px;
-    
-}
+}*/
 #b_cancelar{
 
 
@@ -114,6 +113,7 @@ cursor: pointer;
 
 
 #b_contas-a{
+    margin: 1px 0px 0px 93px;
 	height: 100px;
     width: 300px;
     background-color: #934D9E;
@@ -125,6 +125,7 @@ cursor: pointer;
 }
 
 #b_contas-p{
+    margin: 1px 0px 0px 93px;
 	height: 100px;
     width: 300px;
     background-color: #934D9E;
@@ -138,7 +139,7 @@ cursor: pointer;
 }
 
 #b_exibir-relatorio{
-
+    margin: 1px 0px -70px 93px;
     height: 100px;
     width: 300px;
     background-color: #934D9E;
