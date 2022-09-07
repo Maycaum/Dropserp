@@ -276,25 +276,27 @@ span{
   /* em diante css do da tela de login*/
 
   .centro{
-	position: absolute;
+	/*position: absolute;*/
 	width: 431px;
 	height: 431px;
-	left: 40%;
-	top: 15%;
+	/*left: 40%;
+	top: 15%;*/
 	background: #523961;
 	border-radius: 50%;
+	margin: 80px 0px 0px 40%;
    }
 
 .textologin{
 	color: white;
 	position: absolute;
-	margin-left: 24%;
+	margin-left: 102px;
+	margin-top: 40px;
 	font-size: 50px;
 
 	
 }
 .imglogin{
-	position: absolute;
+	/*position: absolute;*/
 	margin-top: 119px;
 	border-radius: 50%;
 	margin-left: 60px;
@@ -315,7 +317,7 @@ span{
 	width: 461px;
     margin: auto;
     border: none;
-    margin-top: 62px;
+    margin-top: 162px;
 	border:3px solid #934D9E;	;
 	border-radius: 100px;
 	padding: 163px 63px 104px;
