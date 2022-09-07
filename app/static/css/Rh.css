@@ -9,7 +9,7 @@ h3{
     margin-top: -150px;
     margin-left: 42px;
 }
-h4{
+/*h4{
     
     font-family: 'Cabin', sans-serif;
     color: #934D9E;
@@ -19,16 +19,16 @@ h4{
     position: absolute;
     margin-top: -150px;
     margin-left: 70px;
-}
+}*/
 
-fieldset{
+/*fieldset{
     
     width: 461px;
     margin: auto;
     border: none;
 
-}
-.entrada{
+}*/
+/*.entrada{
 
 
 
@@ -42,10 +42,10 @@ fieldset{
     border-radius: 50px;
     text-align: center;
     font-size: 20px;
-}
-label{
+}*/
+/*label{
 
-    
+label foi para uma principal no style    
     position: relative;
     top: 49px;
     font-size: 25px;
@@ -55,9 +55,9 @@ label{
     color: #934D9E;
     margin-left: -30;
     left: -10;
-}
+}*/
 
-.entrada{
+/*.entrada{
 
 
 
@@ -72,7 +72,7 @@ label{
     text-align: center;
     font-size: 20px;
 }
-
+*/
 /*.botoes-estilos{
   
     display: flex;
@@ -96,7 +96,7 @@ cursor: pointer;
 
 
 
-#b_cadastro{
+/*#b_cadastro{
 
 
 background-color: #934D9E;
@@ -107,7 +107,7 @@ border: none;
 margin-left: 250px;
 padding: 20px 50px;
 cursor: pointer;
-} 
+} */
 
 
 
@@ -124,7 +124,7 @@ cursor: pointer;
 }
 
 #cadastrofor{
-    margin: 1px 0px 15px 105px;
+    margin: 1px 0px 42px 109px;
 	height: 85px;
     width: 250px;
     background-color: #934D9E;
@@ -132,7 +132,7 @@ cursor: pointer;
     font-size: 30px;
     border-radius: 50px;
     border: none;
-	margin-top: 60px;
+	/*margin-top: 60px; setado no margin*/
 	cursor: pointer;
 	
 }

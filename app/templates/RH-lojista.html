@@ -5,11 +5,11 @@
 
     <div class="trabalho">
       <fieldset>
-        <h3>Cliente e-commerce</h3>
+        <h4>Cliente E-commerce</h4>
           <form action="" method="POST">
             {{cadastro.csrf_token}}
             <div class="card">
-              <label>username</label>
+              <label>Username</label>
               {{cadastro.username(class="entrada", placeholder="Insira o username do lojista")}}
               <br>
               <label>Nome</label>
@@ -17,15 +17,15 @@
               <br>
               <label>Sobrenome </label>
               {{cadastro.sobrenome(class="entrada", placeholder="Insira o sobrenome do lojista")}}              <br>
-              <label>email</label>
+              <label>E-mail</label>
               {{cadastro.email(class="entrada", placeholder="Insira o nome do lojista")}}              <br>
-              <label>senha</label>
+              <label>Senha</label>
               {{cadastro.senha(class="entrada", placeholder="Insira a senha do lojista")}}              <br>
             </div>
 
       </fieldset>
       <div class="botoes-estilos">
-        <button id="b_cadastro"> Cadastrar </button>
+        <button id="b_centro"> Cadastrar </button>
       </div>
     </form>
     </div>

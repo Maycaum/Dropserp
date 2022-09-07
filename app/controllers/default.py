@@ -48,7 +48,13 @@ def EstoqueCadastro():
         flash('Produto Criado')
     return render_template("Estoque-cadastro-de-produto.html", name=current_user.username, cadastro=cadastro)
 
-@app.route('/estoque-pesquisa')
+@app.route('/estoque-pesquisar')
+@login_required
+def EstoquePesquisar():
+        return render_template("Estoque-pesquisar-produto copy.html", name=current_user.username)
+
+
+@app.route('/estoque-listar')
 @login_required
 def EstoqueListar():
     retorno = wcapi.get("products", params={"per_page": 20}).json()

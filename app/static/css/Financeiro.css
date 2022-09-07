@@ -10,7 +10,7 @@ h3{
     margin-left: 35px;
 
 }
-h4{
+/*h4{
     
     font-family: 'Cabin', sans-serif;
     color: #934D9E;
@@ -20,16 +20,16 @@ h4{
     position: absolute;
     margin-top: -150px;
     margin-left: 70px;
-}
+}*/
 
-fieldset{
+/*fieldset{
     
     width: 461px;
     margin: auto;
     border: none;
 
-}
-.entrada{
+}*/
+/*.entrada{
 
 
 
@@ -43,8 +43,8 @@ fieldset{
     border-radius: 50px;
     text-align: center;
     font-size: 20px;
-}
-label{
+}*/
+/*label{
 
     
     position: relative;
@@ -56,8 +56,8 @@ label{
     color: #934D9E;
     margin-left: -30;
 }
-
-.entrada{
+*/
+/*.entrada{
 
 
 
@@ -71,7 +71,7 @@ label{
     border-radius: 50px;
     text-align: center;
     font-size: 20px;
-}
+}*/
 
 /*.botoes-estilos{
   
@@ -96,7 +96,7 @@ cursor: pointer;
 
 
 
-#b_cadastro{
+/*#b_cadastro{
 
 
 background-color: #934D9E;
@@ -107,7 +107,7 @@ border: none;
 margin-left: 250px;
 padding: 20px 50px;
 cursor: pointer;
-} 
+} */
 
 #b_exibir-relatorio:hover,#b_contas-p:hover,#b_contas-a:hover,#b_cadastro:hover, #b_cancelar:hover{opacity: 0.7;}
 
