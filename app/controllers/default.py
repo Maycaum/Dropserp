@@ -1,8 +1,9 @@
+from tkinter.messagebox import RETRY
 from flask import render_template, flash, redirect, url_for, jsonify
 from app import app
-from app.models.form import LoginForm, CadastroProdutos
+from app.models.form import LoginForm, CadastroProdutos, CadastroLojista
 from app.models.tables import User
-from app.models.api import wcapi, retorno
+from app.models.api import wcapi
 from flask_login import login_user, logout_user, login_required, current_user
 import json
 
@@ -50,6 +51,7 @@ def EstoqueCadastro():
 @app.route('/estoque-pesquisa')
 @login_required
 def EstoqueListar():
+    retorno = wcapi.get("products", params={"per_page": 20}).json()
     return render_template("Estoque-listar-produtos.html", name=current_user.username, retorno=retorno)
 
 @app.route('/financeiros-contas-a-pagar')
@@ -79,8 +81,26 @@ def rh():
 
 @app.route('/rh-funcionario')
 @login_required
-def RhFuncionarios():
+def RhFuncionario():
     return render_template("RH-Funcionario.html", name=current_user.username)
+
+@app.route('/rh-lojista', methods=['GET', 'POST'])
+@login_required
+def RhLojista():
+    cadastro = CadastroLojista()
+    if cadastro.validate_on_submit():
+        lojista = {
+            "email": cadastro.email.data,
+            "first_name": cadastro.nome.data,
+            "last_name": cadastro.sobrenome.data,
+            "role": "teste",
+            "username": cadastro.username.data,
+            "password": cadastro.senha.data,
+        }
+        wcapi.post("customers", lojista).json()
+        flash('lojista criado')
+    return render_template("RH-lojista.html", name=current_user.username, cadastro=cadastro)
+        #return jsonify(lojista)
 
 @app.route('/rh-fornecedores')
 @login_required

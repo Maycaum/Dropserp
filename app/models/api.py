@@ -8,4 +8,3 @@ wcapi = API(
     wp_api=True, # Enable the WP REST API integration
     version="wc/v3" # WooCommerce WP REST API version
 )
-retorno = wcapi.get("products", params={"per_page": 20}).json()
