@@ -1,15 +1,5 @@
 /*all*/
-h3{
-    
-    font-family: 'Cabin', sans-serif;
-    color: #934D9E;
-    margin: auto;
-    text-align: center;
-    font-size: 50px;
-    /*position: absolute;*/
-    margin-top: -150px;
-    margin-left: 32px;
-}
+
 /*h4{
     
     font-family: 'Cabin', sans-serif;
@@ -22,17 +12,7 @@ h3{
     margin-left: 70px;
 }/*
 /*estoque*/
-h5{
-    
-    font-family: 'Cabin', sans-serif;
-    color: #934D9E;
-    margin: auto;
-    text-align: center;
-    font-size: 50px;
-    position: absolute;
-    margin-top: -143px;
-    margin-left: 133px;
-}
+
 
 /*fieldset{
     
