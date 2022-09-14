@@ -11,6 +11,7 @@ body {
 	padding:0px;
     margin:0px;
 	background-color: rgb(10, 2, 37);
+	
 
   }
 
@@ -189,16 +190,27 @@ span{
 	position: absolute;
 }
   
-.mein{
+/*.mein{
 	
-			background-color: #523961;
+		background-color: #523961;
+		padding:8px 8px 8px 32px;
+		position: absolute;
+		
+		width: 100%;
+		height: 150;
+		
+  }
+*/
+.top{
+
+	background-color: #523961;
 		padding:8px 8px 8px 32px;
 		position: absolute;
 		position: fixed;
 		width: 100%;
 		height: 150;
-		
-  }
+	
+}
   
 .sidenav {
 	height: 100%;
@@ -254,35 +266,37 @@ span{
 	padding: 16px;
   }
   
-@media screen and (max-height: 450px) {
+/*@media screen and (max-height: 450px) {
 	.sidenav {padding-top: 15px;}
 	.sidenav a {font-size: 18px;}
   }
-  
+  */
 
 
   /* em diante css do da tela de login*/
 
   .centro{
-	position: absolute;
+	/*position: absolute;*/
 	width: 431px;
 	height: 431px;
-	left: 40%;
-	top: 15%;
+	/*left: 40%;
+	top: 15%;*/
 	background: #523961;
 	border-radius: 50%;
+	margin: 80px 0px 0px 40%;
    }
 
 .textologin{
 	color: white;
 	position: absolute;
-	margin-left: 24%;
+	margin-left: 102px;
+	margin-top: 40px;
 	font-size: 50px;
 
 	
 }
 .imglogin{
-	position: absolute;
+	/*position: absolute;*/
 	margin-top: 119px;
 	border-radius: 50%;
 	margin-left: 60px;
@@ -290,16 +304,112 @@ span{
 }
 /*exescencial*/
 .trabalho{
-	width: 50px;
-    margin-left: 40%;
+	width: 461px;
+    margin: auto;
     border: none;
-    margin-top: 170px;
+    margin-top: 161px;
+    border: 3px solid #934D9E;
+    border-radius: 100px;
+    padding: 53px 173px;
+
 }
+.trabalho-centro{
+	width: 461px;
+    margin: auto;
+    border: none;
+    margin-top: 162px;
+	border:3px solid #934D9E;	;
+	border-radius: 100px;
+	padding: 163px 63px 104px;
+}
+
+
+
 .trabalho-allef{
 	width: 100%;
     margin-left: 40%;
     border: none;
     margin-top: 170px;
+}
+
+
+/*exibição da input*/
+
+label {
+    position: relative;
+    top: 45px;
+    font-size: 25px;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+    text-align: right;
+    color: #934D9E;
+    margin-left: -30;
+    left: -10;
+}
+
+h3{
+    
+    font-family: 'Cabin', sans-serif;
+    color: #934D9E;
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    position: absolute;
+    margin-top: -150px;
+    margin-left: 32px;
+}
+h4 {
+    font-family: 'Cabin', sans-serif;
+    color: #934D9E;
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    /* position: absolute; */
+    margin-top: -150px;
+    /*margin-left: 6px;*/
+}
+h5{
+    
+    font-family: 'Cabin', sans-serif;
+    color: #934D9E;
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    position: absolute;
+    margin-top: -143px;
+    margin-left: 133px;
+}
+fieldset {
+    width: 461px;
+    margin: auto;
+    border: none;
+    margin-top: 100px;
+}
+/*input*/
+.entrada {
+    width: 60%;
+    margin-left: 118px;
+    margin-right: 100px;
+    height: 55px;
+    background: #FFFFFF;
+    border: 1px solid #934D9E;
+    box-sizing: border-box;
+    border-radius: 24px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+ /*Botoes*/
+#b_cadastro {
+    background-color: #934D9E;
+    color: white;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    margin-left: 225px;
+    padding: 20px 50px;
+    cursor: pointer;
 }
 .botao{
     display: flex;
@@ -308,4 +418,72 @@ span{
     margin-top: 30px;
 }
 
-/*menu rh*/
+.botoes-estilos{
+  
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 0px 0px -379px;
+    margin-top: 50px;
+}
+/*ganbiarra para formatar*/
+.botoes-estilos2{
+display: flex;
+    justify-content: space-around;
+    margin: 0px 0px 0px -451px;
+    margin-top: 50px;
+}
+
+#b_centro{
+
+
+	background-color: #934D9E;
+	color: white;
+	border-radius: 50px;
+	border: none;
+	font-size: 20px;
+	margin: -14px -360px -24px 10px;
+	padding: 20px 50px;
+	cursor: pointer;
+	
+}
+
+
+
+/*responsividade telas menores*/
+
+@media (min-width:768px) and (max-width: 1366px) {
+
+    body{
+        background-color: red;
+    }
+	.trabalho-centro {
+		width: 463px;
+		margin: auto;
+		border: none;
+		margin-top: 169px;
+		border: 3px solid #934D9E;
+		border-radius: 100px;
+		padding: 104px 2px;
+	}
+	h3 {
+		font-family: 'Cabin', sans-serif;
+		color: #934D9E;
+		margin: auto;
+		text-align: center;
+		font-size: 50px;
+		position: absolute; 
+		margin-top: -82px;
+		margin-left: 32px;
+	}
+	h5 {
+		font-family: 'Cabin', sans-serif;
+		color: #934D9E;
+		margin: auto;
+		text-align: center;
+		font-size: 50px;
+		position: absolute;
+		margin-top: -101px;
+		margin-left: 133px;
+	}
+    /* de 768px até 992px*/
+}

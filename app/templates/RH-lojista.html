@@ -1,0 +1,33 @@
+{% extends 'menu.html' %}
+{% block title %}{{super()}} - Cadastro de Produtos{% endblock title %}
+{% block name %}  {{name}} {% endblock name %}
+{% block content %}
+
+    <div class="trabalho">
+      <fieldset>
+        <h4>Cliente E-commerce</h4>
+          <form action="" method="POST">
+            {{cadastro.csrf_token}}
+            <div class="card">
+              <label>Username</label>
+              {{cadastro.username(class="entrada", placeholder="Insira o username do lojista")}}
+              <br>
+              <label>Nome</label>
+              {{cadastro.nome(class="entrada", placeholder="Insira o nome do lojista")}}
+              <br>
+              <label>Sobrenome </label>
+              {{cadastro.sobrenome(class="entrada", placeholder="Insira o sobrenome do lojista")}}              <br>
+              <label>E-mail</label>
+              {{cadastro.email(class="entrada", placeholder="Insira o nome do lojista")}}              <br>
+              <label>Senha</label>
+              {{cadastro.senha(class="entrada", placeholder="Insira a senha do lojista")}}              <br>
+            </div>
+
+      </fieldset>
+      <div class="botoes-estilos">
+        <button id="b_centro"> Cadastrar </button>
+      </div>
+    </form>
+    </div>
+
+{% endblock content %}
