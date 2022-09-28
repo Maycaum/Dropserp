@@ -211,7 +211,8 @@ span{
 		height: 150;
 	
 }
-  
+
+
 .sidenav {
 	height: 100%;
 	width: 0;
@@ -446,6 +447,12 @@ display: flex;
 	cursor: pointer;
 	
 }
+
+
+.img-pos{
+	margin: 0px 27px -12px 6px;
+}
+
 
 
 
