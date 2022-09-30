@@ -1,13 +1,14 @@
 {% extends 'menu.html' %} {% block title %}{{super()}} - Financeiro-Contas{%
 endblock title %} {% block content %}
-
 <div class="trabalho">
   <table>
+
     <thead>
       <tr>
         <th>Sku</th>
         <th>Nome</th>
         <th>preço</th>
+        <th>Estoque</th>
       </tr>
     </thead>
     <tbody>
@@ -15,7 +16,8 @@ endblock title %} {% block content %}
       <tr>
         <td>{{i['sku']}}</td>
         <td>{{i['name']}}</td>
-        <td>{{i['price']}}</td>
+        <td>R${{i['price']}}</td>
+        <td>{{i['stock_quantity']}}</td>
       </tr>
       {% endfor %}
     </tbody>
