@@ -9,6 +9,8 @@ migrations/
 models/api.py
 app/models/api.py
 api.py
+api.*
+*/api.*
 # Distribution / packaging
 .Python
 build/
