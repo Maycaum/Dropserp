@@ -1,13 +1,21 @@
 {% extends 'menu.html' %} {% block title %}{{super()}} - Financeiro-Contas{%
 endblock title %} {% block content %}
+{% block tabela %}
 
+    <!-- Javascript abaixo -->
+   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+   <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+{% endblock tabela %}
 <div class="trabalho">
-  <table>
+  <table  id="amar">
+
     <thead>
       <tr>
         <th>Sku</th>
         <th>Nome</th>
         <th>preço</th>
+        <th>Estoque</th>
       </tr>
     </thead>
     <tbody>
@@ -15,7 +23,8 @@ endblock title %} {% block content %}
       <tr>
         <td>{{i['sku']}}</td>
         <td>{{i['name']}}</td>
-        <td>{{i['price']}}</td>
+        <td>R${{i['price']}}</td>
+        <td>{{i['stock_quantity']}}</td>
       </tr>
       {% endfor %}
     </tbody>
@@ -23,3 +32,13 @@ endblock title %} {% block content %}
 </div>
 
 {% endblock content %}
+{% block jstabela %}
+<script>
+       
+  $(document).ready(function () {
+$('#amar').DataTable({});
+});
+   
+
+</script>
+{% endblock jstabela %}
