@@ -347,9 +347,10 @@ label {
     margin-left: -30;
     display: inline-block;
     /* left: -10; */
-    margin: 41px 1
-	
-	px -43px -27px;
+    margin: 41px 1px -43px -27px;
+}
+.label-login{
+	margin: 0px;
 }
 
 h3{
@@ -531,17 +532,21 @@ display: flex;
     /* de 768px até 992px*/
 }
 
+
+/****************listagem********************/
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
   }
   
   td, th {
-	border: 1px solid #dddddd;
+    border: 1px solid #934D9E;
     text-align: left;
-    padding: 8px 3px 40px 88px;
-    color: #dddddd;
-	border-radius: 1000px;
+    padding: 10px 35px 10px 30px;
+    color: #934D9E;
+    /* border-radius: 1000px; */
+    background-color: white;
+	
   }
   
 .pagination{
@@ -553,7 +558,7 @@ table {
 	
 }
 .page-link{
-	margin: 10px 10px 0px 47px;
+    margin: 0px 10px 0px 62px;
     height: 85px;
     width: 297px;
     background-color: #934D9E;
@@ -562,7 +567,7 @@ table {
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    padding: 11px 24px 9px 31px;
+    padding: 11px 17px 9px 15px;
     text-decoration: none;
 
 }
@@ -585,12 +590,16 @@ table {
 	text-align: center;
 }
 #amar_length{
-	margin: 0px 0px 0px 118px;
+	margin:0px 0px -63px -54px;
 }
 #amar_filter{
-	margin: 10px 0px 24px 120px;
+	margin:0px 0px 25px -55px;
 }
 
 tbody{
 	text-align: center;
 }
+#amar_filter{
+	content: "YES";
+  }
+  
