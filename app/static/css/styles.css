@@ -518,3 +518,16 @@ display: flex;
 	}
     /* de 768px até 992px*/
 }
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+	color: #dddddd;
+  }
+  
