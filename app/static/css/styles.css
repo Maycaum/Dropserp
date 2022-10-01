@@ -549,6 +549,7 @@ table {
 		color: none;
 		display: flex;
 		margin: 20px 0px 0px -100px;
+		list-style: none;
 	
 }
 .page-link{
