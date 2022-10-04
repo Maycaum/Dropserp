@@ -76,3 +76,5 @@ class Financeiro(db.Model):
         self.pagar = pagar
         self.sku_Estoque = sku_Estoque
        #self.id_Fornecedor = id_Fornecedor
+
+       

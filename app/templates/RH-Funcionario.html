@@ -2,6 +2,7 @@
 {% block title %}{{super()}} - Cadastro de Produtos{% endblock title %}
 {% block name %}  {{name}} {% endblock name %}
 {% block content %}
+<script src="../static/js/funcoesparaform.js"></script>
 
     <div class="trabalho">
       <fieldset>
@@ -9,10 +10,10 @@
           <form action="" method="post">
             <div class="card">
               <label>Nome</label>
-              <input class="entrada" type="text" maxlength="20" />
+              <input class="entrada" type="text" maxlength="20" onkeyup="Apenasletras(this)" />
               <br>
               <label>Sobrenome </label>
-              <input class="entrada" type="text" maxlength="20" />
+              <input class="entrada" type="text" maxlength="20" onkeyup="Apenasletras(this)" />
               <br>
               <label>CPF</label>
               <input id="cpf" class="entrada" type="text" maxlength="14"  pattern="[a1,]+" onkeyup="mascara_cpf()" />
