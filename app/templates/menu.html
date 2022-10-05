@@ -1,165 +1,104 @@
 <html lang="pt-br">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <title>{% block title %} DropsERP {% endblock title %}</title>
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0"
-    />
-    <link
-      rel="shortcut icon"
-      href="{{url_for('static', filename = 'images/image_2.png')}}"
-      type="image/x-icon"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Cabin&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename = 'css/styles.css')}}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename='css/Rh.css')}}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename='css/Financeiro.css')}}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename='/css/estoque.css')}}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename='/css/contas_a_receber.css')}}"
-    />
+    <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0" />
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'images/image_2.png')}}" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/styles.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Rh.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Financeiro.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/estoque.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/contas_a_receber.css')}}" />
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
     {% block tabela %} {% endblock tabela %}
-    <script
-      src="https://kit.fontawesome.com/d7f5ff492c.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+    <script src="https://kit.fontawesome.com/d7f5ff492c.js" crossorigin="anonymous"></script>
+    <script src="../static/js/funcoesparaform.js"></script>
+</head>
 
-  <body>
+<body>
     <div class="top">
-      <a href="/rh-menu"
-        ><img
-          id="logo"
-          src="{{url_for('static', filename = '/images/image_2.png')}}"
-          alt=""
-          height="120px"
-          width=""
-      /></a>
+        <a href="/rh-menu"><img id="logo" src="{{url_for('static', filename = '/images/image_2.png')}}" alt=""
+                height="120px" width="" /></a>
 
-      <div class="pos1">
-        <img
-          id="logop"
-          src="{{url_for('static', filename = '/images/image_1.png')}}"
-          alt=""
-          height="100px"
-          width="100px"
-        />
-        <div class="pos3">
-          <p id="nome">{% block name %} {% endblock name %}</p>
-          <p id="cargo">cargo</p>
-        </div>
-        <a class="moon" onclick="modo_nortuno()">
-          <div class="toggle-button-cover">
-            <div class="button-cover">
-              <div class="button r" id="button-3">
-                <input type="checkbox" class="checkbox" />
-                <div class="knobs"></div>
-                <div class="layer"></div>
-              </div>
+        <div class="pos1">
+            <img id="logop" src="{{url_for('static', filename = '/images/image_1.png')}}" alt="" height="100px"
+                width="100px" />
+            <div class="pos3">
+                <p id="nome">{% block name %} {% endblock name %}</p>
+                <p id="cargo">cargo</p>
             </div>
-          </div>
-        </a>
-      </div>
+            <a class="moon" onclick="modo_nortuno()">
+                <div class="toggle-button-cover">
+                    <div class="button-cover">
+                        <div class="button r" id="button-3">
+                            <input type="checkbox" class="checkbox" />
+                            <div class="knobs"></div>
+                            <div class="layer"></div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 
     <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-        >&times;</a
-      >
-      <a href="rh-menu"
-        ><img
-          class="img-pos"
-          src="{{url_for('static', filename = '/images/icons8-usuario-64.png')}}"
-          height="40"
-          width="40"
-        />
-        RH</a
-      >
-      <a href="estoque"
-        ><img
-          class="img-pos"
-          src="{{url_for('static', filename = '/images/icons8-bolsa-de-dinheiro-euro-64.png')}}"
-          height="40"
-          width="40"
-        />
-        Estoque</a
-      >
-      <a href="financeiro-menu"
-        ><img
-          class="img-pos"
-          src="{{url_for('static', filename = '/images/icons8-barras-de-ouro-64.png')}}"
-          height="40"
-          width="40"
-        />
-        Finanças</a
-      >
-      <div>
-        <a href="/logout"
-          ><img
-            id="sairpos"
-            src="{{url_for('static', filename = '/images/sair_1.png')}}"
-            height="100px"
-            width=""
-        /></a>
-      </div>
-      <h1 class="pos2">
-        Para mais informações entrar em contato com o Admin@admin.com
-      </h1>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="rh-menu"><img class="img-pos" src="{{url_for('static', filename = '/images/icons8-usuario-64.png')}}"
+                height="40" width="40" />
+            RH</a>
+        <a href="estoque"><img class="img-pos"
+                src="{{url_for('static', filename = '/images/icons8-bolsa-de-dinheiro-euro-64.png')}}" height="40"
+                width="40" />
+            Estoque</a>
+        <a href="financeiro-menu"><img class="img-pos"
+                src="{{url_for('static', filename = '/images/icons8-barras-de-ouro-64.png')}}" height="40" width="40" />
+            Finanças</a>
+        <div>
+            <a href="/logout"><img id="sairpos" src="{{url_for('static', filename = '/images/sair_1.png')}}"
+                    height="100px" width="" /></a>
+        </div>
+        <h1 class="pos2">
+            Para mais informações entrar em contato com o Admin@admin.com
+        </h1>
     </div>
 
     <div id="main">
-      <span style="font-size: 30px; cursor: pointer" onclick="openNav()"
-        >&#9776;</span
-      >
+        <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
     </div>
 
     <script>
-      function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-      }
-
-      function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-      }
-
-
-      function modo_nortuno() {
-        var element = document.body;
-        element.classList.toggle("white-mode");
-      }
-      function mascara_cnpj() {
-        var cnpj = document.getElementById("cnpj");
-        if (cnpj.value.length == 2 || cnpj.value.length == 6) {
-          cnpj.value = cnpj.value + ".";
-        } else if (cnpj.value.length == 10) {
-          cnpj.value += "/";
-        } else if (cnpj.value.length == 15) {
-          cnpj.value += "-";
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
         }
-      }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+
+        function modo_nortuno() {
+            var element = document.body;
+            element.classList.toggle("white-mode");
+        }
+        function mascara_cnpj() {
+            var cnpj = document.getElementById("cnpj");
+            if (cnpj.value.length == 2 || cnpj.value.length == 6) {
+                cnpj.value = cnpj.value + ".";
+            } else if (cnpj.value.length == 10) {
+                cnpj.value += "/";
+            } else if (cnpj.value.length == 15) {
+                cnpj.value += "-";
+            }
+        }
     </script>
 
     {% block content %} {% endblock content %} {% block jstabela %} {% endblock
     jstabela %}
-  </body>
+</body>
+
 </html>
