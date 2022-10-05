@@ -2,13 +2,14 @@
 {% block title %}{{super()}} - Financeiro-Contas{% endblock title %}
 {% block name %}  {{name}} {% endblock name %}
 {% block content %}
+<script src="../static/js/funcoesparaform.js"></script>
 
     <div class="trabalho">
       <fieldset>
         <h4>Contas a Pagar</h4>
         <div class="card">
           <label>Nome</label>
-          <input class="entrada" type="text" maxlength="20" />
+          <input class="entrada" type="text" maxlength="20" onkeyup="Apenasletras(this)" />
           <br />
           <label>Valor</label>
           <input class="entrada" type="text" />

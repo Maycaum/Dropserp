@@ -2,20 +2,20 @@
 {% block title %}{{super()}} - Cadastro de Produtos{% endblock title %}
 {% block name %}  {{name}} {% endblock name %}
 {% block content %}
-
+<script src="../static/js/funcoesparaform.js"></script>
 
     <div class="trabalho">
       <fieldset>
         <h4>Fornecedores</h4>
         <div class="card">
          <label class="nomeem">Nome da Empresa</label>
-         <input class="entrada" type="text" maxlength="20" />
+         <input class="entrada" type="text" maxlength="20" onkeyup="Apenasletras(this)" />
          <br>
          <label>CNPJ</label>
          <input id="cnpj" class="entrada" type="text" maxlength="18" onkeyup="mascara_cnpj()" />
          <br> 
          <label>Descrição</label>
-         <input class="entrada" type="text" maxlength="20" /> 
+         <input class="entrada" type="text" maxlength="20" onkeyup="Apenasletras(this)" /> 
         </div>
       </fieldset>
       <div class="botoes-estilos">

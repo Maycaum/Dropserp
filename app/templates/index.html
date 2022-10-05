@@ -17,10 +17,10 @@
             <fieldset>
                 <form action="" method="POST">
                     {{form.csrf_token}}
-                    <label>Login</label>
+                    <label class="label-login">Login</label>
                     {{form.username(class="entrada", placeholder='Seu Usuário')}}
                     <br>
-                    <label>Senha</label>
+                    <label class="label-login">Senha</label>
                     {{form.password(class="entrada", placeholder='Insira sua senha')}}
                     <br>
                     <div class="botao">
