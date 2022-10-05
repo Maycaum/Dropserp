@@ -167,6 +167,7 @@ body {
     color: white;
     /*width: 10px;*/
     /*height: 10px;*/
+	
 
 }
 
@@ -543,9 +544,9 @@ table {
     border: 1px solid #934D9E;
     text-align: left;
     padding: 10px 35px 10px 30px;
-    color: #934D9E;
+    color: white;
     /* border-radius: 1000px; */
-    background-color: white;
+
 	
   }
   
