@@ -1,6 +1,6 @@
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, IntegerField, DecimalField, TextAreaField
+from wtforms import StringField, PasswordField, IntegerField, DecimalField, TextAreaField, SelectField
 from wtforms.validators import DataRequired
 
 class LoginForm(FlaskForm):
@@ -20,3 +20,9 @@ class CadastroLojista(FlaskForm):
     sobrenome = StringField('sobrenomenome', validators=[DataRequired()])
     email = StringField('email', validators=[DataRequired()])
     senha = PasswordField('password', validators=[DataRequired()])
+
+class CadastroFuncionario(FlaskForm):
+    nome = StringField('nome', validators=[DataRequired()])
+    sobrenome = StringField('sobrenomenome', validators=[DataRequired()])
+    cpf = IntegerField('CPF', validators=[DataRequired()])
+    cargo = SelectField('Cargo', validators=[DataRequired()], choices=[("Analista Rh"), ("Analista Estoque"), ("Analista Financeiro")])

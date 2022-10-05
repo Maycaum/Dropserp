@@ -1,11 +1,11 @@
-from tkinter.messagebox import RETRY
-from flask import render_template, flash, redirect, url_for, jsonify
-from app import app
-from app.models.form import LoginForm, CadastroProdutos, CadastroLojista
-from app.models.tables import User
+from flask import render_template, flash, redirect, url_for
+from app import app,db
+from config import conn
+from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario
+from app.models.tables import Funcionario, User
 from app.models.api import wcapi
 from flask_login import login_user, logout_user, login_required, current_user
-import json
+from sqlalchemy import insert, values
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
@@ -85,10 +85,17 @@ def Financeiro():
 def rh():
     return render_template("RH-menu.html", name=current_user.username)
 
-@app.route('/rh-funcionario')
+@app.route('/rh-funcionario', methods=['GET', 'POST'])
 @login_required
 def RhFuncionario():
-    return render_template("RH-Funcionario.html", name=current_user.username)
+    funcionario = CadastroFuncionario()
+    if funcionario.validate_on_submit():
+        cadastro = Funcionario(nome = funcionario.nome.data, sobrenome = funcionario.sobrenome.data, cpf = funcionario.cpf.data, cargo = funcionario.cargo.data)
+        db.session.add(cadastro)
+        db.session.commit()
+        Funcionario.query.all()
+
+    return render_template("RH-Funcionario.html", name=current_user.username, funcionario = funcionario)
 
 @app.route('/rh-lojista', methods=['GET', 'POST'])
 @login_required

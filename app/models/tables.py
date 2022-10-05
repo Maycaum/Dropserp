@@ -66,7 +66,6 @@ class Funcionario(db.Model):
     sobrenome = db.Column(db.String(25))
     cpf = db.Column(db.Integer,unique=True)
     cargo =  db.Column(db.String(25))
-    senha = db.Column(db.String(50))
 
     def __init__(self, nome, sobrenome, cpf, cargo):
         self.nome = nome
