@@ -1,6 +1,7 @@
 {% extends 'menu.html' %} {% block title %}{{super()}} - Cadastro de Produtos{%
 endblock title %} {% block name %} {{name}} {% endblock name %} {% block content%}
 
+
 <div class="trabalho">
   <fieldset>
     <h4>Cadastro de produto</h4>
@@ -8,10 +9,10 @@ endblock title %} {% block name %} {{name}} {% endblock name %} {% block content
       {{cadastro.csrf_token}}
       <div class="card">
         <label>SKU</label>
-        {{cadastro.sku(class_="entrada", placeholder='Insira o SKU do produtos')}}
+        {{cadastro.sku(class_="entrada", placeholder='Insira o SKU do produtos')}} 
         <br>
         <label>Nome</label>
-        {{cadastro.nome(class="entrada", placeholder='Insira o nome do produtos')}}
+        {{cadastro.nome(class="entrada", placeholder='Insira o nome do produtos', onkeyup_="Apenasletras(this)")}}
         <br />
         <label>Quantidade </label>
         {{cadastro.quantidade(class="entrada", placeholder='Insira A quantidade em estoque')}}
