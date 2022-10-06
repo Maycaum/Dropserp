@@ -64,7 +64,7 @@ class Funcionario(db.Model):
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
     nome = db.Column(db.String(25))
     sobrenome = db.Column(db.String(25))
-    cpf = db.Column(db.Integer,unique=True)
+    cpf = db.Column(db.String(14),unique=True)
     cargo =  db.Column(db.String(25))
 
     def __init__(self, nome, sobrenome, cpf, cargo):
@@ -76,25 +76,21 @@ class Funcionario(db.Model):
     def __repr__(self):
         return "<Funcionario %r>" % self.nome
 
-class Cliente(db.Model):
-    __tablename__ = "cliente"
+class Fornecedor(db.Model):
+    __tablename__ = "fornecedor"
 
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
-    user = db.Column(db.String(25), unique=True)
-    nome = db.Column(db.String(25))
-    sobrenome = db.Column(db.String(25))
-    email = db.Column(db.String(25),unique=True)
-    senha = db.Column(db.String(50))
+    nome = db.Column(db.String(50))
+    cnpj = db.Column(db.String(20),unique=True)
+    descricao = db.Column(db.String(50))
 
-    def __init__(self, user, nome, sobrenome, email, senha):
-        self.user = user
+    def __init__(self, nome, cnpj, descricao):
         self.nome = nome
-        self.sobrenome = sobrenome
-        self.email = email
-        self.senha = senha        
+        self.cnpj = cnpj      
+        self.descricao = descricao
 
     def __repr__(self):
-        return "<Cliente %r>" % self.nome
+        return "<Fornecedor %r>" % self.nome
 
 #Financeiro
 class Pagar(db.Model):
