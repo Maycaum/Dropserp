@@ -1,6 +1,7 @@
 {% extends 'menu.html' %} {% block title %}{{super()}} - Cadastro de Funcionarios{%
 endblock title %} {% block name %} {{name}} {% endblock name %} {% block content
 %}
+<script src="../static/js/funcoesparaform.js"></script>
 
 <div class="trabalho">
   <fieldset>
@@ -13,7 +14,7 @@ endblock title %} {% block name %} {{name}} {% endblock name %} {% block content
         <label>Sobrenome </label>
         {{funcionario.sobrenome(class="entrada", type="text", maxlength="20", onkeyup="Apenasletras(this)")}}
         <label>CPF</label>
-        {{funcionario.cpf(id="cpf", class="entrada",type="text", maxlength="14",  onkeyup_="mascara_cpf()")}}
+        {{funcionario.cpf(id="cpf", class="entrada",type="text", maxlength="14",  onkeyup="mascara_cpf()")}}
         <br />
         <label>Cargo</label>
         {{funcionario.cargo(class="entrada",id="teste")}}
