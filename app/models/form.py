@@ -1,4 +1,5 @@
 
+from tokenize import String
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, IntegerField, DecimalField, TextAreaField, SelectField
 from wtforms.validators import DataRequired
@@ -26,3 +27,8 @@ class CadastroFuncionario(FlaskForm):
     sobrenome = StringField('sobrenomenome', validators=[DataRequired()])
     cpf = IntegerField('CPF', validators=[DataRequired()])
     cargo = SelectField('Cargo', validators=[DataRequired()], choices=[("Analista Rh"), ("Analista Estoque"), ("Analista Financeiro")])
+
+class CadastroFornecedor(FlaskForm):
+    nome = StringField('nome', validators=[DataRequired()])
+    cnpj = StringField('CNPJ', validators=[DataRequired()])
+    descricao = TextAreaField('Descrição', validators=[DataRequired()])

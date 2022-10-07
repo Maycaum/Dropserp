@@ -1,8 +1,8 @@
 from flask import render_template, flash, redirect, url_for
 from app import app,db
 from config import conn
-from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario
-from app.models.tables import Funcionario, User
+from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario, CadastroFornecedor
+from app.models.tables import Fornecedor, Funcionario, User
 from app.models.api import wcapi
 from flask_login import login_user, logout_user, login_required, current_user
 from sqlalchemy import insert, values
@@ -115,8 +115,16 @@ def RhLojista():
     return render_template("RH-lojista.html", name=current_user.username, cadastro=cadastro)
         #return jsonify(lojista)
 
-@app.route('/rh-fornecedores')
+@app.route('/rh-fornecedores', methods=['GET', 'POST'])
 @login_required
 def Rh():
-    return render_template("RH-Fornecedores.html", name=current_user.username) 
+    fornecedor = CadastroFornecedor()
+    if fornecedor.validate_on_submit():
+        cadastro = Fornecedor(nome = fornecedor.nome.data, 
+        cnpj = fornecedor.cnpj.data, 
+        descricao = fornecedor.descricao.data)
+        db.session.add(cadastro)
+        db.session.commit()
+        Funcionario.query.all()
+    return render_template("RH-Fornecedores.html", name=current_user.username, fornecedor = fornecedor) 
 
