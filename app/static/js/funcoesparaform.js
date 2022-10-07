@@ -1,8 +1,7 @@
 function Apenasletras(input){
     var regex = /[^a-z]/gi;
-    var regex = /[ ]/gi;
     // var regex = /[([aA-zZ]+)]/gi;
-    input.value = input.value.replace(regex,"");
+    input.value = input.value.replace(regex," ");
 }
 
 function mascara_cpf() {

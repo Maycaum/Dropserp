@@ -188,7 +188,7 @@ body {
 span{
 	color: #934D9E;
 	top: 166;
-	position: absolute;
+	position: fixed;
 }
   
 /*.mein{
@@ -479,8 +479,9 @@ display: flex;
 @media (min-width:768px) and (max-width: 1366px) {
 
     body{
-        background-color: red;
+        /*background-color: red;*/
     }
+	
 	.trabalho-centro {
 		width: 463px;
 		margin: auto;
@@ -488,28 +489,27 @@ display: flex;
 		margin-top: 169px;
 		border: 3px solid #934D9E;
 		border-radius: 100px;
-		padding: 13px 225px;
+		padding: 105px 47px 16px 28px;
 	}
 	h3 {
-	    font-family: 'Cabin', sans-serif;
-    color: #934D9E;
-    margin: auto;
-    text-align: center;
-    font-size: 50px;
-    position: absolute;
-    margin-top: 131px;
-    margin-left: -180px;
+		font-family: 'Cabin', sans-serif;
+		color: #934D9E;
+		margin: auto;
+		text-align: center;
+		font-size: 50px;
+		/*position: absolute;*/
+		margin-top: -90px;
+		margin-left: 32px;
 	}
 	h5 {
-	    font-family: 'Cabin', sans-serif;
-    color: #934D9E;
-    margin: auto;
-    text-align: center;
-    font-size: 50px;
-     position: absolute; 
-    /* margin-top: 91px; */
-    margin: 129px 29px 2px -81px;
-    
+		font-family: 'Cabin', sans-serif;
+		color: #934D9E;
+		margin: auto;
+		text-align: center;
+		font-size: 50px;
+		/* position: absolute; */
+		margin-top: -93px;
+		margin-left: 148px;
 	}
 	.sidenav a {
 		padding: 5px 0.5px 10px 32px;
@@ -555,17 +555,28 @@ display: flex;
 		margin:-278px 0px 0px 490px;
 	}
 	#cadastrofor {
-		margin: 1px 0px 39px 295px;
+		margin: 1px 0px 42px 109px;
 		height: 85px;
 		width: 295px;
 		background-color: #934D9E;
 		color: white;
-		font-size: 30px;
+		font-size: 25px;
 		border-radius: 50px;
 		border: none;
 		cursor: pointer;
-    /* de 768px até 992px*/
+	}
+	.trabalho {
+		width: 461px;
+		margin: auto;
+		border: none;
+		margin-top: 161px;
+		border: 3px solid #934D9E;
+		border-radius: 100px;
+		padding: 58px 120px;
+	}
+	
 }
+
 
 
 /****************listagem********************/
