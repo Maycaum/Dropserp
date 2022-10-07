@@ -123,7 +123,7 @@ cursor: pointer;
 	cursor: pointer;
 }
 
-#cadastrofor{
+/*#cadastrofor{
     margin: 1px 0px 42px 109px;
 	height: 85px;
     width: 295px;
@@ -132,10 +132,10 @@ cursor: pointer;
     font-size: 30px;
     border-radius: 50px;
     border: none;
-	/*margin-top: 60px; setado no margin*/
+	margin-top: 60px; setado no margin
 	cursor: pointer;
 	
-}
+}*/
 
 #cadastrofun:hover,#cadastrofor:hover,#b_cadastro:hover, #b_cancelar:hover{opacity: 0.7;}
 

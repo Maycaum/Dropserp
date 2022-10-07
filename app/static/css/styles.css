@@ -458,7 +458,19 @@ display: flex;
 .img-pos{
 	margin: 0px 27px -12px 6px;
 }
-
+#cadastrofor{
+    margin: 1px 0px 42px 109px;
+	height: 85px;
+    width: 295px;
+    background-color: #934D9E;
+    color: white;
+    font-size: 30px;
+    border-radius: 50px;
+    border: none;
+	/*margin-top: 60px; setado no margin*/
+	cursor: pointer;
+	
+}
 
 
 
@@ -476,27 +488,28 @@ display: flex;
 		margin-top: 169px;
 		border: 3px solid #934D9E;
 		border-radius: 100px;
-		padding: 104px 2px;
+		padding: 13px 225px;
 	}
 	h3 {
-		font-family: 'Cabin', sans-serif;
-		color: #934D9E;
-		margin: auto;
-		text-align: center;
-		font-size: 50px;
-		position: absolute; 
-		margin-top: -82px;
-		margin-left: 32px;
+	    font-family: 'Cabin', sans-serif;
+    color: #934D9E;
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    position: absolute;
+    margin-top: 131px;
+    margin-left: -180px;
 	}
 	h5 {
-		font-family: 'Cabin', sans-serif;
-		color: #934D9E;
-		margin: auto;
-		text-align: center;
-		font-size: 50px;
-		position: absolute;
-		margin-top: -101px;
-		margin-left: 133px;
+	    font-family: 'Cabin', sans-serif;
+    color: #934D9E;
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+     position: absolute; 
+    /* margin-top: 91px; */
+    margin: 129px 29px 2px -81px;
+    
 	}
 	.sidenav a {
 		padding: 5px 0.5px 10px 32px;
@@ -530,6 +543,27 @@ display: flex;
 		width: 100%;
 		/* height: 150; */
 	}
+	.centro{
+	    /* position: absolute; */
+		width: 431px;
+		height: 431px;
+		background: #523961;
+		border-radius: 50%;
+		margin: 71px 0px 0px 224px;
+	}
+	.ajuste-login{
+		margin:-278px 0px 0px 490px;
+	}
+	#cadastrofor {
+		margin: 1px 0px 39px 295px;
+		height: 85px;
+		width: 295px;
+		background-color: #934D9E;
+		color: white;
+		font-size: 30px;
+		border-radius: 50px;
+		border: none;
+		cursor: pointer;
     /* de 768px até 992px*/
 }
 
@@ -603,4 +637,3 @@ tbody{
 #amar_filter{
 	content: "YES";
   }
-  
