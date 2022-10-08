@@ -1,40 +1,39 @@
 {% extends 'menu.html' %} {% block title %}{{super()}} - Cadastro de Funcionarios{%
 endblock title %} {% block name %} {{name}} {% endblock name %} {% block content
 %}
+<script src="../static/js/funcoesparaform.js"></script>
 
-
-  <div class="trabalho">
+<div class="trabalho">
+  <fieldset>
+    <h4>Funcionario</h4>
     {% with messages = get_flashed_messages() %}
       {% if messages %}
           {% for message in messages %}
-              <p class="mensagem">{{ message }}</p>
+              <span class="mensagem">{{ message }}</span>
           {% endfor %}
       {% endif %}
-    {% endwith %}  
-    
-    <fieldset>
-      <h4>Funcionario</h4>
-      <form action="" method="POST">
-        {{funcionario.csrf_token}}
-        <div class="card">        
-          <label>Nome</label>
-          {{funcionario.nome(class="entrada", type="text", maxlength="20", onkeyup="Apenasletras(this)")}}
-          <label>Sobrenome </label>
-          {{funcionario.sobrenome(class="entrada", type="text", maxlength="20", onkeyup="Apenasletras(this)")}}
-          <label>CPF</label>
-          {{funcionario.cpf(id="cpf", class="entrada",type="text", maxlength="14",  onkeyup="mascara_cpf()")}}
-          <br />
-          <label>Cargo</label>
-          {{funcionario.cargo(class="entrada",id="teste")}}
-                  <br />
-        </div>
-    </fieldset>
-    <div class="botoes-estilos">
-      <button id="b_cancelar">Cancelar</button>
-      <button id="b_cadastro">Cadastrar</button>
-    </div>
-  </form>
-
+    {% endwith %}      
+    <form action="" method="POST">
+      {{funcionario.csrf_token}}
+      <div class="card">        
+        <label>Nome</label>
+        {{funcionario.nome(class="entrada", type="text", maxlength="20", onkeyup_="Apenasletras(this)")}}
+        <label>Sobrenome </label>
+        {{funcionario.sobrenome(class="entrada", type="text", maxlength="20", onkeyup_="Apenasletras(this)")}}
+        <label>CPF</label>
+        {{funcionario.cpf(id="cpf", class="entrada",type="text", maxlength="14",  onkeyup_="mascara_cpf()")}}
+        <br />
+        <label>Cargo</label>
+        {{funcionario.cargo(class="entrada",id="teste")}}
+                <br />
+      </div>
+  </fieldset>
+  <div class="botoes-estilos">
+    <button id="b_cancelar">Cancelar</button>
+    <button id="b_cadastro">Cadastrar</button>
   </div>
+</form>
+
+</div>
 
 {% endblock content %}

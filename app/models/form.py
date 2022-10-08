@@ -25,7 +25,7 @@ class CadastroLojista(FlaskForm):
 class CadastroFuncionario(FlaskForm):
     nome = StringField('nome', validators=[DataRequired()])
     sobrenome = StringField('sobrenomenome', validators=[DataRequired()])
-    cpf = IntegerField('CPF', validators=[DataRequired()])
+    cpf = StringField('CPF', validators=[DataRequired()])
     cargo = SelectField('Cargo', validators=[DataRequired()], choices=[("Analista Rh"), ("Analista Estoque"), ("Analista Financeiro")])
 
 class CadastroFornecedor(FlaskForm):
