@@ -115,7 +115,7 @@ class Receber(db.Model):
     __tablename__ = "receber"
 
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
-    nome = db.Column(db.String(25))
+    identificador = db.Column(db.String(25))
     valor = db.Column(db.Integer)
     pagador = db.Column(db.String(25))
     data = db.Column(db.DateTime)

@@ -1,8 +1,9 @@
+from crypt import methods
 from flask import render_template, flash, redirect, url_for, flash
 from app import app, db
 from config import conn
-from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario, CadastroFornecedor
-from app.models.tables import Fornecedor, Funcionario, User
+from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario, CadastroFornecedor, CadastroReceber
+from app.models.tables import Fornecedor, Funcionario, Receber, User
 from app.models.api import wcapi
 from flask_login import login_user, logout_user, login_required, current_user
 from sqlalchemy import insert, values
@@ -64,17 +65,28 @@ def EstoqueListar():
     retorno = wcapi.get("products", params={"per_page": 20}).json()
     return render_template("Estoque-listar-produtos.html", name=current_user.username, retorno=retorno)
 
+#Financeiro
 
-@app.route('/financeiros-contas-a-pagar')
+@app.route('/financeiros-contas-a-pagar', methods=['GET', 'POST'])
 @login_required
 def ContasAPagar():
     return render_template("financeiro-contas-a-pagar.html", name=current_user.username)
 
 
-@app.route('/financeiro-contas-a-receber')
+@app.route('/financeiro-contas-a-receber', methods=['GET', 'POST'])
 @login_required
 def ContasAReceber():
-    return render_template("financeiro-contas-a-receber.html", name=current_user.username)
+    receber = CadastroReceber()
+    if receber.validate_on_submit():
+        cadastro = Receber(identificador = receber.identificador.data,
+                            valor= receber.valor.data,
+                            pagador=receber.pagador.data,
+                            data=receber.dia.data)
+        db.session.add(cadastro)
+        db.session.commit()
+        Receber.query.all()
+        flash('Conta á receber cadastrada com sucesso')
+    return render_template("financeiro-contas-a-receber.html", name=current_user.username, receber=receber)
 
 
 @app.route('/financeiros-exibir-relatorio')
@@ -88,6 +100,7 @@ def ExibirRelatorio():
 def Financeiro():
     return render_template("Financeiro-menu.html", name=current_user.username)
 
+#RH
 
 @app.route('/rh-menu')
 @login_required
