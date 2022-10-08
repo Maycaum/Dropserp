@@ -2,8 +2,8 @@ from crypt import methods
 from flask import render_template, flash, redirect, url_for, flash
 from app import app, db
 from config import conn
-from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario, CadastroFornecedor, CadastroReceber
-from app.models.tables import Fornecedor, Funcionario, Receber, User
+from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario, CadastroFornecedor, CadastroReceber, CadastroPagar
+from app.models.tables import Fornecedor, Funcionario, Pagar, Receber, User
 from app.models.api import wcapi
 from flask_login import login_user, logout_user, login_required, current_user
 from sqlalchemy import insert, values
@@ -70,7 +70,17 @@ def EstoqueListar():
 @app.route('/financeiros-contas-a-pagar', methods=['GET', 'POST'])
 @login_required
 def ContasAPagar():
-    return render_template("financeiro-contas-a-pagar.html", name=current_user.username)
+    pagar = CadastroPagar()
+    if pagar.validate_on_submit():
+        cadastro = Pagar(nome = pagar.nome.data,
+                            valor= pagar.valor.data,
+                            pagador=pagar.pagador.data,
+                            data=pagar.dia.data)
+        db.session.add(cadastro)
+        db.session.commit()
+        Receber.query.all()
+        flash('Conta á pagar cadastrada com sucesso')
+    return render_template("financeiro-contas-a-pagar.html", name=current_user.username, pagar=pagar)
 
 
 @app.route('/financeiro-contas-a-receber', methods=['GET', 'POST'])

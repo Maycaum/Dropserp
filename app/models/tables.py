@@ -120,11 +120,11 @@ class Receber(db.Model):
     pagador = db.Column(db.String(25))
     data = db.Column(db.DateTime)
 
-    def __init__(self, nome, valor, pagador, data):
-        self.nome = nome
+    def __init__(self, identificador, valor, pagador, data):
+        self.identificador = identificador
         self.valor = valor
         self.pagador = pagador
         self.data = data
 
     def __repr__(self):
-        return "<Receber %r>" % self.nome
+        return "<Receber %r>" % self.identificador

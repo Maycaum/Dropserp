@@ -39,3 +39,8 @@ class CadastroReceber(FlaskForm):
     pagador = StringField('pagador', validators=[DataRequired()])
     dia = DateField(validators=None, format='%Y-%m-%d')
 
+class CadastroPagar(FlaskForm):
+    nome = StringField('nome', validators=[DataRequired()])
+    valor = IntegerField('valor', validators=[DataRequired()])
+    pagador = StringField('pagador', validators=[DataRequired()])
+    dia = DateField(validators=None, format='%Y-%m-%d')
