@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import render_template, flash, redirect, url_for, flash
 from app import app, db
 from config import conn
@@ -27,6 +26,13 @@ def logout():
     logout_user()
     flash('deslogado')
     return redirect(url_for('index'))
+
+
+#dashboard
+@app.route('/dashboard', methods=['GET', 'POST'])
+@login_required
+def Dashboard():
+    return render_template("dashboard.html", name=current_user.username)
 
 
 @app.route('/estoque')
