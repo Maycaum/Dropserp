@@ -4,8 +4,17 @@
 {% block content %}
 
 
+
 <div class="trabalho">
+
   <fieldset>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          {% for message in messages %}
+              <p class="mensagem">{{ message }}</p>
+          {% endfor %}
+      {% endif %}
+    {% endwith %}      
     <h4>Fornecedores</h4>
     <form action="" method="POST">
       {{fornecedor.csrf_token}}
@@ -14,7 +23,7 @@
         {{fornecedor.nome(class="entrada", type="text", maxlength="50", onkeyup="Apenasletras(this)")}}
         <br>
         <label>CNPJ</label>
-        {{fornecedor.cnpj(id="cnpj", class="entrada",type="text", maxlength="18",  onkeyup_="mascara_cpf()")}}
+        {{fornecedor.cnpj(id="cnpj", class="entrada",type="text", maxlength="18",  onkeyup_="mascara_cnpj()")}}
         <br>
         <label>Descrição</label>
         {{fornecedor.descricao(class="entrada_maior", placeholder='Insira Uma descrição')}}

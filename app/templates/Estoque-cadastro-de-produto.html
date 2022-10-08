@@ -1,9 +1,18 @@
 {% extends 'menu.html' %} {% block title %}{{super()}} - Cadastro de Produtos{%
 endblock title %} {% block name %} {{name}} {% endblock name %} {% block content%}
+  
 
 
 <div class="trabalho">
+  
   <fieldset>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+            <span class="mensagem">{{ message }}</span>
+        {% endfor %}
+      {% endif %}
+    {% endwith %} 
     <h4>Cadastro de produto</h4>
     <form action="" method="POST">
       {{cadastro.csrf_token}}

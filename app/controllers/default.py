@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, flash
 from app import app,db
 from config import conn
 from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario, CadastroFornecedor
@@ -13,8 +13,8 @@ def index():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user and user.password == form.password.data:
+            flash('logado')
             login_user(user)
-            print("logado")
             return redirect(url_for("rh"))
         else:
             flash('Login Invalido')
@@ -45,7 +45,7 @@ def EstoqueCadastro():
             "description": cadastro.descricao.data,
             }
         wcapi.post("products", produto).json()
-        flash('Produto Criado')
+        flash('Produto Criado com sucesso')
     return render_template("Estoque-cadastro-de-produto.html", name=current_user.username, cadastro=cadastro)
 
 @app.route('/estoque-pesquisar')
@@ -94,7 +94,7 @@ def RhFuncionario():
         db.session.add(cadastro)
         db.session.commit()
         Funcionario.query.all()
-
+        flash('Funcionario criado com sucesso')
     return render_template("RH-Funcionario.html", name=current_user.username, funcionario = funcionario)
 
 @app.route('/rh-lojista', methods=['GET', 'POST'])
@@ -111,7 +111,7 @@ def RhLojista():
             "password": cadastro.senha.data,
         }
         wcapi.post("customers", lojista).json()
-        flash('lojista criado')
+        flash('Lojista criado com sucesso')
     return render_template("RH-lojista.html", name=current_user.username, cadastro=cadastro)
         #return jsonify(lojista)
 
@@ -126,5 +126,6 @@ def Rh():
         db.session.add(cadastro)
         db.session.commit()
         Funcionario.query.all()
+        flash('Fornecedor criado com sucesso')
     return render_template("RH-Fornecedores.html", name=current_user.username, fornecedor = fornecedor) 
 
