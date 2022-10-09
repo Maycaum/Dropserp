@@ -1,5 +1,5 @@
 DEBUG = True
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root@localhost:3306/flask'
+conn = SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root@localhost:3306/flask'
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 SECRET_KEY = 'Amar0Higor07564205452054251'

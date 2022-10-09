@@ -1,35 +1,45 @@
 <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        
-        <title> DropsERP - Login </title> 
-        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0">
-        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-        <script src="https://kit.fontawesome.com/d7f5ff492c.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="{{url_for('static', filename='/css/login.css')}}">
-        <link rel="stylesheet" href="{{url_for('static', filename = 'css/styles.css')}}">
-    </head>
-    <body>
-        <div class="centro">
-            <h6 class="textologin">DropsERP</h6>
-            <img class="imglogin" src="{{url_for('static', filename='images/image_1.png')}}" alt="" height="300px">
-            <fieldset>
-                <form action="" method="POST">
-                    {{form.csrf_token}}
-                    <label>Login</label>
-                    {{form.username(class="entrada", placeholder='Seu Usuário')}}
-                    <br>
-                    <label>Senha</label>
-                    {{form.password(class="entrada", placeholder='Insira sua senha')}}
-                    <br>
-                    <div class="botao">
-                        <button id="entrar" type="submit"> Entrar</button>
-                    </div>
-                    
-                </form>
-                
-            </fieldset>
-            </div>
-    </body>
-    </html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>DropsERP - Login</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+    <script src="https://kit.fontawesome.com/d7f5ff492c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/login.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/styles.css')}}" />
+</head>
+
+<body>
+    <div class="centro">
+        {% with messages = get_flashed_messages() %} 
+            {% if messages %} 
+                {% for message in messages %}
+                    <span class="mensagem">{{ message }}</span>
+                {% endfor %} 
+            {% endif %}
+        {% endwith %}
+
+        <h6 class="textologin">DropsERP</h6>
+        <img class="imglogin" src="{{url_for('static', filename='images/image_1.png')}}" alt="" height="300px" />
+        <fieldset class="ajuste-login">
+            <form action="" method="POST">
+                {{form.csrf_token}}
+                <label class="label-login">Login</label>
+                {{form.username(class="entrada", placeholder='Seu Usuário')}}
+                <br />
+                <label class="label-login">Senha</label>
+                {{form.password(class="entrada", placeholder='Insira sua senha')}}
+                <br />
+                <div class="botao">
+                    <button id="entrar" type="submit">Entrar</button>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</body>
+
+</html>

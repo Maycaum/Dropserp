@@ -1,29 +1,41 @@
 {% extends 'menu.html' %}
-{% block title %}{{super()}} - RH{% endblock title %}
-{% block name %}  {{name}} {% endblock name %}
+{% block title %}{{super()}} - Financeiro-Contas{% endblock title %}
+{% block name %} {{name}} {% endblock name %}
 {% block content %}
 
-    <div class="trabalho">
-      <fieldset>
-        <h4>Contas a Receber</h4>
-        <div class="card">
-          <label>Nome</label>
-          <input class="entrada" type="text" maxlength="20" />
-          <br />
-          <label>Valor</label>
-          <input class="entrada" type="text" />
-          <br />
-          <label>Pagador</label>
-          <input class="entrada" type="text" maxlength="20" />
-          <br />
-          <label>Data</label>
-          <input class="entrada" type="date" />
-        </div>
+
+<div class="trabalho">
+  <fieldset>
+    <h4>Contas a Receber</h4>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+            <span class="mensagem">{{ message }}</span>
+        {% endfor %}
+      {% endif %}
+    {% endwith %} 
+    <form action="" method="post">
+      {{receber.csrf_token}}
+      <div class="card">
+        <label>Identificador</label>
+        {{receber.identificador(class="entrada", maxlength_="20", placeholder='insira o identificador para esta conta', onkeyup_="Apenasletras(this)")}}
         <br />
-        <div class="botoes-estilos2">
-          <button id="b_cancelar">Visualizar</button>
-          <button id="b_cadastro">Cadastrar</button>
-        </div>
-      </fieldset>
-    </div>
+        <label>Valor</label>
+        {{receber.valor(class="entrada", maxlength_="20", placeholder="insira o valor que será recebido")}}
+        <br />
+        <label>Pagador</label>
+        {{receber.pagador(class="entrada", maxlength_="20", placeholder='insira o nome do pagador', onkeyup_="Apenasletras(this)")}}
+        <br />
+        <label>Data</label>
+        {{receber.dia(class="entrada")}}
+      </div>
+      <br />
+    </fieldset>
+      <div class="botoes-estilos2">
+        <button id="b_cancelar">Visualizar</button>
+        <button id="b_cadastro"> Cadastrar </button>
+      </div>
+  </form>
+</div>
+
 {% endblock content %}

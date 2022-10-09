@@ -57,22 +57,74 @@ class Estoque(db.Model):
     def __repr__(self):
         return "<Estoque %r>" % self.nome
 
+#RH
+class Funcionario(db.Model):
+    __tablename__ = "funcionario"
+
+    id = db.Column(db.Integer, primary_key=True,autoincrement=True)
+    nome = db.Column(db.String(25))
+    sobrenome = db.Column(db.String(25))
+    cpf = db.Column(db.String(14),unique=True)
+    cargo =  db.Column(db.String(25))
+
+    def __init__(self, nome, sobrenome, cpf, cargo):
+        self.nome = nome
+        self.sobrenome = sobrenome
+        self.cpf = cpf
+        self.cargo = cargo
+
+    def __repr__(self):
+        return "<Funcionario %r>" % self.nome
+
+class Fornecedor(db.Model):
+    __tablename__ = "fornecedor"
+
+    id = db.Column(db.Integer, primary_key=True,autoincrement=True)
+    nome = db.Column(db.String(50))
+    cnpj = db.Column(db.String(20),unique=True)
+    descricao = db.Column(db.String(50))
+
+    def __init__(self, nome, cnpj, descricao):
+        self.nome = nome
+        self.cnpj = cnpj      
+        self.descricao = descricao
+
+    def __repr__(self):
+        return "<Fornecedor %r>" % self.nome
+
 #Financeiro
-class Financeiro(db.Model):
-    __tablename__ = "financeiro"
+class Pagar(db.Model):
+    __tablename__ = "pagar"
 
-    movimento = db.Column(db.Integer, primary_key=True) # Id da transação
-    receber = db.Column(db.Integer)
-    pagar = db.Column(db.Integer)
-    sku_Estoque = db.Column(db.Integer, db.ForeignKey('estoque.sku'))
-    #id_Fornecedor = db.Column(db.Integer, db.ForeignKey('fornecedor.sku'))
+    id = db.Column(db.Integer, primary_key=True,autoincrement=True)
+    nome = db.Column(db.String(25))
+    valor = db.Column(db.Integer)
+    pagador = db.Column(db.String(25))
+    data = db.Column(db.DateTime)
 
-    sku = db.relationship('Estoque', foreign_keys=sku_Estoque)
-    #id = db.relationship('Fornecedor', foreign_keys=id_Fornecedor)
+    def __init__(self, nome, valor, pagador, data):
+        self.nome = nome
+        self.valor = valor
+        self.pagador = pagador
+        self.data = data
 
-    def __init__(self, movimento, receber, pagar, sku_Estoque, id_Fornecedor):
-        self.movimento = movimento
-        self.receber = receber
-        self.pagar = pagar
-        self.sku_Estoque = sku_Estoque
-       #self.id_Fornecedor = id_Fornecedor
+    def __repr__(self):
+        return "<Pagar %r>" % self.nome
+
+class Receber(db.Model):
+    __tablename__ = "receber"
+
+    id = db.Column(db.Integer, primary_key=True,autoincrement=True)
+    identificador = db.Column(db.String(25))
+    valor = db.Column(db.Integer)
+    pagador = db.Column(db.String(25))
+    data = db.Column(db.DateTime)
+
+    def __init__(self, identificador, valor, pagador, data):
+        self.identificador = identificador
+        self.valor = valor
+        self.pagador = pagador
+        self.data = data
+
+    def __repr__(self):
+        return "<Receber %r>" % self.identificador

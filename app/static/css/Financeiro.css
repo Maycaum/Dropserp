@@ -1,85 +1,4 @@
-/*h3{
-    
-    font-family: 'Cabin', sans-serif;
-    color: #934D9E;
-    margin: auto;
-    text-align: center;
-    font-size: 50px;
-    position: absolute;
-    margin-top: -150px;
-    margin-left: 35px;
 
-}*/
-/*h4{
-    
-    font-family: 'Cabin', sans-serif;
-    color: #934D9E;
-    margin: auto;
-    text-align: center;
-    font-size: 50px;
-    position: absolute;
-    margin-top: -150px;
-    margin-left: 70px;
-}*/
-
-/*fieldset{
-    
-    width: 461px;
-    margin: auto;
-    border: none;
-
-}*/
-/*.entrada{
-
-
-
-    width: 50%;
-    margin-left: -100px;
-    margin-right: 100px;
-    height: 55px;
-    background: #FFFFFF;
-    border: 1px solid #934D9E;
-    box-sizing: border-box;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 20px;
-}*/
-/*label{
-
-    
-    position: relative;
-    top: 49px;
-    font-size: 25px;
-    font-family: 'Cabin', sans-serif;
-    font-weight: 400;
-    text-align: right;
-    color: #934D9E;
-    margin-left: -30;
-}
-*/
-/*.entrada{
-
-
-
-    width: 50%;
-    margin-left: 118px;
-    margin-right: 100px;
-    height: 55px;
-    background: #FFFFFF;
-    border: 1px solid #934D9E;
-    box-sizing: border-box;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 20px;
-}*/
-
-/*.botoes-estilos{
-  
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
-    margin-top: 50px;
-}*/
 #b_cancelar{
 
 
@@ -96,18 +15,7 @@ cursor: pointer;
 
 
 
-/*#b_cadastro{
 
-
-background-color: #934D9E;
-color: white;
-font-size: 20px;
-border-radius: 50px;
-border: none;
-margin-left: 250px;
-padding: 20px 50px;
-cursor: pointer;
-} */
 
 #b_exibir-relatorio:hover,#b_contas-p:hover,#b_contas-a:hover,#b_cadastro:hover, #b_cancelar:hover{opacity: 0.7;}
 

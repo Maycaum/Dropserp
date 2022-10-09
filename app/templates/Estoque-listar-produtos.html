@@ -9,7 +9,7 @@ endblock title %} {% block content %}
 {% endblock tabela %}
 <div class="trabalho">
   <table  id="amar">
-
+    
     <thead>
       <tr>
         <th>Sku</th>
@@ -36,9 +36,15 @@ endblock title %} {% block content %}
 <script>
        
   $(document).ready(function () {
-$('#amar').DataTable({});
+$('#amar').DataTable({"language": {
+      "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/pt-BR.json"}});
 });
    
+
+
+ 
+
+</script>
 
 </script>
 {% endblock jstabela %}
