@@ -98,7 +98,7 @@ class Pagar(db.Model):
 
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
     nome = db.Column(db.String(25))
-    valor = db.Column(db.Integer)
+    valor = db.Column(db.Float)
     pagador = db.Column(db.String(25))
     data = db.Column(db.DateTime)
 
@@ -116,7 +116,7 @@ class Receber(db.Model):
 
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
     identificador = db.Column(db.String(25))
-    valor = db.Column(db.Integer)
+    valor = db.Column(db.Float)
     pagador = db.Column(db.String(25))
     data = db.Column(db.DateTime)
 
