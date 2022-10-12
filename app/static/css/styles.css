@@ -295,6 +295,36 @@ span{
 	
 }
 /*exescencial*/
+.dash-tudo{
+	margin: 236px 0px 0px 0px;
+}
+.dash-campo{
+	width: 0px;
+    margin: auto;
+    border: none;
+    margin-top: 50px;
+    border: 3px solid #934D9E;
+    border-radius: 42px;
+    padding: 92px 290px;
+
+}
+.dash-campo-baixo{
+	width: 0px;
+    margin: auto;
+    border: none;
+    margin-top: 50px;
+    border: 3px solid #934D9E;
+    border-radius: 42px;
+    padding: 152px 645px;
+
+}
+.dash-cima{
+	display: flex;
+    padding: 0px 250px 0px 250px;
+}
+.dash.baixo{
+
+}
 .trabalho{
 	width: 461px;
     margin: auto;
