@@ -4,13 +4,8 @@
 {% block content %}
 <div class="trabalho">
   <fieldset>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-          {% for message in messages %}
-              <span class="mensagem">{{ message }}</span>
-          {% endfor %}
-      {% endif %}
-    {% endwith %}      
+ 
+   
     <h4>Fornecedores</h4>
     <form action="" method="POST">
       {{fornecedor.csrf_token}}
@@ -24,7 +19,15 @@
         <label>Descrição</label>
         {{fornecedor.descricao(class="entrada_maior", placeholder='Insira Uma descrição')}}
       </div>
+         
   </fieldset>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+      {% for message in messages %}
+          <span class="mensagem-forn">{{ message }}</span>
+      {% endfor %}
+  {% endif %}
+{% endwith %} 
   <div class="botoes-estilos">
     <button id="b_cancelar"> Cancelar </button>
     <button id="b_cadastro"> Cadastrar </button>
