@@ -15,7 +15,7 @@ def index():
         user = User.query.filter_by(username=form.username.data).first()
         if user and user.password == form.password.data:
             login_user(user)
-            return redirect(url_for("dashboard"))
+            return redirect(url_for("Dashboard"))
         else:
             flash('Login Invalido')
     return render_template('index.html', form=form)
@@ -106,9 +106,9 @@ def ExibirRelatorio():
     mes = datetime.now().month
     ano = datetime.now().year
     retorno = wcapi.get("orders", params={"after": f'{ano}-{mes}-01T00:00:00', "before":f'{ano}-{mes}-30T23:59:59', 'per_page': 100, 'status':'completed'}).json()
-    pagar = "select * from pagar"
+    pagar = f"select * from pagar where data BETWEEN '{ano}-{mes}-01 00:00:00' and '{ano}-{mes}-30 00:00:00'"
     pagar = db.session.execute(pagar)
-    receber = "select * from receber"
+    receber = f"select * from receber "
     receber = db.session.execute(receber)
     return render_template("financeiro-exibir-relatorio.html", name=current_user.username, pagar=pagar, receber=receber)
 

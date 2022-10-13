@@ -101,7 +101,7 @@ class Pagar(db.Model):
     valor = db.Column(db.Float)
     clientefinal = db.Column(db.String(25))
     comprador = db.Column(db.String(25))
-    dia = db.Column(db.DateTime)
+    data = db.Column(db.DateTime)
 
     def __init__(self, finalidade, valor, clientefinal, comprador, data):
         self.finalidade = finalidade

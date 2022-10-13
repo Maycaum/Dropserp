@@ -17,14 +17,13 @@
       </thead>
       <tbody>
         {% for i in pagar %}
-          <tr>
-            <td>{{i['finalidade'], i['valor']}}</td>
-          </tr>
-        {% endfor %}
-        {% for i in receber %}
-          <tr>
-            <td>{{i['identificador'], i['valor']}}</td>
-          </tr >
+          {% for j in receber %}
+              <tr>
+                <td>{{i['finalidade']}} - R${{i['valor']}}</td>
+                <td>{{j["identificador"]}} - R${{j["valor"]}}</td>
+                
+              </tr>
+            {% endfor %}
         {% endfor %}
       </tbody>
     </table>
