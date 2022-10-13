@@ -9,7 +9,7 @@
         {% with messages = get_flashed_messages() %}
           {% if messages %}
             {% for message in messages %}
-                <span class="mensagem">{{ message }}</span>
+                <span class="mensagem-loj">{{ message }}</span>
             {% endfor %}
           {% endif %}
         {% endwith %}   
@@ -18,17 +18,17 @@
             {{cadastro.csrf_token}}
             <div class="card">
               <label>Username</label>
-              {{cadastro.username(class="entrada", placeholder="Insira o username do lojista")}}
+              {{cadastro.username(class="entrada")}}
               <br>
               <label>Nome</label>
-              {{cadastro.nome(class="entrada", placeholder="Insira o nome do lojista")}}
+              {{cadastro.nome(class="entrada")}}
               <br>
               <label>Sobrenome </label>
-              {{cadastro.sobrenome(class="entrada", placeholder="Insira o sobrenome do lojista")}}              <br>
+              {{cadastro.sobrenome(class="entrada")}}              <br>
               <label>E-mail</label>
-              {{cadastro.email(class="entrada", placeholder="Insira o nome do lojista")}}              <br>
+              {{cadastro.email(class="entrada")}}              <br>
               <label>Senha</label>
-              {{cadastro.senha(class="entrada", placeholder="Insira a senha do lojista")}}              <br>
+              {{cadastro.senha(class="entrada")}}              <br>
             </div>
 
       </fieldset>
