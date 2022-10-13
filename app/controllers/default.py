@@ -1,12 +1,12 @@
-from flask import render_template, flash, redirect, url_for, flash
+from datetime import date, datetime
+from flask import render_template, flash, redirect, url_for, flash, jsonify
 from app import app, db
 from config import conn
 from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario, CadastroFornecedor, CadastroReceber, CadastroPagar
 from app.models.tables import Fornecedor, Funcionario, Pagar, Receber, User
 from app.models.api import wcapi
 from flask_login import login_user, logout_user, login_required, current_user
-from sqlalchemy import insert, values
-
+import sqlalchemy
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
@@ -15,7 +15,7 @@ def index():
         user = User.query.filter_by(username=form.username.data).first()
         if user and user.password == form.password.data:
             login_user(user)
-            return redirect(url_for("rh"))
+            return redirect(url_for("dashboard"))
         else:
             flash('Login Invalido')
     return render_template('index.html', form=form)
@@ -72,9 +72,10 @@ def EstoqueListar():
 def ContasAPagar():
     pagar = CadastroPagar()
     if pagar.validate_on_submit():
-        cadastro = Pagar(nome = pagar.nome.data,
+        cadastro = Pagar(finalidade = pagar.finalidade.data,
                             valor= pagar.valor.data,
-                            pagador=pagar.pagador.data,
+                            comprador=pagar.comprador.data,
+                            clientefinal = pagar.clienteFinal.data,
                             data=pagar.dia.data)
         db.session.add(cadastro)
         db.session.commit()
@@ -102,7 +103,14 @@ def ContasAReceber():
 @app.route('/financeiros-exibir-relatorio')
 @login_required
 def ExibirRelatorio():
-    return render_template("financeiro-exibir-relatorio.html", name=current_user.username)
+    mes = datetime.now().month
+    ano = datetime.now().year
+    retorno = wcapi.get("orders", params={"after": f'{ano}-{mes}-01T00:00:00', "before":f'{ano}-{mes}-30T23:59:59', 'per_page': 100, 'status':'completed'}).json()
+    pagar = "select * from pagar"
+    pagar = db.session.execute(pagar)
+    receber = "select * from receber"
+    receber = db.session.execute(receber)
+    return render_template("financeiro-exibir-relatorio.html", name=current_user.username, pagar=pagar, receber=receber)
 
 
 @app.route('/financeiro-menu')
@@ -166,3 +174,5 @@ def Rh():
         Fornecedor.query.all()
         flash('Fornecedor criado com sucesso')
     return render_template("RH-Fornecedores.html", name=current_user.username, fornecedor=fornecedor)
+
+

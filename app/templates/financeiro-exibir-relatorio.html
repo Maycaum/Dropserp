@@ -1,29 +1,48 @@
 {% extends 'menu.html' %}
 {% block title %}{{super()}} - RH{% endblock title %}
-{% block name %}  {{name}} {% endblock name %}
+{% block name %} {{name}} {% endblock name %}
 {% block content %}
-
-    <div class="trabalho">
-      <fieldset>
-        <h4>Contas a Pagar</h4>
-        <div class="card">
-          <label>Nome</label>
-          <input class="entrada" type="text" maxlength="20" onkeyup="Apenasletras(this)" />
-          <br />
-          <label>Valor</label>
-          <input class="entrada" type="number" />
-          <br />
-          <label>Pagador</label>
-          <input class="entrada" type="text" maxlength="20" />
-          <br />
-          <label>Data</label>
-          <input class="entrada" type="date" />
-        </div>
-        <br />
-        <div class="botoes-estilos2">
-          <button id="b_cancelar">Visualizar</button>
-          <button id="b_cadastro">Cadastrar</button>
-        </div>
-      </fieldset>
-    </div>
-{% endblock content %}
+  {% block tabela %}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  {% endblock tabela %}
+  <div class="trabalho">
+    <table id="teste">
+      <thead>
+        <tr>
+          <th>Contas a Pagar</th>
+          <th>Contas a receber</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in pagar %}
+          <tr>
+            <td>{{i['finalidade'], i['valor']}}</td>
+          </tr>
+        {% endfor %}
+        {% for i in receber %}
+          <tr>
+            <td>{{i['identificador'], i['valor']}}</td>
+          </tr >
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endblock content %}
+  {% block jstabela %}
+  <script>
+         
+    $(document).ready(function () {
+  $('#amar').DataTable({"language": {
+        "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/pt-BR.json"}});
+  });
+     
+  
+  
+   
+  
+  </script>
+  
+  </script>
+  {% endblock jstabela %}
