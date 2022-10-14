@@ -1,5 +1,5 @@
 {% extends 'menu.html' %}
-{% block title %}{{super()}} - RH{% endblock title %}
+{% block title %}{{super()}} - Listar conta a receber{% endblock title %}
 {% block name %} {{name}} {% endblock name %}
 {% block content %}
   {% block tabela %}
@@ -8,19 +8,25 @@
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
   {% endblock tabela %}
   <div class="trabalho">
+    <h4>Listar contas a receber</h4>
     <table id="relatoio">
       <thead>
         <tr>
-          <th>Contas a Pagar</th>
-          <th>Contas a receber</th>
+          <th>Finalidade</th>
+          <th>valor</th>
         </tr>
       </thead>
       <tbody>
-        <iframe src="pagar" style="width:300px;height:200px;"></iframe>
+        {% for i in receber %}
+            <tr>
+                <td>{{i['identificador']}}</td>
+                <td>{{i['valor']}}</td>
+            </tr>
+        {% endfor %}
       </tbody>
     </table>
+    <a href="/financeiros-exibir-relatorio"><button>Voltar ao relatório</button></a>
     <a href="/pagar" target="_blank"><button>Listar contas a pagar</button></a>
-    <a href="/pagar" target="_blank"><button>Listar contas a receber</button></a>
   </div>
   {% endblock content %}
   {% block jstabela %}

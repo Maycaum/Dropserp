@@ -112,6 +112,21 @@ def ExibirRelatorio():
     receber = db.session.execute(receber)
     return render_template("financeiro-exibir-relatorio.html", name=current_user.username, pagar=pagar, receber=receber)
 
+@app.route('/pagar')
+def ListaPagar():
+    mes = datetime.now().month
+    ano = datetime.now().year
+    pagar = f"select * from pagar where data BETWEEN '{ano}-{mes}-01 00:00:00' and '{ano}-{mes}-30 00:00:00'"
+    pagar = db.session.execute(pagar)
+    return render_template('financeiro-listar-contas-a-pagar.html', pagar=pagar)
+
+@app.route('/receber')
+def ListaReceber():
+    mes = datetime.now().month
+    ano = datetime.now().year
+    receber = f"select * from receber where data BETWEEN '{ano}-{mes}-01 00:00:00' and '{ano}-{mes}-30 00:00:00'"
+    receber = db.session.execute(receber)
+    return render_template('financeiro-listar-contas-a-pagar.html', receber=receber)
 
 @app.route('/financeiro-menu')
 @login_required
