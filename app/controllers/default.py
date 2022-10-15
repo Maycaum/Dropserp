@@ -32,7 +32,9 @@ def logout():
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def Dashboard():
-    return render_template("dashboard.html", name=current_user.username)
+    qtdfuncionarios = "SELECT id FROM funcionario ORDER BY id DESC LIMIT 1"
+    qtdfuncionarios =db.session.execute(qtdfuncionarios)
+    return render_template("dashboard.html", name=current_user.username, qtdfuncionarios=qtdfuncionarios)
 
 
 @app.route('/estoque')
@@ -166,7 +168,6 @@ def RhLojista():
             "email": cadastro.email.data,
             "first_name": cadastro.nome.data,
             "last_name": cadastro.sobrenome.data,
-            "role": "teste",
             "username": cadastro.username.data,
             "password": cadastro.senha.data,
         }
