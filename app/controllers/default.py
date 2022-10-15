@@ -1,8 +1,9 @@
 from datetime import date, datetime
+from logging import Filter
 from flask import render_template, flash, redirect, url_for, flash, jsonify
 from app import app, db
 from config import conn
-from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario, CadastroFornecedor, CadastroReceber, CadastroPagar
+from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario, CadastroFornecedor, CadastroReceber, CadastroPagar, FIltroReceber, FIltroPagar
 from app.models.tables import Fornecedor, Funcionario, Pagar, Receber, User
 from app.models.api import wcapi
 from flask_login import login_user, logout_user, login_required, current_user
@@ -102,33 +103,35 @@ def ContasAReceber():
     return render_template("financeiro-contas-a-receber.html", name=current_user.username, receber=receber)
 
 
-@app.route('/financeiros-exibir-relatorio')
+@app.route('/financeiros-exibir-relatorio', methods=['GET', 'POST'])
 @login_required
 def ExibirRelatorio():
-    mes = datetime.now().month
-    ano = datetime.now().year
-    retorno = wcapi.get("orders", params={"after": f'{ano}-{mes}-01T00:00:00', "before":f'{ano}-{mes}-30T23:59:59', 'per_page': 100, 'status':'completed'}).json()
-    pagar = f"select * from pagar where data BETWEEN '{ano}-{mes}-01 00:00:00' and '{ano}-{mes}-30 00:00:00'"
-    pagar = db.session.execute(pagar)
-    receber = f"select * from receber "
-    receber = db.session.execute(receber)
-    return render_template("financeiro-exibir-relatorio.html", name=current_user.username, pagar=pagar, receber=receber)
+    listareceber = FIltroReceber()
+    listapagar = FIltroPagar()
+    inicio = f"{datetime.now().year}-{datetime.now().month}-01 00:00:00"
+    fim = f"{datetime.now().year}-{datetime.now().month}-30 23:59:59"
+    if listareceber.validate_on_submit():
+        inicio = listareceber.diainicial.data
+        fim = listareceber.diafinal.data
+        pagar = f"select * from pagar where data BETWEEN '{inicio} 00:00:00' and '{fim} 00:00:00'"
+        pagar = db.session.execute(pagar)
+        receber = f"select * from receber where data BETWEEN '{inicio} 00:00:00' and '{fim} 00:00:00'"
+        receber = db.session.execute(receber)
+    if listapagar.validate_on_submit():
+        inicio = listapagar.diainicial.data
+        fim = listapagar.diafinal.data
+        pagar = f"select * from pagar where data BETWEEN '{inicio} 00:00:00' and '{fim} 00:00:00'"
+        pagar = db.session.execute(pagar)
+        receber = f"select * from receber where data BETWEEN '{inicio} 00:00:00' and '{fim} 00:00:00'"
+        receber = db.session.execute(receber)
+    
 
-@app.route('/pagar')
-def ListaPagar():
-    mes = datetime.now().month
-    ano = datetime.now().year
-    pagar = f"select * from pagar where data BETWEEN '{ano}-{mes}-01 00:00:00' and '{ano}-{mes}-30 00:00:00'"
+    #retorno = wcapi.get("orders", params={"after": f'{ano}-{mes}-01T00:00:00', "before":f'{ano}-{mes}-30T23:59:59', 'per_page': 100, 'status':'completed'}).json()
+    pagar = f"select * from pagar where data BETWEEN '{inicio} 00:00:00' and '{fim} 00:00:00'"
     pagar = db.session.execute(pagar)
-    return render_template('financeiro-listar-contas-a-pagar.html', pagar=pagar)
-
-@app.route('/receber')
-def ListaReceber():
-    mes = datetime.now().month
-    ano = datetime.now().year
-    receber = f"select * from receber where data BETWEEN '{ano}-{mes}-01 00:00:00' and '{ano}-{mes}-30 00:00:00'"
+    receber = f"select * from receber where data BETWEEN '{inicio} 00:00:00' and '{fim} 00:00:00'"
     receber = db.session.execute(receber)
-    return render_template('financeiro-listar-contas-a-pagar.html', receber=receber)
+    return render_template("financeiro-exibir-relatorio.html", name=current_user.username, pagar=pagar, receber=receber, listareceber=listareceber, listapagar=listapagar)
 
 @app.route('/financeiro-menu')
 @login_required

@@ -3,26 +3,41 @@
 {% block name %} {{name}} {% endblock name %}
 {% block content %}
 
-
   <div class="trabalho">
 
     <details>
       <summary>receber</summary>
-      <ul>Lista</ul>
-      <ul>Lista</ul>
-      <ul>Lista</ul>
-      <ul>Lista</ul>
-      <ul>Lista</ul>
+      <form action="" method="post">
+        {{listareceber.csrf_token}}
+        <label>Data Inicial</label>
+        {{listareceber.diainicial(class="entrada")}}
+        <label>Data Final</label>
+        {{listareceber.diafinal(class="entrada")}}
+        <button> filtrar </button>
+
+      </form>
+      {% for i in receber  %}
+        <ul>identificador: {{i['identificador']}} - Valor: R${{i['valor']}}</ul>
+      {% endfor %}
       </summary>
     </details>
-    <br>
+
+    <br><br>
+
     <details>
       <summary>pagar</summary>
-      <ul>Lista</ul>
-      <ul>Lista</ul>
-      <ul>Lista</ul>
-      <ul>Lista</ul>
-      <ul>Lista</ul>
+      <form action="" method="post">
+        {{listapagar.csrf_token}}
+        <label>Data Inicial</label>
+        {{listapagar.diainicial(class="entrada")}}
+        <label>Data Final</label>
+        {{listapagar.diafinal(class="entrada")}}
+        <button> filtrar </button>
+
+      </form>
+      {% for i in pagar  %}
+        <ul>finalidade: {{i['finalidade']}} - Valor: R${{i['valor']}}</ul>
+      {% endfor %}
     </details>
     <br>
     <a><button class="cadastrofor"> Total receber</button></a>

@@ -45,3 +45,11 @@ class CadastroPagar(FlaskForm):
     valor = IntegerField('valor', validators=[DataRequired()])
     comprador = StringField('comprador', validators=[DataRequired()])
     dia = DateField(validators=None, format='%Y-%m-%d')
+
+class FIltroReceber(FlaskForm):
+    diainicial = DateField(validators=None, format='%Y-%m-%d')
+    diafinal = DateField(validators=None, format='%Y-%m-%d')
+
+class FIltroPagar(FlaskForm):
+    diainicial = DateField(validators=None, format='%Y-%m-%d')
+    diafinal = DateField(validators=None, format='%Y-%m-%d')
