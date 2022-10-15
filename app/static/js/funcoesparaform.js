@@ -4,22 +4,36 @@ function Apenasletras(input){
     input.value = input.value.replace(regex," ");
 }
 
-function mascara_cpf() {
-    var cpf = document.getElementById('cpf')
-    if(cpf.value.length == 3 || cpf.value.length == 7) { 
-        cpf.value+="."
-    } else if(cpf.value.length == 11) { 
-        cpf.value +="."
-    }
+function mascara_cpf(i) {
+    
+    var v = i.value;
+   
+   if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+      i.value = v.substring(0, v.length-1);
+      return;
+   }
+   
+   i.setAttribute("maxlength", "14");
+   if (v.length == 3 || v.length == 7) i.value += ".";
+   if (v.length == 11) i.value += "-";
+
 }
 
-function mascara_cnpj() {
-    var cpf = document.getElementById('cpf')
-    if(cpf.value.length == 2 || cpf.value.length == 7) { 
-        cpf.value+="."
-    } else if(cpf.value.length == 11) { 
-        cpf.value +="."
+function mascara_cnpj(i) {
+    // var cpf = document.getElementById('cpf')
+    
+    var v = i.value;
+       
+    if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+       i.value = v.substring(0, v.length-1);
+       return;
     }
-}
+    
+    i.setAttribute("maxlength", "18");
+    if (v.length == 2 || v.length == 6) i.value += ".";
+    if (v.length == 10) i.value += "/";
+    if (v.length == 15) i.value += "-";
+ 
 
+}
 
