@@ -288,7 +288,7 @@ span{
 }
 /*exescencial*/
 .dash-tudo{
-	margin: 236px 0px 0px 0px;
+	margin: 255px 0px 0px 116px;
 }
 .dash-campo{
 	width: 0px;
@@ -375,6 +375,18 @@ label {
 	margin: 0px;
 }
 
+h2{
+    
+    font-family: 'Cabin', sans-serif;
+    color: #934D9E;
+    margin: auto;
+    font-size: 30px;
+	position:absolute;
+	margin: -76px 15px -15px -179px;
+    
+}
+
+
 h3{
     
     font-family: 'Cabin', sans-serif;
@@ -405,6 +417,13 @@ h5{
     position: absolute;
     margin-top: -143px;
     margin-left: 133px;
+}
+h6{
+	font-family: 'Cabin', sans-serif;
+    color: #934D9E;
+    margin: auto;
+   
+    font-size: 50px;
 }
 fieldset {
     width: 461px;
