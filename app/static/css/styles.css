@@ -671,3 +671,18 @@ tbody{
 #amar_filter{
 	content: "YES";
   }
+
+summary{
+	font-family: 'Cabin', sans-serif;
+    color: #934D9E;
+    margin: auto;
+    text-align: left;
+    font-size: 25px;
+    
+}
+ul{
+	border: 1px solid #934D9E;
+    text-align: left;
+    padding: 10px 35px 10px 30px;
+    color: white;
+}
