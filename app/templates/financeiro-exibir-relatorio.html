@@ -6,14 +6,14 @@
   <div class="trabalho">
 
     <details>
-      <summary>receber</summary>
+      <summary>Contas a Receber</summary>
       <form action="" method="post">
         {{listareceber.csrf_token}}
         <label>Data Inicial</label>
-        {{listareceber.diainicial(class="entrada")}}
+        {{listareceber.diainicial(class="entrada-date")}}
         <label>Data Final</label>
-        {{listareceber.diafinal(class="entrada")}}
-        <button> filtrar </button>
+        {{listareceber.diafinal(class="entrada-date")}}
+        <button id="botao-filter"> Filtrar </button>
 
       </form>
       {% for i in receber  %}
@@ -25,14 +25,14 @@
     <br><br>
 
     <details>
-      <summary>pagar</summary>
+      <summary>Contas a Pagar</summary>
       <form action="" method="post">
         {{listapagar.csrf_token}}
         <label>Data Inicial</label>
-        {{listapagar.diainicial(class="entrada")}}
+        {{listapagar.diainicial(class="entrada-date")}}
         <label>Data Final</label>
-        {{listapagar.diafinal(class="entrada")}}
-        <button> filtrar </button>
+        {{listapagar.diafinal(class="entrada-date")}}
+        <button id="botao-filter"> Filtrar </button>
 
       </form>
       {% for i in pagar  %}
@@ -40,9 +40,9 @@
       {% endfor %}
     </details>
     <br>
-    <a><button class="cadastrofor"> Total receber</button></a>
-    <a><button class="cadastrofor"> Total pagar</button></a>
-    <a><button class="cadastrofor"> Saldo</button></a>
+    <h1 class="legend">|Total Receber|</h1>
+    <h1 class="legend">|Total Pagar|</h1> 
+    <h1 class="legend">|Saldo|</h1> 
     </body>
   </div>
 
