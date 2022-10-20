@@ -3,47 +3,51 @@
 {% block name %} {{name}} {% endblock name %}
 {% block content %}
 
-  <div class="trabalho">
+<div class="trabalho">
 
-    <details>
-      <summary>Contas a Receber</summary>
-      <form action="" method="post">
-        {{listareceber.csrf_token}}
-        <label>Data Inicial</label>
-        {{listareceber.diainicial(class="entrada-date")}}
-        <label>Data Final</label>
-        {{listareceber.diafinal(class="entrada-date")}}
-        <button id="botao-filter"> Filtrar </button>
+  <details>
+    <summary>Contas a Receber</summary>
+    <form action="" method="post">
+      {{listareceber.csrf_token}}
+      <label>Data Inicial</label>
+      {{listareceber.diainicial(class="entrada-date")}}
+      <label>Data Final</label>
+      {{listareceber.diafinal(class="entrada-date")}}
+      <button id="botao-filter"> Filtrar </button>
 
-      </form>
-      {% for i in receber  %}
-        <ul>identificador: {{i['identificador']}} - Valor: R${{i['valor']}}</ul>
-      {% endfor %}
-      </summary>
-    </details>
+    </form>
+    {% for i in receber %}
+    <ul>identificador: {{i['identificador']}} - Valor: R${{i['valor']}}</ul>
+    {% endfor %}
+    </summary>
+  </details>
 
-    <br><br>
+  <br><br>
 
-    <details>
-      <summary>Contas a Pagar</summary>
-      <form action="" method="post">
-        {{listapagar.csrf_token}}
-        <label>Data Inicial</label>
-        {{listapagar.diainicial(class="entrada-date")}}
-        <label>Data Final</label>
-        {{listapagar.diafinal(class="entrada-date")}}
-        <button id="botao-filter"> Filtrar </button>
+  <details>
+    <summary>Contas a Pagar</summary>
+    <form action="" method="post">
+      {{listapagar.csrf_token}}
+      <label>Data Inicial</label>
+      {{listapagar.diainicial(class="entrada-date")}}
+      <label>Data Final</label>
+      {{listapagar.diafinal(class="entrada-date")}}
+      <button id="botao-filter"> Filtrar </button>
 
-      </form>
-      {% for i in pagar  %}
-        <ul>finalidade: {{i['finalidade']}} - Valor: R${{i['valor']}}</ul>
-      {% endfor %}
-    </details>
-    <br>
-    <h1 class="legend">|Total Receber|</h1>
-    <h1 class="legend">|Total Pagar|</h1> 
-    <h1 class="legend">|Saldo|</h1> 
-    </body>
-  </div>
+    </form>
+    {% for i in pagar %}
+    <ul>finalidade: {{i['finalidade']}} - Valor: R${{i['valor']}}</ul>
+    {% endfor %}
+  </details>
+  <br>
+  <details>
+    <summary>Relatório gerado a partid de {{inicio}}</summary>
+
+    <h1 class="legend">|Total Receber: R$ {{somareceber}}|</h1><br>
+    <h1 class="legend">|Total Pagar: R$ {{somapagar}}|</h1><br>
+    <h1 class="legend">|Saldo: R$ {{somareceber - somapagar}}|</h1><br>
+  </details>
+  </body>
+</div>
 
 {% endblock content %}

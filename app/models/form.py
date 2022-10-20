@@ -35,14 +35,14 @@ class CadastroFornecedor(FlaskForm):
 
 class CadastroReceber(FlaskForm):
     identificador = StringField('identificador', validators=[DataRequired()])
-    valor = IntegerField('valor', validators=[DataRequired()])
+    valor = DecimalField('valor', validators=[DataRequired()])
     pagador = StringField('pagador', validators=[DataRequired()])
     dia = DateField(validators=None, format='%Y-%m-%d')
 
 class CadastroPagar(FlaskForm):
     finalidade = StringField('nome', validators=[DataRequired()])
     clienteFinal = StringField('cliente', validators=[DataRequired()])
-    valor = IntegerField('valor', validators=[DataRequired()])
+    valor = DecimalField('valor', validators=[DataRequired()])
     comprador = StringField('comprador', validators=[DataRequired()])
     dia = DateField(validators=None, format='%Y-%m-%d')
 

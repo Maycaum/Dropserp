@@ -108,8 +108,8 @@ def ContasAReceber():
 def ExibirRelatorio():
     listareceber = FIltroReceber()
     listapagar = FIltroPagar()
-    inicio = f"{datetime.now().year}-{datetime.now().month}-01 00:00:00"
-    fim = f"{datetime.now().year}-{datetime.now().month}-30 23:59:59"
+    inicio = f"{datetime.now().year}-{datetime.now().month}-01"
+    fim = f"{datetime.now().year}-{datetime.now().month}-30"
     if listareceber.validate_on_submit():
         inicio = listareceber.diainicial.data
         fim = listareceber.diafinal.data
@@ -125,13 +125,22 @@ def ExibirRelatorio():
         receber = f"select * from receber where data BETWEEN '{inicio} 00:00:00' and '{fim} 00:00:00'"
         receber = db.session.execute(receber)
     
+    querypagar = f"select * from pagar where data BETWEEN '{inicio} 00:00:00' and '{fim} 00:00:00'"
+    pagar = db.session.execute(querypagar)
+    totpagar = db.session.execute(querypagar)
+    itenspagar = []
+    for i in totpagar:
+        itenspagar.append(i['valor'])
+    somapagar=sum(itenspagar)
 
-    #retorno = wcapi.get("orders", params={"after": f'{ano}-{mes}-01T00:00:00', "before":f'{ano}-{mes}-30T23:59:59', 'per_page': 100, 'status':'completed'}).json()
-    pagar = f"select * from pagar where data BETWEEN '{inicio} 00:00:00' and '{fim} 00:00:00'"
-    pagar = db.session.execute(pagar)
-    receber = f"select * from receber where data BETWEEN '{inicio} 00:00:00' and '{fim} 00:00:00'"
-    receber = db.session.execute(receber)
-    return render_template("financeiro-exibir-relatorio.html", name=current_user.username, pagar=pagar, receber=receber, listareceber=listareceber, listapagar=listapagar)
+    queryreceber = f"select * from receber where data BETWEEN '{inicio} 00:00:00' and '{fim} 00:00:00'"
+    receber = db.session.execute(queryreceber)
+    totreceber = db.session.execute(queryreceber)
+    itensreceber = []
+    for i in totreceber:
+        itensreceber.append(i['valor'])
+    somareceber=sum(itensreceber)
+    return render_template("financeiro-exibir-relatorio.html", name=current_user.username, pagar=pagar, receber=receber, listareceber=listareceber, listapagar=listapagar, inicio=inicio, somapagar=somapagar,somareceber=somareceber)
 
 @app.route('/financeiro-menu')
 @login_required
