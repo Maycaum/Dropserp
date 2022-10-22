@@ -9,13 +9,15 @@ class User(db.Model):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
+    acesso = db.Column(db.String(5))
     username = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(50))
 
 
 
-    def __init__(self, username, password):
+    def __init__(self, username, acesso, password):
         self.username = username
+        self.acesso = acesso
         self.password = password
 
 

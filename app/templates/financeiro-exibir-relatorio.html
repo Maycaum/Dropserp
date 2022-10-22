@@ -19,6 +19,8 @@
     {% for i in receber %}
     <ul>identificador: {{i['identificador']}} - Valor: R${{i['valor']}}</ul>
     {% endfor %}
+    <ul>Recebido pelo ecomemrce: Valor: R${{somaecommerce}}</ul>
+
     </summary>
   </details>
 
@@ -43,9 +45,9 @@
   <details>
     <summary>Relatório gerado a partid de {{inicio}}</summary>
 
-    <h1 class="legend">|Total Receber: R$ {{somareceber}}|</h1><br>
-    <h1 class="legend">|Total Pagar: R$ {{somapagar}}|</h1><br>
-    <h1 class="legend">|Saldo: R$ {{somareceber - somapagar}}|</h1><br>
+    <h1 class="legend">|Total Receber: R$ {{somareceber + somaecommerce|round(2)}}|</h1><br>
+    <h1 class="legend">|Total Pagar: R$ {{(somapagar)|round(2)}}|</h1><br>
+    <h1 class="legend">|Saldo: R$ {{((somareceber + somaecommerce) - somapagar)|round(2)}}|</h1><br>
   </details>
   </body>
 </div>

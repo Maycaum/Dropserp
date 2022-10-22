@@ -1,13 +1,10 @@
-from datetime import date, datetime
-from logging import Filter
+from datetime import datetime
 from flask import render_template, flash, redirect, url_for, flash, jsonify
 from app import app, db
-from config import conn
 from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario, CadastroFornecedor, CadastroReceber, CadastroPagar, FIltroReceber, FIltroPagar
 from app.models.tables import Fornecedor, Funcionario, Pagar, Receber, User
 from app.models.api import wcapi
 from flask_login import login_user, logout_user, login_required, current_user
-import sqlalchemy
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
@@ -131,16 +128,23 @@ def ExibirRelatorio():
     itenspagar = []
     for i in totpagar:
         itenspagar.append(i['valor'])
-    somapagar=sum(itenspagar)
+    somapagar=round(sum(itenspagar),2)
 
     queryreceber = f"select * from receber where data BETWEEN '{inicio} 00:00:00' and '{fim} 00:00:00'"
     receber = db.session.execute(queryreceber)
     totreceber = db.session.execute(queryreceber)
     itensreceber = []
+    recebidoecommerce = []
+    retorno = wcapi.get("orders", params={"after": f'{inicio}T00:00:00', "before":f'{fim}T23:59:59', 'per_page': 100, 'status':'completed'}).json()
+    for i in range(len(retorno)):
+        retornodecimal = float(retorno[i]['total'])
+        recebidoecommerce.append(round(retornodecimal, 2))
     for i in totreceber:
         itensreceber.append(i['valor'])
     somareceber=sum(itensreceber)
-    return render_template("financeiro-exibir-relatorio.html", name=current_user.username, pagar=pagar, receber=receber, listareceber=listareceber, listapagar=listapagar, inicio=inicio, somapagar=somapagar,somareceber=somareceber)
+    somaecommerce = sum(recebidoecommerce)
+
+    return render_template("financeiro-exibir-relatorio.html", name=current_user.username, pagar=pagar, receber=receber, listareceber=listareceber, listapagar=listapagar, inicio=inicio, somapagar=somapagar,somareceber=somareceber, somaecommerce=somaecommerce)
 
 @app.route('/financeiro-menu')
 @login_required
