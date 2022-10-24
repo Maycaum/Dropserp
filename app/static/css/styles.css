@@ -521,6 +521,9 @@ display: flex;
 .mensagem-loj{
 	margin: 615px 0px 0px 131px;
 }
+.mensagem-logout{
+	margin: 0px 0px 0px 0px;
+}
 .img-pos{
 	margin: 0px 27px -12px 6px;
 
