@@ -9,13 +9,15 @@ class User(db.Model):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
+    acesso = db.Column(db.String(5))
     username = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(50))
 
 
 
-    def __init__(self, username, password):
+    def __init__(self, username, acesso, password):
         self.username = username
+        self.acesso = acesso
         self.password = password
 
 
@@ -97,15 +99,17 @@ class Pagar(db.Model):
     __tablename__ = "pagar"
 
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
-    nome = db.Column(db.String(25))
+    finalidade = db.Column(db.String(25))
     valor = db.Column(db.Float)
-    pagador = db.Column(db.String(25))
+    clientefinal = db.Column(db.String(25))
+    comprador = db.Column(db.String(25))
     data = db.Column(db.DateTime)
 
-    def __init__(self, nome, valor, pagador, data):
-        self.nome = nome
+    def __init__(self, finalidade, valor, clientefinal, comprador, data):
+        self.finalidade = finalidade
         self.valor = valor
-        self.pagador = pagador
+        self.clientefinal = clientefinal
+        self.comprador = comprador
         self.data = data
 
     def __repr__(self):

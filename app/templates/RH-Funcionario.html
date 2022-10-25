@@ -6,13 +6,7 @@ endblock title %} {% block name %} {{name}} {% endblock name %} {% block content
 <div class="trabalho">
   <fieldset>
     <h4>Funcionario</h4>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-          {% for message in messages %}
-              <span class="mensagem">{{ message }}</span>
-          {% endfor %}
-      {% endif %}
-    {% endwith %}      
+       
     <form action="" method="POST">
       {{funcionario.csrf_token}}
       <div class="card">        
@@ -21,13 +15,20 @@ endblock title %} {% block name %} {{name}} {% endblock name %} {% block content
         <label>Sobrenome </label>
         {{funcionario.sobrenome(class="entrada", type="text", maxlength="20", onkeyup_="Apenasletras(this)")}}
         <label>CPF</label>
-        {{funcionario.cpf(id="cpf", class="entrada",type="text", maxlength="14",  onkeyup_="mascara_cpf()")}}
+        {{funcionario.cpf(id="cpf", class="entrada",type="text", maxlength="14",  oninput_="mascara_cpf(this)")}}
         <br />
         <label>Cargo</label>
-        {{funcionario.cargo(class="entrada",id="teste")}}
+        {{funcionario.cargo(class="entrada")}}
                 <br />
       </div>
   </fieldset>
+  {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          {% for message in messages %}
+              <span class="mensagem-fun">{{ message }}</span>
+          {% endfor %}
+      {% endif %}
+    {% endwith %}   
   <div class="botoes-estilos">
     <button id="b_cancelar">Cancelar</button>
     <button id="b_cadastro">Cadastrar</button>

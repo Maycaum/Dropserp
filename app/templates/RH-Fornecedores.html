@@ -2,15 +2,13 @@
 {% block title %}{{super()}} - Cadastro de Produtos{% endblock title %}
 {% block name %} {{name}} {% endblock name %}
 {% block content %}
+
+<script src="../static/js/funcoesparaform.js"></script>
+
 <div class="trabalho">
   <fieldset>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-          {% for message in messages %}
-              <span class="mensagem">{{ message }}</span>
-          {% endfor %}
-      {% endif %}
-    {% endwith %}      
+ 
+   
     <h4>Fornecedores</h4>
     <form action="" method="POST">
       {{fornecedor.csrf_token}}
@@ -19,12 +17,20 @@
         {{fornecedor.nome(class="entrada", type="text", maxlength="50", onkeyup="Apenasletras(this)")}}
         <br>
         <label>CNPJ</label>
-        {{fornecedor.cnpj(id="cnpj", class="entrada",type="text", maxlength="18",  onkeyup_="mascara_cnpj()")}}
+        {{fornecedor.cnpj(id="cnpj", class="entrada",type="text", maxlength="18",  oninput="mascara_cnpj(this)")}}
         <br>
         <label>Descrição</label>
-        {{fornecedor.descricao(class="entrada_maior", placeholder='Insira Uma descrição')}}
+        {{fornecedor.descricao(class="entrada_maior")}}
       </div>
+         
   </fieldset>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+      {% for message in messages %}
+          <span class="mensagem-forn">{{ message }}</span>
+      {% endfor %}
+  {% endif %}
+{% endwith %} 
   <div class="botoes-estilos">
     <button id="b_cancelar"> Cancelar </button>
     <button id="b_cadastro"> Cadastrar </button>

@@ -18,13 +18,13 @@
       {{receber.csrf_token}}
       <div class="card">
         <label>Identificador</label>
-        {{receber.identificador(class="entrada", maxlength_="20", placeholder='insira o identificador para esta conta', onkeyup_="Apenasletras(this)")}}
-        <br />
-        <label>Valor</label>
-        {{receber.valor(class="entrada", maxlength_="20", placeholder="insira o valor que será recebido")}}
+        {{receber.identificador(class="entrada", maxlength_="20", onkeyup_="Apenasletras(this)")}}
         <br />
         <label>Pagador</label>
-        {{receber.pagador(class="entrada", maxlength_="20", placeholder='insira o nome do pagador', onkeyup_="Apenasletras(this)")}}
+        {{receber.pagador(class="entrada", maxlength_="20", onkeyup_="Apenasletras(this)")}}
+        <br />
+        <label>Valor</label>
+        {{receber.valor(class="entrada", maxlength_="20")}}
         <br />
         <label>Data</label>
         {{receber.dia(class="entrada")}}

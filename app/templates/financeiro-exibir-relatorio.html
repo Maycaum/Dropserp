@@ -1,29 +1,55 @@
 {% extends 'menu.html' %}
 {% block title %}{{super()}} - RH{% endblock title %}
-{% block name %}  {{name}} {% endblock name %}
+{% block name %} {{name}} {% endblock name %}
 {% block content %}
 
-    <div class="trabalho">
-      <fieldset>
-        <h4>Contas a Pagar</h4>
-        <div class="card">
-          <label>Nome</label>
-          <input class="entrada" type="text" maxlength="20" onkeyup="Apenasletras(this)" />
-          <br />
-          <label>Valor</label>
-          <input class="entrada" type="number" />
-          <br />
-          <label>Pagador</label>
-          <input class="entrada" type="text" maxlength="20" />
-          <br />
-          <label>Data</label>
-          <input class="entrada" type="date" />
-        </div>
-        <br />
-        <div class="botoes-estilos2">
-          <button id="b_cancelar">Visualizar</button>
-          <button id="b_cadastro">Cadastrar</button>
-        </div>
-      </fieldset>
-    </div>
+<div class="trabalho">
+
+  <details>
+    <summary>Contas a Receber</summary>
+    <form action="" method="post">
+      {{listareceber.csrf_token}}
+      <label>Data Inicial</label>
+      {{listareceber.diainicial(class="entrada-date")}}
+      <label>Data Final</label>
+      {{listareceber.diafinal(class="entrada-date")}}
+      <button id="botao-filter"> Filtrar </button>
+
+    </form>
+    {% for i in receber %}
+    <ul>identificador: {{i['identificador']}} - Valor: R${{i['valor']}}</ul>
+    {% endfor %}
+    <ul>Recebido pelo ecomemrce: Valor: R${{somaecommerce}}</ul>
+
+    </summary>
+  </details>
+
+  <br><br>
+
+  <details>
+    <summary>Contas a Pagar</summary>
+    <form action="" method="post">
+      {{listapagar.csrf_token}}
+      <label>Data Inicial</label>
+      {{listapagar.diainicial(class="entrada-date")}}
+      <label>Data Final</label>
+      {{listapagar.diafinal(class="entrada-date")}}
+      <button id="botao-filter"> Filtrar </button>
+
+    </form>
+    {% for i in pagar %}
+    <ul>finalidade: {{i['finalidade']}} - Valor: R${{i['valor']}}</ul>
+    {% endfor %}
+  </details>
+  <br>
+  <details>
+    <summary>Relatório gerado a partid de {{inicio}}</summary>
+
+    <h1 class="legend">|Total Receber: R$ {{somareceber + somaecommerce|round(2)}}|</h1><br>
+    <h1 class="legend">|Total Pagar: R$ {{(somapagar)|round(2)}}|</h1><br>
+    <h1 class="legend">|Saldo: R$ {{((somareceber + somaecommerce) - somapagar)|round(2)}}|</h1><br>
+  </details>
+  </body>
+</div>
+
 {% endblock content %}

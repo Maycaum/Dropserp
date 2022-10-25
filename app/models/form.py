@@ -26,7 +26,7 @@ class CadastroFuncionario(FlaskForm):
     nome = StringField('nome', validators=[DataRequired()])
     sobrenome = StringField('sobrenomenome', validators=[DataRequired()])
     cpf = StringField('CPF', validators=[DataRequired()])
-    cargo = SelectField('Cargo', validators=[DataRequired()], choices=[("Analista Rh"), ("Analista Estoque"), ("Analista Financeiro")])
+    cargo = SelectField('Cargo', validators=[DataRequired()], choices=[(""), ("Analista Rh"), ("Analista Estoque"), ("Analista Financeiro")])
 
 class CadastroFornecedor(FlaskForm):
     nome = StringField('nome', validators=[DataRequired()])
@@ -35,12 +35,21 @@ class CadastroFornecedor(FlaskForm):
 
 class CadastroReceber(FlaskForm):
     identificador = StringField('identificador', validators=[DataRequired()])
-    valor = IntegerField('valor', validators=[DataRequired()])
+    valor = DecimalField('valor', validators=[DataRequired()])
     pagador = StringField('pagador', validators=[DataRequired()])
     dia = DateField(validators=None, format='%Y-%m-%d')
 
 class CadastroPagar(FlaskForm):
-    nome = StringField('nome', validators=[DataRequired()])
-    valor = IntegerField('valor', validators=[DataRequired()])
-    pagador = StringField('pagador', validators=[DataRequired()])
+    finalidade = StringField('nome', validators=[DataRequired()])
+    clienteFinal = StringField('cliente', validators=[DataRequired()])
+    valor = DecimalField('valor', validators=[DataRequired()])
+    comprador = StringField('comprador', validators=[DataRequired()])
     dia = DateField(validators=None, format='%Y-%m-%d')
+
+class FIltroReceber(FlaskForm):
+    diainicial = DateField(validators=None, format='%Y-%m-%d')
+    diafinal = DateField(validators=None, format='%Y-%m-%d')
+
+class FIltroPagar(FlaskForm):
+    diainicial = DateField(validators=None, format='%Y-%m-%d')
+    diafinal = DateField(validators=None, format='%Y-%m-%d')

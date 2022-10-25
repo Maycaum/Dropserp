@@ -17,14 +17,16 @@
     <form action="" method="post">
       {{pagar.csrf_token}}
       <div class="card">
-        <label>nome</label>
-        {{pagar.nome(class="entrada", maxlength_="20", placeholder='insira o identificador para esta conta', onkeyup_="Apenasletras(this)")}}
+        <label>Finalidade</label>
+        {{pagar.finalidade(class="entrada", maxlength_="20", onkeyup_="Apenasletras(this)")}}
         <br />
+        <label>Cliente final</label>
+        {{pagar.clienteFinal(class="entrada", maxlength_="20", onkeyup_="Apenasletras(this)")}}
         <label>Valor</label>
-        {{pagar.valor(class="entrada", maxlength_="20", placeholder="insira o valor que será recebido")}}
+        {{pagar.valor(class="entrada", maxlength_="20")}}
         <br />
-        <label>Pagador</label>
-        {{pagar.pagador(class="entrada", maxlength_="20", placeholder='insira o nome do pagador', onkeyup_="Apenasletras(this)")}}
+        <label>Comprador</label>
+        {{pagar.comprador(class="entrada", maxlength_="20", onkeyup_="Apenasletras(this)")}}
         <br />
         <label>Data</label>
         {{pagar.dia(class="entrada")}}

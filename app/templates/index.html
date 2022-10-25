@@ -15,18 +15,17 @@
 
 <body>
     <div class="centro">
-        {% with messages = get_flashed_messages() %} 
-            {% if messages %} 
-                {% for message in messages %}
-                    <span class="mensagem">{{ message }}</span>
-                {% endfor %} 
-            {% endif %}
-        {% endwith %}
-
         <h6 class="textologin">DropsERP</h6>
         <img class="imglogin" src="{{url_for('static', filename='images/image_1.png')}}" alt="" height="300px" />
         <fieldset class="ajuste-login">
             <form action="" method="POST">
+                {% with messages = get_flashed_messages() %} 
+                {% if messages %} 
+                    {% for message in messages %}
+                        <span class="mensagem-logout" style="margin-left: 215px;">{{ message }}</span>
+                    {% endfor %} 
+                {% endif %}
+            {% endwith %}
                 {{form.csrf_token}}
                 <label class="label-login">Login</label>
                 {{form.username(class="entrada", placeholder='Seu Usuário')}}
@@ -39,6 +38,9 @@
                 </div>
             </form>
         </fieldset>
+      
+
+       
     </div>
 </body>
 

@@ -165,8 +165,7 @@ body {
 
     background-color: #E1DEE9;
     color: white;
-    /*width: 10px;*/
-    /*height: 10px;*/
+	
 	
 
 }
@@ -180,7 +179,7 @@ body {
 
 #logop{
     border-radius: 50%;
-    /*margin-top: -115px;*/
+    
     display: flex;
 }
 
@@ -258,21 +257,14 @@ span{
 	padding: 16px;
   }
   
-/*@media screen and (max-height: 450px) {
-	.sidenav {padding-top: 15px;}
-	.sidenav a {font-size: 18px;}
-  }
-  */
 
 
   /* em diante css do da tela de login*/
 
   .centro{
-	/*position: absolute;*/
+	
 	width: 431px;
 	height: 431px;
-	/*left: 40%;
-	top: 15%;*/
 	background: #523961;
 	border-radius: 50%;
 	margin: 80px 0px 0px 40%;
@@ -295,6 +287,47 @@ span{
 	
 }
 /*exescencial*/
+.dash-tudo{
+	margin: 255px 0px 0px 116px;
+}
+.dash-campo{
+	width: 0px;
+    margin: 0px 19px 0px 6px;
+    border: none;
+   
+    border: 3px solid #934D9E;
+    border-radius: 42px;
+    padding: 94px 230px;
+}
+.dash-campo-baixo-men{
+	width: 0px;
+	margin: 24px 10px -5px 18px;
+    border: none;
+   
+    border: 3px solid #934D9E;
+    border-radius: 42px;
+	padding: 238px 280px 85px 18px;
+}
+
+
+.dash-campo-baixo{
+	width: 0px;
+    margin: 23px 0px 0px 6px;
+    border: none;
+   
+    border: 3px solid #934D9E;
+    border-radius: 42px;
+    padding:212px 1113px 103px 10px;
+
+}
+.dash-cima{
+	display: flex;
+    padding: 0px 250px 0px 250px;
+}
+.dash-baixo{
+	display: flex;
+	padding: 0px 250px 0px 250px;
+}
 .trabalho{
 	width: 461px;
     margin: auto;
@@ -328,8 +361,7 @@ span{
 /*exibição da input*/
 
 label {
-	/*position: relative; */
-    /* top: -17px; */
+
     font-size: 25px;
     font-family: 'Cabin', sans-serif;
     font-weight: 400;
@@ -337,12 +369,23 @@ label {
     color: #934D9E;
     margin-left: -30;
     display: inline-block;
-    /* left: -10; */
     margin: 41px 1px -43px -27px;
 }
 .label-login{
 	margin: 0px;
 }
+
+h2{
+    
+    font-family: 'Cabin', sans-serif;
+    color: #934D9E;
+    margin: auto;
+    font-size: 30px;
+	position:absolute;
+	margin: -76px 15px -15px -179px;
+    
+}
+
 
 h3{
     
@@ -361,9 +404,8 @@ h4 {
     margin: auto;
     text-align: center;
     font-size: 50px;
-    /* position: absolute; */
     margin-top: -150px;
-    /*margin-left: 6px;*/
+    
 }
 h5{
     
@@ -376,6 +418,20 @@ h5{
     margin-top: -143px;
     margin-left: 133px;
 }
+h6{
+	font-family: 'Cabin', sans-serif;
+    color: #934D9E;
+    margin: auto;
+   
+    font-size: 50px;
+}
+.legend{
+	font-size: 22px;
+    /* position: relative; */
+    display: initial;
+    margin: 0px 23px 0px 23px;
+}
+
 fieldset {
     width: 461px;
     margin: auto;
@@ -394,6 +450,18 @@ fieldset {
     border-radius: 24px;
     text-align: center;
     font-size: 20px;
+}
+.entrada-date {
+    margin-left: 118px;
+    margin-right: 100px;
+    /* height: 55px; */
+    background: #FFFFFF;
+    border: 1px solid #934D9E;
+    box-sizing: border-box;
+    border-radius: 24px;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px 10px 8px 10px;
 }
 
 
@@ -444,9 +512,21 @@ display: flex;
 	
 }
 
-
+.mensagem-forn{
+	margin: 523px 0px 0px 310px;
+}
+.mensagem-fun{
+	margin: 550px 0px 0px 280px;
+}
+.mensagem-loj{
+	margin: 615px 0px 0px 131px;
+}
+.mensagem-logout{
+	margin: 0px 0px 0px 0px;
+}
 .img-pos{
 	margin: 0px 27px -12px 6px;
+
 }
 #cadastrofor{
     margin: 1px 0px 42px 109px;
@@ -459,6 +539,21 @@ display: flex;
     border: none;
 	/*margin-top: 60px; setado no margin*/
 	cursor: pointer;
+	
+}
+
+#botao-filter {
+		margin: 18px 0px 10px 355px;
+		/* height: 85px; */
+		/* width: 295px; */
+		background-color: #934D9E;
+		color: white;
+		font-size: 19px;
+		border-radius: 50px;
+		border: none;
+		cursor: pointer;
+		padding: 5px 5px 5px 5px;
+	
 	
 }
 
@@ -487,7 +582,6 @@ display: flex;
 		margin: auto;
 		text-align: center;
 		font-size: 50px;
-		/*position: absolute;*/
 		margin-top: -90px;
 		margin-left: 32px;
 	}
@@ -497,7 +591,6 @@ display: flex;
 		margin: auto;
 		text-align: center;
 		font-size: 50px;
-		/* position: absolute; */
 		margin-top: -93px;
 		margin-left: 148px;
 	}
@@ -534,7 +627,6 @@ display: flex;
 		/* height: 150; */
 	}
 	.centro{
-	    /* position: absolute; */
 		width: 431px;
 		height: 431px;
 		background: #523961;
@@ -580,7 +672,7 @@ table {
     text-align: left;
     padding: 10px 35px 10px 30px;
     color: white;
-    /* border-radius: 1000px; */
+ 
 
 	
   }
@@ -609,14 +701,11 @@ table {
 }
 .dataTables_info{
 	margin: 20px 113px 38px 359px;
-    /* height: 85px; */
-    /* width: 297px; */
     background-color: #934D9E;
     color: white;
     font-size: 12px;
     border-radius: 50px;
     border: none;
-    /* cursor: pointer; */
     padding: 6px 0px 0px 14px;
     text-decoration: none;
 }
@@ -638,3 +727,18 @@ tbody{
 #amar_filter{
 	content: "YES";
   }
+
+summary{
+	font-family: 'Cabin', sans-serif;
+    color: #934D9E;
+    margin: auto;
+    text-align: left;
+    font-size: 30px;
+    
+}
+ul{
+	border: 1px solid #934D9E;
+    text-align: left;
+    padding: 10px 35px 10px 30px;
+    color: white;
+}
