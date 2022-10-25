@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'menu.html' %}
+{% block title %}{{super()}} - Dashboard{% endblock title %}
+{% block name %} {{name}} {% endblock name %}
+{% block content %}
+<div class="trabalho">
     <h1>Produto Cadastrado com sucesso</h1>
-    <p>Retorno Magalu: {{soup}}</p>
-</body>
-</html>
+    <h1>Retorno Magalu: {{soup}}</h1>
+
+</div>
+{% endblock content %}

@@ -30,7 +30,7 @@ def index():
 @app.route('/logout')
 def logout():
     logout_user()
-    flash('deslogado')
+    flash('Deslogado')
     return redirect(url_for('index'))
 
 
