@@ -137,7 +137,7 @@ def EstoqueCadastro():
             })
         http = urllib3.PoolManager()
 
-        teste= http.request(
+        requisicao= http.request(
             'POST',
             'https://luizalabs-test.apigee.net/marketplace/products/',
             headers={
@@ -145,7 +145,7 @@ def EstoqueCadastro():
             },
             body = values
         )
-        pagina = teste.data #retorna a mensagem da pagina
+        pagina = requisicao.data #retorna a mensagem da pagina
 
         '''Deixa o retorno no terminal de forma agradavel'''
         soup = BeautifulSoup(pagina, 'html.parser')
