@@ -5,6 +5,9 @@ from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, Cadast
 from app.models.tables import Fornecedor, Funcionario, Pagar, Receber, User
 from app.models.api import wcapi
 from flask_login import login_user, logout_user, login_required, current_user
+import urllib3
+from bs4 import BeautifulSoup
+import json
 
 acesso = '0'
 
@@ -126,9 +129,29 @@ def EstoqueCadastro():
         }
         wcapi.post("products", produto).json()
         flash('Produto Criado com sucesso')
+
+        values = json.dumps({
+            "description": cadastro.descricao.data,
+            "id": cadastro.sku.data,
+            "title": cadastro.nome.data,
+            })
+        http = urllib3.PoolManager()
+
+        teste= http.request(
+            'POST',
+            'https://luizalabs-test.apigee.net/marketplace/products/',
+            headers={
+                'Content-Type': 'application/json'
+            },
+            body = values
+        )
+        pagina = teste.data #retorna a mensagem da pagina
+
+        '''Deixa o retorno no terminal de forma agradavel'''
+        soup = BeautifulSoup(pagina, 'html.parser')
+        soup =soup.prettify()
+        return render_template('Marketplace.html',soup=soup)
     return render_template("Estoque-cadastro-de-produto.html", name=current_user.username, cadastro=cadastro)
-
-
 @app.route('/estoque-listar')
 @login_required
 def EstoqueListar():
