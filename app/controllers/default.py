@@ -27,6 +27,18 @@ def index():
             flash('Login Invalido')
     return render_template('index.html', form=form)
 
+@app.route('/cartao')
+def Cartao():
+    cartao = lercartao()
+    query = f"select * from users where cartao = '{cartao}'"
+    data = db.session.execute(query)
+    for i in data:
+        if i['cartao'] == cartao:
+            user = User.query.filter_by(username=i['username']).first()
+            login_user(user)
+            global acesso
+            acesso = user.acesso
+            return redirect(url_for("Dashboard"))
 
 @app.route('/logout')
 def logout():
@@ -68,19 +80,6 @@ def RhFuncionario():
         flash('funcionario cadastrado com sucesso')
     return render_template("RH-Funcionario.html", name=current_user.username, acesso=acesso, funcionario=funcionario)
 
-@app.route('/cartao')
-def RhCartcao():
-    cartao = lercartao()
-    query = f"select * from users where cartao = '{cartao}'"
-    data = db.session.execute(query)
-    for i in data:
-        if i['cartao'] == cartao:
-            user = User.query.filter_by(username=i['username']).first()
-            login_user(user)
-            global acesso
-            acesso = user.acesso
-            return redirect(url_for("Dashboard"))
-    
 
 
 @app.route('/rh-lojista', methods=['GET', 'POST'])
@@ -121,7 +120,7 @@ def rh():
     if '1' in acesso:
         return (RhMenu())
     else:
-        return render_template('Acesso-Negado.html')
+        return render_template('Acesso-Negado.html',name=current_user.username, acesso=acesso)
 
 # Estoque
 
@@ -183,7 +182,7 @@ def Estoque():
     if '2' in acesso:
         return (EstoqueMenu())
     else:
-        return render_template('Acesso-Negado.html')
+        return render_template('Acesso-Negado.html',name=current_user.username, acesso=acesso)
 
 
 # Financeiro
@@ -281,4 +280,4 @@ def Financeiro():
     if '3' in acesso:
         return (FinanceiroMenu())
     else:
-        return render_template('Acesso-Negado.html')
+        return render_template('Acesso-Negado.html',name=current_user.username, acesso=acesso)
