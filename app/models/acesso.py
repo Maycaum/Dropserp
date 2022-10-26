@@ -1,8 +1,6 @@
 import serial
-print ('Serial Iniciada...\n')
-while True:
+def lercartao():
     comport = serial.Serial('/dev/ttyUSB0', 9600) 
-
     retorno = comport.read(8)
-    print(retorno)
     comport.close()
+    return(str(retorno).replace("'","").replace(" ","").replace("\r",""))

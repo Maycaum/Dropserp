@@ -1,9 +1,10 @@
 from datetime import datetime
-from flask import render_template, flash, redirect, url_for, flash
+from flask import render_template, flash, redirect, url_for, flash, jsonify
 from app import app, db
 from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario, CadastroFornecedor, CadastroReceber, CadastroPagar, FIltroReceber, FIltroPagar
 from app.models.tables import Fornecedor, Funcionario, Pagar, Receber, User
 from app.models.api import wcapi
+from app.models.acesso import lercartao
 from flask_login import login_user, logout_user, login_required, current_user
 import urllib3
 from bs4 import BeautifulSoup
@@ -40,7 +41,10 @@ def logout():
 def Dashboard():
     qtdfuncionarios = "SELECT id FROM funcionario ORDER BY id DESC LIMIT 1"
     qtdfuncionarios = db.session.execute(qtdfuncionarios)
-    return render_template("dashboard.html", name=current_user.username, qtdfuncionarios=qtdfuncionarios, acesso=acesso)
+    qtdprodutos = wcapi.get("products", params={'order': 'desc','per_page': 1}).json()
+    qtdclientes = wcapi.get("customers", params={'order': 'asc','per_page': 1}).json()
+    
+    return render_template("dashboard.html", name=current_user.username, qtdfuncionarios=qtdfuncionarios, acesso=acesso, qtdprodutos=qtdprodutos, qtdclientes=qtdclientes)
 
 
 @app.route('/rh-menu')
@@ -63,6 +67,20 @@ def RhFuncionario():
         Funcionario.query.all()
         flash('funcionario cadastrado com sucesso')
     return render_template("RH-Funcionario.html", name=current_user.username, funcionario=funcionario)
+
+@app.route('/cartao')
+def RhCartcao():
+    cartao = lercartao()
+    query = f"select * from users where cartao = '{cartao}'"
+    data = db.session.execute(query)
+    for i in data:
+        if i['cartao'] == cartao:
+            user = User.query.filter_by(username=i['username']).first()
+            login_user(user)
+            global acesso
+            acesso = user.acesso
+            return redirect(url_for("Dashboard"))
+    
 
 
 @app.route('/rh-lojista', methods=['GET', 'POST'])

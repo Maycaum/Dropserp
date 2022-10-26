@@ -13,21 +13,18 @@
         
     </div>
     <div class="dash-campo">
-      
+      <h2>Produtos</h2>
+      {% for i in qtdprodutos %}
+        <h6>{{i['id'] - 10}}</h6>
+      {% endfor %}
     </div>
     <div class="dash-campo">
-
+      <h2>clientes</h2>
+      {% for i in qtdclientes %}
+        <h6>{{(i['id'])}}</h6>
+      {% endfor %}
     </div>
 
   </div >  
-  <div class="dash-baixo">  
-    <div class="dash-campo-baixo">
-      
-
-    </div>
-    <div class="dash-campo-baixo-men">
-
-    </div>
-  </div>
 </div>  
 {% endblock content %}
