@@ -44,7 +44,7 @@ def Dashboard():
     qtdprodutos = wcapi.get("products", params={'order': 'desc','per_page': 1}).json()
     qtdclientes = wcapi.get("customers", params={'order': 'asc','per_page': 1}).json()
     
-    return render_template("dashboard.html", name=current_user.username, acesso=acesso, qtdfuncionarios=qtdfuncionarios, acesso=acesso, qtdprodutos=qtdprodutos, qtdclientes=qtdclientes)
+    return render_template("dashboard.html", name=current_user.username, acesso=acesso, qtdfuncionarios=qtdfuncionarios, qtdprodutos=qtdprodutos, qtdclientes=qtdclientes)
 
 
 @app.route('/rh-menu')
