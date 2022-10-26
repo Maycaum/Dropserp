@@ -568,7 +568,7 @@ display: flex;
 @media (min-width:768px) and (max-width: 1366px) {
 
     body{
-        background-color: red;
+       /* background-color: red;*/
     }
 	h2{
     
