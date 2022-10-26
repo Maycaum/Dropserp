@@ -387,17 +387,20 @@ h2{
 }
 
 
-h3{
+
     
-    font-family: 'Cabin', sans-serif;
-    color: #934D9E;
-    margin: auto;
-    text-align: center;
-    font-size: 50px;
-    position: absolute;
-    margin-top: -150px;
-    margin-left: 32px;
+h3 {
+		font-family: 'Cabin', sans-serif;
+		color: #934D9E;
+		margin: auto;
+		text-align: center;
+		font-size: 50px;
+		/* position: absolute; */
+		/* margin-top: -150px; */
+		/* margin-left: 32px; */
+		margin: -126px -29px 52px 0px;
 }
+
 h4 {
     font-family: 'Cabin', sans-serif;
     color: #934D9E;
@@ -409,14 +412,15 @@ h4 {
 }
 h5{
     
-    font-family: 'Cabin', sans-serif;
+	font-family: 'Cabin', sans-serif;
     color: #934D9E;
     margin: auto;
     text-align: center;
     font-size: 50px;
-    position: absolute;
-    margin-top: -143px;
-    margin-left: 133px;
+    /* position: absolute; */
+    /* margin-top: -132px; */
+    /* margin-left: 86px; */
+    margin: -148px -74px 46px -22px;
 }
 h6{
 	font-family: 'Cabin', sans-serif;
@@ -564,9 +568,60 @@ display: flex;
 @media (min-width:768px) and (max-width: 1366px) {
 
     body{
-        /*background-color: red;*/
+        background-color: red;
     }
+	h2{
+    
+		font-family: 'Cabin', sans-serif;
+		color: #934D9E;
+		margin: auto;
+		font-size: 20px;
+		position:absolute;
+		margin: -25px 15px -15px -138px;
+		
+	}
 	
+	.dash-tudo{
+		margin: 221px 0px 0px -133px;
+	}
+	.dash-campo{
+		width: 0px;
+		margin: 0px 19px 0px 6px;
+		border: none;
+	   
+		border: 3px solid #934D9E;
+		border-radius: 42px;
+		padding: 35px 150px;
+	}
+	.dash-campo-baixo-men{
+		width: 0px;
+		margin: 24px 10px -5px 18px;
+		border: none;
+	   
+		border: 3px solid #934D9E;
+		border-radius: 42px;
+		padding: 180px 197px 0px 1px;
+	}
+	
+	
+	.dash-campo-baixo{
+		width: 0px;
+		margin: 23px 0px 0px 6px;
+		border: none;
+	   
+		border: 3px solid #934D9E;
+		border-radius: 42px;
+		padding: 40px 745px 0px 0px;
+	
+	}
+	.dash-cima{
+		display: flex;
+		padding: 0px 250px 0px 250px;
+	}
+	.dash-baixo{
+		display: flex;
+		padding: 0px 250px 0px 250px;
+	}
 	.trabalho-centro {
 		width: 463px;
 		margin: auto;
@@ -581,18 +636,16 @@ display: flex;
 		color: #934D9E;
 		margin: auto;
 		text-align: center;
-		font-size: 50px;
-		margin-top: -90px;
-		margin-left: 32px;
+		font-size: 40px;
+		margin: -82px 0px 21px 54px;
 	}
 	h5 {
 		font-family: 'Cabin', sans-serif;
 		color: #934D9E;
 		margin: auto;
 		text-align: center;
-		font-size: 50px;
-		margin-top: -93px;
-		margin-left: 148px;
+		font-size: 40px;
+		margin: -82px 0px 21px 54px;
 	}
 	.sidenav a {
 		padding: 5px 0.5px 10px 32px;
