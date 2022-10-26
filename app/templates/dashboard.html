@@ -2,7 +2,9 @@
 {% block title %}{{super()}} - Dashboard{% endblock title %}
 {% block name %} {{name}} {% endblock name %}
 {% block content %}
-
+<head>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/styles.css')}}" />
+</head>
 <div class="dash-tudo">
   <div class="dash-cima">
     <div class="dash-campo">
