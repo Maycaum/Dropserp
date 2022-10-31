@@ -1,9 +1,10 @@
 from datetime import datetime
-from flask import render_template, flash, redirect, url_for, flash
+from flask import render_template, flash, redirect, url_for, flash, jsonify
 from app import app, db
 from app.models.form import LoginForm, CadastroProdutos, CadastroLojista, CadastroFuncionario, CadastroFornecedor, CadastroReceber, CadastroPagar, FIltroReceber, FIltroPagar
 from app.models.tables import Fornecedor, Funcionario, Pagar, Receber, User
 from app.models.api import wcapi
+from app.models.acesso import lercartao
 from flask_login import login_user, logout_user, login_required, current_user
 import urllib3
 from bs4 import BeautifulSoup
@@ -26,6 +27,18 @@ def index():
             flash('Login Invalido')
     return render_template('index.html', form=form)
 
+@app.route('/cartao')
+def Cartao():
+    cartao = lercartao()
+    query = f"select * from users where cartao = '{cartao}'"
+    data = db.session.execute(query)
+    for i in data:
+        if i['cartao'] == cartao:
+            user = User.query.filter_by(username=i['username']).first()
+            login_user(user)
+            global acesso
+            acesso = user.acesso
+            return redirect(url_for("Dashboard"))
 
 @app.route('/logout')
 def logout():
@@ -40,13 +53,16 @@ def logout():
 def Dashboard():
     qtdfuncionarios = "SELECT id FROM funcionario ORDER BY id DESC LIMIT 1"
     qtdfuncionarios = db.session.execute(qtdfuncionarios)
-    return render_template("dashboard.html", name=current_user.username, qtdfuncionarios=qtdfuncionarios, acesso=acesso)
+    qtdprodutos = wcapi.get("products", params={'order': 'desc','per_page': 1}).json()
+    qtdclientes = wcapi.get("customers", params={'order': 'asc','per_page': 1}).json()
+    
+    return render_template("dashboard.html", name=current_user.username, acesso=acesso, qtdfuncionarios=qtdfuncionarios, qtdprodutos=qtdprodutos, qtdclientes=qtdclientes)
 
 
 @app.route('/rh-menu')
 @login_required
 def RhMenu():
-    return render_template("RH-menu.html", name=current_user.username)
+    return render_template("RH-menu.html", name=current_user.username, acesso=acesso)
 
 
 @app.route('/rh-funcionario', methods=['GET', 'POST'])
@@ -62,7 +78,8 @@ def RhFuncionario():
         db.session.commit()
         Funcionario.query.all()
         flash('funcionario cadastrado com sucesso')
-    return render_template("RH-Funcionario.html", name=current_user.username, funcionario=funcionario)
+    return render_template("RH-Funcionario.html", name=current_user.username, acesso=acesso, funcionario=funcionario)
+
 
 
 @app.route('/rh-lojista', methods=['GET', 'POST'])
@@ -79,7 +96,7 @@ def RhLojista():
         }
         wcapi.post("customers", lojista).json()
         flash('Lojista criado com sucesso')
-    return render_template("RH-lojista.html", name=current_user.username, cadastro=cadastro)
+    return render_template("RH-lojista.html", name=current_user.username, acesso=acesso, cadastro=cadastro)
 
 
 @app.route('/rh-fornecedores', methods=['GET', 'POST'])
@@ -94,7 +111,7 @@ def RhFornecedor():
         db.session.commit()
         Fornecedor.query.all()
         flash('Fornecedor criado com sucesso')
-    return render_template("RH-Fornecedores.html", name=current_user.username, fornecedor=fornecedor)
+    return render_template("RH-Fornecedores.html", name=current_user.username, acesso=acesso, fornecedor=fornecedor)
 
 
 @app.route('/rh')
@@ -103,7 +120,7 @@ def rh():
     if '1' in acesso:
         return (RhMenu())
     else:
-        return render_template('Acesso-Negado.html')
+        return render_template('Acesso-Negado.html',name=current_user.username, acesso=acesso)
 
 # Estoque
 
@@ -111,7 +128,7 @@ def rh():
 @app.route('/estoque-menu')
 @login_required
 def EstoqueMenu():
-    return render_template("Estoque-menu.html", name=current_user.username)
+    return render_template("Estoque-menu.html", name=current_user.username, acesso=acesso)
 
 
 @app.route('/estoque-cadastro', methods=['GET', 'POST'])
@@ -151,12 +168,12 @@ def EstoqueCadastro():
         soup = BeautifulSoup(pagina, 'html.parser')
         soup =soup.prettify()
         return render_template('Marketplace.html',soup=soup)
-    return render_template("Estoque-cadastro-de-produto.html", name=current_user.username, cadastro=cadastro)
+    return render_template("Estoque-cadastro-de-produto.html", name=current_user.username, acesso=acesso, cadastro=cadastro)
 @app.route('/estoque-listar')
 @login_required
 def EstoqueListar():
     retorno = wcapi.get("products", params={"per_page": 20}).json()
-    return render_template("Estoque-listar-produtos.html", name=current_user.username, retorno=retorno)
+    return render_template("Estoque-listar-produtos.html", name=current_user.username, acesso=acesso, retorno=retorno)
 
 
 @app.route('/estoque')
@@ -165,7 +182,7 @@ def Estoque():
     if '2' in acesso:
         return (EstoqueMenu())
     else:
-        return render_template('Acesso-Negado.html')
+        return render_template('Acesso-Negado.html',name=current_user.username, acesso=acesso)
 
 
 # Financeiro
@@ -184,7 +201,7 @@ def ContasAPagar():
         db.session.commit()
         Receber.query.all()
         flash('Conta á pagar cadastrada com sucesso')
-    return render_template("financeiro-contas-a-pagar.html", name=current_user.username, pagar=pagar)
+    return render_template("financeiro-contas-a-pagar.html", name=current_user.username, acesso=acesso, pagar=pagar)
 
 
 @app.route('/financeiro-contas-a-receber', methods=['GET', 'POST'])
@@ -200,7 +217,7 @@ def ContasAReceber():
         db.session.commit()
         Receber.query.all()
         flash('Conta á receber cadastrada com sucesso')
-    return render_template("financeiro-contas-a-receber.html", name=current_user.username, receber=receber)
+    return render_template("financeiro-contas-a-receber.html", name=current_user.username, acesso=acesso, receber=receber)
 
 
 @app.route('/financeiros-exibir-relatorio', methods=['GET', 'POST'])
@@ -248,13 +265,13 @@ def ExibirRelatorio():
     somareceber = sum(itensreceber)
     somaecommerce = sum(recebidoecommerce)
 
-    return render_template("financeiro-exibir-relatorio.html", name=current_user.username, pagar=pagar, receber=receber, listareceber=listareceber, listapagar=listapagar, inicio=inicio, somapagar=somapagar, somareceber=somareceber, somaecommerce=somaecommerce)
+    return render_template("financeiro-exibir-relatorio.html", name=current_user.username, acesso=acesso, pagar=pagar, receber=receber, listareceber=listareceber, listapagar=listapagar, inicio=inicio, somapagar=somapagar, somareceber=somareceber, somaecommerce=somaecommerce)
 
 
 @app.route('/financeiro-menu')
 @login_required
 def FinanceiroMenu():
-    return render_template("Financeiro-menu.html", name=current_user.username)
+    return render_template("Financeiro-menu.html", name=current_user.username, acesso=acesso)
 
 
 @app.route('/financeiro')
@@ -263,4 +280,4 @@ def Financeiro():
     if '3' in acesso:
         return (FinanceiroMenu())
     else:
-        return render_template('Acesso-Negado.html')
+        return render_template('Acesso-Negado.html',name=current_user.username, acesso=acesso)

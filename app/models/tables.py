@@ -10,6 +10,7 @@ class User(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     acesso = db.Column(db.String(5))
+    cartao = db.Column(db.String(12))
     username = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(50))
 

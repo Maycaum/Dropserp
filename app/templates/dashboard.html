@@ -2,7 +2,9 @@
 {% block title %}{{super()}} - Dashboard{% endblock title %}
 {% block name %} {{name}} {% endblock name %}
 {% block content %}
-
+<head>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/styles.css')}}" />
+</head>
 <div class="dash-tudo">
   <div class="dash-cima">
     <div class="dash-campo">
@@ -13,21 +15,18 @@
         
     </div>
     <div class="dash-campo">
-      
+      <h2>Produtos</h2>
+      {% for i in qtdprodutos %}
+        <h6>{{i['id'] - 10}}</h6>
+      {% endfor %}
     </div>
     <div class="dash-campo">
-
+      <h2>clientes</h2>
+      {% for i in qtdclientes %}
+        <h6>{{(i['id'])}}</h6>
+      {% endfor %}
     </div>
 
   </div >  
-  <div class="dash-baixo">  
-    <div class="dash-campo-baixo">
-      
-
-    </div>
-    <div class="dash-campo-baixo-men">
-
-    </div>
-  </div>
 </div>  
 {% endblock content %}
