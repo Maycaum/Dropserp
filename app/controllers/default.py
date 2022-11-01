@@ -80,7 +80,11 @@ def RhFuncionario():
         flash('funcionario cadastrado com sucesso')
     return render_template("RH-Funcionario.html", name=current_user.username, acesso=acesso, funcionario=funcionario)
 
-
+@app.route('/lista-funcionario')
+def ListaFuncionario():
+    query = "select id,nome,sobrenome,cargo from funcionario"
+    lista = db.session.execute(query)
+    return render_template("Lista-Funcionario.html", lista=lista)
 
 @app.route('/rh-lojista', methods=['GET', 'POST'])
 @login_required
@@ -113,6 +117,11 @@ def RhFornecedor():
         flash('Fornecedor criado com sucesso')
     return render_template("RH-Fornecedores.html", name=current_user.username, acesso=acesso, fornecedor=fornecedor)
 
+@app.route('/lista-fornecedor')
+def ListaFornecedor():
+    query = "select id,nome,descricao from fornecedor"
+    lista = db.session.execute(query)
+    return render_template("Lista-Fornecedor.html", lista=lista)
 
 @app.route('/rh')
 @login_required
