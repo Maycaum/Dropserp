@@ -1,0 +1,45 @@
+{% extends 'menu.html' %} {% block title %}{{super()}} - Financeiro-Contas{%
+    endblock title %} {% block content %}
+    {% block tabela %}
+    
+        <!-- Javascript abaixo -->
+       <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+       <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+       <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    {% endblock tabela %}
+    <div class="trabalho">
+      <table  id="amar">
+        
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in lista %}
+          <tr>
+            <td>{{i['id']}}</td>
+            <td>{{i['nome']}}</td>
+            <td>{{i['descricao']}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    
+    {% endblock content %}
+    {% block jstabela %}
+    <script>
+           
+      $(document).ready(function () {
+    $('#amar').DataTable({"language": {
+          "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/pt-BR.json"}});
+    });
+       
+    
+    </script>
+    
+    </script>
+    {% endblock jstabela %}

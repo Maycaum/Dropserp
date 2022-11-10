@@ -17,9 +17,9 @@
 
     </form>
     {% for i in receber %}
-    <ul>identificador: {{i['identificador']}} - Valor: R${{i['valor']}}</ul>
+    <ul style="border: 1px solid #934D9E;">identificador: {{i['identificador']}} - Valor: R${{i['valor']}}</ul>
     {% endfor %}
-    <ul>Recebido pelo ecomemrce: Valor: R${{somaecommerce}}</ul>
+    <ul style="border: 1px solid #934D9E;">Recebido pelo ecomemrce: Valor: R${{somaecommerce}}</ul>
 
     </summary>
   </details>
@@ -38,7 +38,7 @@
 
     </form>
     {% for i in pagar %}
-    <ul>finalidade: {{i['finalidade']}} - Valor: R${{i['valor']}}</ul>
+    <ul style="border: 1px solid #934D9E;">finalidade: {{i['finalidade']}} - Valor: R${{i['valor']}}</ul>
     {% endfor %}
   </details>
   <br>

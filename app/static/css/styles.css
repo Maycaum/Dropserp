@@ -515,6 +515,17 @@ display: flex;
 	cursor: pointer;
 	
 }
+#b_centro_2{
+	background-color: #934D9E;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
+    margin: 51px 0px 0px 131px;
+    padding: 20px 21px;
+    cursor: pointer;
+
+}
 
 .mensagem-forn{
 	margin: 523px 0px 0px 310px;
@@ -562,7 +573,9 @@ display: flex;
 }
 
 
-
+.ajuste-login{
+	margin:40px 0px 0px 0px;
+}
 /*responsividade telas menores*/
 
 @media (min-width:768px) and (max-width: 1366px) {
@@ -687,7 +700,7 @@ display: flex;
 		margin: 71px 0px 0px 224px;
 	}
 	.ajuste-login{
-		margin:-278px 0px 0px 490px;
+		margin:-354px 0px 0px 490px;
 	}
 	#cadastrofor {
 		margin: 1px 0px 42px 109px;
@@ -790,7 +803,7 @@ summary{
     
 }
 ul{
-	border: 1px solid #934D9E;
+	
     text-align: left;
     padding: 10px 35px 10px 30px;
     color: white;
